@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.88% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>124/128</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">92.45% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>49/53</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>24/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.74% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>90/94</span>
+      </div>
+      <div class='fl pad1y'>
+        <span class="strong">2 statements, 4 branches</span>
+        <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+import Logger from 'mccree-helper-logger';
+&nbsp;
+import EventEmitter from 'events';
+&nbsp;
+import Media from './media.js';
+&nbsp;
+import events from './events.js';
+&nbsp;
+import LoaderBuffer from 'mccree-core-loaderbuffer';
+&nbsp;
+import Utils from 'mccree-helper-utils';
+&nbsp;
+/**
+ * The main class to create an decoder.
+ */
+class Mccree {
+  /**
+   * The function to get if mccree is supported by the browser.
+   * 
+   * @return {boolean}
+   *    If the browser support mccree.
+   */
+  constructor(modules, config, plugins) {
+    if(!modules) {
+      modules = {};
+    }
+&nbsp;
+    this.TAG = 'Mccree';
+    
+    this.config = config ? config : {};
+    
+    this.debug = config &amp;&amp; config.debug || false;
+    
+    this.plugins = plugins || [];
+&nbsp;
+    this.url = null;
+    
+    this.time = 0;
+&nbsp;
+    this.events = events;
+    
+    this.logMsgs = events.logMsgs;
+&nbsp;
+    Object.assign(this.logMsgs, this.config.logMessages || {});
+&nbsp;
+    this._initLogger(modules.logger);
+&nbsp;
+    this.initObserver();
+&nbsp;
+    // Use default when options do not defined.
+    this.loaderBuffer = new LoaderBuffer();
+    this.remuxBuffer = {};
+    this.initSegment = {};
+&nbsp;
+    this._createModules(modules);
+    this._initModules();
+&nbsp;
+    let media = new Media();
+&nbsp;
+    this.attachMedia(media);    
+  }
+&nbsp;
+&nbsp;
+  destroy() {
+    // Destroy timer
+    clearInterval(this.timmer);
+    this.timmer = null;
+    return this.unload().then(res =&gt; {
+      this.observer = null;
+      this.detachMedia();
+      this.media = null;
+      this.logger.debug(this.TAG, 'unload', this.logMsgs.DESTROY);
+    });
+  }
+&nbsp;
+  /**
+   * Use to attach media element.
+   */
+  attachMedia(media) {
+    this.detachMedia();
+    this.media = media;
+  }
+&nbsp;
+  /** 
+   * Use to detach Media.
+   */
+  detachMedia() {
+    this.media = null;
+  }
+&nbsp;
+  /** 
+   * Load the resource.
+   *
+   * @param {string} url - The resource url.
+   */
+  load(url) {
+    this.logger.log(this.TAG, `loadurl ${url}`);
+    this.originUrl = url;
+    this.loader.load(url);
+  }
+&nbsp;
+  /**
+   * Unload the resource.
+   */
+  unload() {
+    return new Promise((resolve, reject) =&gt; {
+      if(this.loader) {
+        this.logger.debug(this.TAG, 'unload', this.logMsgs.UNLOADING);
+        this.loader.unload().then(res =&gt; {
+          resolve();
+        }).catch(res =&gt; {
+          reject(res);
+        });
+      } else {
+        resolve();
+      }
+    });
+  }
+&nbsp;
+  /**
+   * Initialize the logger for mccree.
+   * 
+   * @param {object} logger - The js object which has required functions for recording logs.
+   */
+  _initLogger(logger) {
+    // init the logger;
+    if (logger &amp;&amp; Logger.isValid(logger)) {
+      this.logger = new Logger(logger, false, this.debug);
+      this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_LOGGER_CUSTOM);
+    } else {
+      this.logger = new Logger(null, false, this.debug);
+      this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_LOGGER_INTERNAL);
+    }
+  }
+&nbsp;
+  /**
+   * Initialize the eventemitter for the mccree.
+   */
+  initObserver() {
+    // init eventEmitter;
+    var that = this;
+    this.observer = new EventEmitter();
+&nbsp;
+    this.observer.trigger = function trigger(event, ...data) {
+      if(event !== 'error') {
+        that.observer.emit(event, ...data);
+      } else {
+        that.observer.emit('internalError', ...data);
+      }
+    };
+&nbsp;
+    this.observer.on = function on(event, listener) {
+      if(event !== 'error') {
+        that.observer.addListener(event, listener);
+      } else {
+        that.observer.addListener('internalError', listener);
+      }
+    };
+&nbsp;
+    this.observer.off = function off(event, cb) {
+      if(!cb) {
+        cb = () =&gt; {};
+      }
+      if(!event){
+        that.observer.removeAllListeners();
+        cb();
+      } else if(event !== 'error') {
+        that.observer.removeListener(event, cb);
+      } else {
+        that.observer.removeListener('internalError', cb);
+      }
+    };
+&nbsp;
+    this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_OBSERVER);
+&nbsp;
+    this.on = this.observer.on.bind(this.observer);
+    this.off = this.observer.off.bind(this.observer);
+    this.trigger = this.observer.trigger.bind(this.observer);
+  }
+&nbsp;
+  /**
+   * Load and check the loader, demux and remux modules for mccree.
+   *
+   * @params {Object} modules - The js object contains loader, demux and remux objects.
+   */
+  _createModules(modules) {
+    if (modules.loader) {
+      this.loader = modules.loader;
+      this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_LOADER);
+    } else {
+      this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_LOADER_FAIL);
+    }
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (modules.demux) {
+<span class="cstat-no" title="statement not covered" >      t</span>his.demux = modules.demux;
+<span class="cstat-no" title="statement not covered" >      t</span>his.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_DEMUXER);
+    } else {
+      this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_DEMUXER_FAILED);
+    }
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (modules.remux) {
+<span class="cstat-no" title="statement not covered" >      t</span>his.remux = modules.remux;
+<span class="cstat-no" title="statement not covered" >      t</span>his.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_REMUXER);
+    } else {
+      this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_REMUXER_FAILED);
+    }
+  }
+&nbsp;
+  /**
+   * Call the init functions of loader, demux, remux.
+   */
+  _initModules() {
+    this.loader &amp;&amp; this.loader.init(this);
+    t</span>his.demux &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >this.demux.init(this);
+    t</span>his.remux &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >this.remux.init(this);
+  }
+}
+&nbsp;
+export default Mccree;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Aug 12 2017 16:17:35 GMT+0800 (CST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
