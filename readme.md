@@ -38,13 +38,13 @@ TBA (After panda-mccree-live module released)
 ## Modules and Status
 |name|dev|test|doc|comments|developer|org|status|
 |---|---|---|---|---|---|---|---|
-|mccree-core|100%||||Yuqing Jiang|PandaTv|TBA(before 2017-08-15)|
+|mccree-core|100%||||Yuqing Jiang|PandaTv|realesed|
 |mccree-core-track|100%|100%|√|√|Yuqing Jiang|PandaTv|realesed|
-|mccree-core-loaderbuffer|100%||||Yuqing Jiang|PandaTv|TBA(before 2017-08-15)|
+|mccree-core-loaderbuffer|100%||||Yuqing Jiang|PandaTv|realesed|
 |mccree-helper-utils|100%|100%|√|√|Yuqing Jiang|PandaTv|realesed|
 |mccree-helper-logger|100%|100%|√|√|Yuqing Jiang|PandaTv|realesed|
 |mccree-helper-browser|100%||||Yuqing Jiang|PandaTv|---|
-|mccree-controller-loader|100%||||Yuqing Jiang|PandaTv|TBA(before 2017-08-15)|
+|mccree-controller-loader|100%||||Yuqing Jiang|PandaTv|---|
 |mccree-loader-fetch|100%||||Yuqing Jiang|PandaTv|---|
 |mccree-loader-moz-xhr|100%||||Yuqing Jiang|PandaTv|---|
 |mccree-loader-tencentp2p|100%||||Tencent Team|Tencent|---|
