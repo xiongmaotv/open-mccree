@@ -47,7 +47,7 @@ TBA (After panda-mccree-live module released)
 |mccree-controller-loader|100%||||Yuqing Jiang|PandaTv|---|
 |mccree-loader-fetch|100%||||Yuqing Jiang|PandaTv|---|
 |mccree-loader-moz-xhr|100%||||Yuqing Jiang|PandaTv|---|
-|mccree-loader-tencentp2p|100%||||Tencent Team|Tencent|---|
+|mccree-loader-tencentp2p|100%||||Tencent Team|Tencent|not availible for open source|
 |mccree-loader-hls|70%||||Jiaqi Li|PandaTv|---|
 |mccree-demuxer-flv|100%||||Yuqing Jiang|PandaTv|---|
 |mccree-demuxer-ts|30%||||Jiaqi Li|PandaTv|---|
