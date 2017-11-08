@@ -61,4 +61,4 @@ cp ../../scripts/tpl/gulpfile.js ./;
 
 
 
-echo -e "Done. \n弄完了滚吧"; 
+echo -e "Done."; 

@@ -23,5 +23,5 @@ read confirm;
 if [ "${confirm}" == "y" ]; then
   ./scripts/createmodule.sh ${moduleFoldername};
 else
-  echo -e "See u next time \n好了,可以滚了";
+  echo -e "See u next time \n 模块创建已完成";
 fi
