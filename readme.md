@@ -1,4 +1,5 @@
 # MCCREE
+[![license](https://img.shields.io/github/license/xiongmaotv/open-mccree.svg)](https://github.com/xiongmaotv/open-mccree)
 
 A front end solution for mutlimedia loading, mux, demux, stream and play.
 
@@ -29,20 +30,20 @@ The following features will be supported soon:
 
 ## Structure
 
-<img alt="Mccree" src="https://www.processon.com/chart_image/59817f6fe4b06886663b776b.png" width="1000">
+<img alt="Mccree" src="https://i.ssl.pdim.gs/b819064a86027ec2487d74d8a0702807.png" width="1000">
 
 
 ## Getting Started
 TBA (After panda-mccree-live module released)
 
 ## Modules and Status
-|name|dev|test|doc|comments|developer|org|status|
-|---|---|---|---|---|---|---|---|
+|name|dev|test|doc|comments|developer|org|version|
+|---|---|---|---|---|---|---|---|---|
 |mccree-core|100%|100%|√|√|Yuqing Jiang|PandaTv|realesed|
 |mccree-core-track|100%|100%|√|√|Yuqing Jiang|PandaTv|realesed|
 |mccree-core-loaderbuffer|100%|100%|√|√|Yuqing Jiang|PandaTv|realesed|
-|mccree-helper-utils|100%|100%|√|√|Yuqing Jiang|PandaTv|realesed|
-|mccree-helper-logger|100%|100%|√|√|Yuqing Jiang|PandaTv|realesed|
+|mccree-helper-utils|100%|100%|√|√|Yuqing Jiang|PandaTv|[![npm (tag)](https://img.shields.io/npm/v/mccree-helper-utils.svg)](https://img.shields.io/npm/v/mccree-helper-utils)|
+|mccree-helper-logger|100%|100%|√|√|Yuqing Jiang|PandaTv|[![npm](https://img.shields.io/npm/v/mccree-helper-logger.svg)](https://www.npmjs.com/package/mccree-helper-logger)|
 |mccree-helper-browser|100%||||Yuqing Jiang|PandaTv|---|
 |mccree-controller-loader|100%||||Yuqing Jiang|PandaTv|---|
 |mccree-loader-fetch|100%||||Yuqing Jiang|PandaTv|---|
@@ -72,4 +73,16 @@ TBA
 Read ./docs/en/developer.md
 
 ## License
-TBA
+    Copyright [2017] [Shanghai Panda Interactive Entertainment And Culture Company Limited]
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
