@@ -38,7 +38,7 @@ TBA (After panda-mccree-live module released)
 
 ## Modules and Status
 |name|dev|test|doc|comments|developer|org|version|
-|---|---|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|---|
 |mccree-core|100%|100%|√|√|Yuqing Jiang|PandaTv|realesed|
 |mccree-core-track|100%|100%|√|√|Yuqing Jiang|PandaTv|realesed|
 |mccree-core-loaderbuffer|100%|100%|√|√|Yuqing Jiang|PandaTv|realesed|
