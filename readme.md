@@ -41,7 +41,7 @@ TBA (After panda-mccree-live module released)
 |---|---|---|---|---|---|---|---|
 |mccree-core|100%|100%|√|√|Yuqing Jiang|PandaTv|realesed|
 |mccree-core-track|100%|100%|√|√|Yuqing Jiang|PandaTv|realesed|
-|mccree-core-loaderbuffer|100%|100%|√|√|Yuqing Jiang|PandaTv|realesed|
+|mccree-core-loaderbuffer|100%|100%|√|√|Yuqing Jiang|PandaTv|[![npm](https://img.shields.io/npm/v/mccree-core-loaderbuffer.svg)](https://www.npmjs.com/package/mccree-core-loaderbuffer)|
 |mccree-helper-utils|100%|100%|√|√|Yuqing Jiang|PandaTv|[![npm (tag)](https://img.shields.io/npm/v/mccree-helper-utils.svg)](https://img.shields.io/npm/v/mccree-helper-utils)|
 |mccree-helper-logger|100%|100%|√|√|Yuqing Jiang|PandaTv|[![npm](https://img.shields.io/npm/v/mccree-helper-logger.svg)](https://www.npmjs.com/package/mccree-helper-logger)|
 |mccree-helper-browser|100%||||Yuqing Jiang|PandaTv|---|
