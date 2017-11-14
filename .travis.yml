@@ -3,7 +3,7 @@ node_js:
   - '8.9.0'
 before_script: 
     - 'npm install -g gulp-cli'
-    - 'sudo npm install -g lerna'
-    - 'sudo ./scripts/init.sh'
+    - 'npm install -g lerna'
+    - 'sudo bash ./scripts/init.sh'
 script:
-    - 'sudo ./scripts/build.sh'
+    - 'sudo bash ./scripts/build.sh'
