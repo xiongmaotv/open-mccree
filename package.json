@@ -7,17 +7,20 @@
   },
   "scripts": {
     "init": "./scripts/init.sh",
-    "createmodule":"./scripts/createmodule.sh"
+    "createmodule": "./scripts/createmodule.sh"
   },
   "repository": {
     "type": "git",
-    "url": "git@git.pandatv.com:jiangyuqing/mccree.git"
+    "url": "git@github.com:xiongmaotv/open-mccree.git"
   },
   "keywords": [
     "multimedia"
   ],
   "author": "",
-  "license": "ISC",
+  "license": {
+    "type": "Apache-2.0",
+    "url": "https://opensource.org/licenses/apache2.0.php"
+  },
   "devDependencies": {
     "lerna": "^2.0.0",
     "babel": "6.23.0",

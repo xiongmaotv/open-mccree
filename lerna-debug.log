@@ -1,0 +1,1401 @@
+0 silly input []
+1 silly flags { _: [ 'bootstrap' ],
+1 silly flags   'reject-cycles': false,
+1 silly flags   rejectCycles: false,
+1 silly flags   args: [] }
+2 verbose rootPath /home/jiangyuqing/devspace/mccree
+3 info version 2.5.1
+4 silly existsSync /home/jiangyuqing/devspace/mccree/VERSION
+5 silly initialize attempt
+6 silly npmConfig { registry: undefined,
+6 silly npmConfig   npmClient: undefined,
+6 silly npmConfig   npmClientArgs: undefined,
+6 silly npmConfig   mutex: undefined }
+7 silly initialize success
+8 silly execute attempt
+9 info Bootstrapping 8 packages
+10 info lifecycle preinstall
+11 silly runScript preinstall mccree-controller-loader
+12 silly mccree-controller-loader
+13 silly runScript preinstall mccree-core-loaderbuffer
+14 silly mccree-core-loaderbuffer
+15 silly runScript preinstall mccree-core-track
+16 silly mccree-core-track
+17 silly runScript preinstall mccree-helper-logger
+18 silly mccree-helper-logger
+19 silly runScript preinstall mccree-helper-utils
+20 silly mccree-helper-utils
+21 silly runScript preinstall mccree-loader-fetch
+22 silly mccree-loader-fetch
+23 silly runScript preinstall mccree-loader-tencentp2p
+24 silly mccree-loader-tencentp2p
+25 silly runScript preinstall mccree-core
+26 silly mccree-core
+27 silly hasMatchingDependency mccree-core mccree-core-loaderbuffer
+28 silly hasMatchingDependency mccree-core mccree-helper-logger
+29 silly hasMatchingDependency mccree-core mccree-helper-utils
+30 silly hasDependencyInstalled mccree-core-loaderbuffer babel
+31 silly dependencyIsSatisfied [ 'babel',
+31 silly dependencyIsSatisfied   '6.23.0',
+31 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-loaderbuffer/node_modules' ]
+32 verbose dependencyIsSatisfied babel true
+33 silly hasDependencyInstalled mccree-core-track babel
+34 silly dependencyIsSatisfied [ 'babel',
+34 silly dependencyIsSatisfied   '6.23.0',
+34 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+35 verbose dependencyIsSatisfied babel true
+36 silly hasDependencyInstalled mccree-core babel
+37 silly dependencyIsSatisfied [ 'babel',
+37 silly dependencyIsSatisfied   '6.23.0',
+37 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core/node_modules' ]
+38 verbose dependencyIsSatisfied babel true
+39 silly hasDependencyInstalled mccree-helper-logger babel
+40 silly dependencyIsSatisfied [ 'babel',
+40 silly dependencyIsSatisfied   '6.23.0',
+40 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-logger/node_modules' ]
+41 verbose dependencyIsSatisfied babel true
+42 silly hasDependencyInstalled mccree-helper-utils babel
+43 silly dependencyIsSatisfied [ 'babel',
+43 silly dependencyIsSatisfied   '6.23.0',
+43 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-utils/node_modules' ]
+44 verbose dependencyIsSatisfied babel true
+45 silly hasDependencyInstalled mccree-controller-loader babel
+46 silly dependencyIsSatisfied [ 'babel',
+46 silly dependencyIsSatisfied   '^6.23.0',
+46 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+47 verbose dependencyIsSatisfied babel true
+48 silly hasDependencyInstalled mccree-controller-loader babel-cli
+49 silly dependencyIsSatisfied [ 'babel-cli',
+49 silly dependencyIsSatisfied   '6.18.0',
+49 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+50 verbose dependencyIsSatisfied babel-cli true
+51 silly hasDependencyInstalled mccree-core-loaderbuffer babel-cli
+52 silly dependencyIsSatisfied [ 'babel-cli',
+52 silly dependencyIsSatisfied   '6.18.0',
+52 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-loaderbuffer/node_modules' ]
+53 verbose dependencyIsSatisfied babel-cli true
+54 silly hasDependencyInstalled mccree-core-track babel-cli
+55 silly dependencyIsSatisfied [ 'babel-cli',
+55 silly dependencyIsSatisfied   '6.18.0',
+55 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+56 verbose dependencyIsSatisfied babel-cli true
+57 silly hasDependencyInstalled mccree-core babel-cli
+58 silly dependencyIsSatisfied [ 'babel-cli',
+58 silly dependencyIsSatisfied   '6.18.0',
+58 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core/node_modules' ]
+59 verbose dependencyIsSatisfied babel-cli true
+60 silly hasDependencyInstalled mccree-helper-logger babel-cli
+61 silly dependencyIsSatisfied [ 'babel-cli',
+61 silly dependencyIsSatisfied   '6.18.0',
+61 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-logger/node_modules' ]
+62 verbose dependencyIsSatisfied babel-cli true
+63 silly hasDependencyInstalled mccree-helper-utils babel-cli
+64 silly dependencyIsSatisfied [ 'babel-cli',
+64 silly dependencyIsSatisfied   '6.18.0',
+64 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-utils/node_modules' ]
+65 verbose dependencyIsSatisfied babel-cli true
+66 silly hasDependencyInstalled mccree-controller-loader babel-eslint
+67 silly dependencyIsSatisfied [ 'babel-eslint',
+67 silly dependencyIsSatisfied   '^7.1.1',
+67 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+68 verbose dependencyIsSatisfied babel-eslint true
+69 silly hasDependencyInstalled mccree-core-track babel-eslint
+70 silly dependencyIsSatisfied [ 'babel-eslint',
+70 silly dependencyIsSatisfied   '^7.1.1',
+70 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+71 verbose dependencyIsSatisfied babel-eslint true
+72 silly hasDependencyInstalled mccree-core babel-eslint
+73 silly dependencyIsSatisfied [ 'babel-eslint',
+73 silly dependencyIsSatisfied   '^7.1.1',
+73 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core/node_modules' ]
+74 verbose dependencyIsSatisfied babel-eslint true
+75 silly hasDependencyInstalled mccree-core-loaderbuffer babel-eslint
+76 silly dependencyIsSatisfied [ 'babel-eslint',
+76 silly dependencyIsSatisfied   '7.1.1',
+76 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-loaderbuffer/node_modules' ]
+77 verbose dependencyIsSatisfied babel-eslint true
+78 silly hasDependencyInstalled mccree-helper-logger babel-eslint
+79 silly dependencyIsSatisfied [ 'babel-eslint',
+79 silly dependencyIsSatisfied   '7.1.1',
+79 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-logger/node_modules' ]
+80 verbose dependencyIsSatisfied babel-eslint true
+81 silly hasDependencyInstalled mccree-helper-utils babel-eslint
+82 silly dependencyIsSatisfied [ 'babel-eslint',
+82 silly dependencyIsSatisfied   '7.1.1',
+82 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-utils/node_modules' ]
+83 verbose dependencyIsSatisfied babel-eslint true
+84 silly hasDependencyInstalled mccree-controller-loader babel-preset-es2015
+85 silly dependencyIsSatisfied [ 'babel-preset-es2015',
+85 silly dependencyIsSatisfied   '6.18.0',
+85 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+86 verbose dependencyIsSatisfied babel-preset-es2015 true
+87 silly hasDependencyInstalled mccree-core-loaderbuffer babel-preset-es2015
+88 silly dependencyIsSatisfied [ 'babel-preset-es2015',
+88 silly dependencyIsSatisfied   '6.18.0',
+88 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-loaderbuffer/node_modules' ]
+89 verbose dependencyIsSatisfied babel-preset-es2015 true
+90 silly hasDependencyInstalled mccree-core-track babel-preset-es2015
+91 silly dependencyIsSatisfied [ 'babel-preset-es2015',
+91 silly dependencyIsSatisfied   '6.18.0',
+91 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+92 verbose dependencyIsSatisfied babel-preset-es2015 true
+93 silly hasDependencyInstalled mccree-core babel-preset-es2015
+94 silly dependencyIsSatisfied [ 'babel-preset-es2015',
+94 silly dependencyIsSatisfied   '6.18.0',
+94 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core/node_modules' ]
+95 verbose dependencyIsSatisfied babel-preset-es2015 true
+96 silly hasDependencyInstalled mccree-helper-logger babel-preset-es2015
+97 silly dependencyIsSatisfied [ 'babel-preset-es2015',
+97 silly dependencyIsSatisfied   '6.18.0',
+97 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-logger/node_modules' ]
+98 verbose dependencyIsSatisfied babel-preset-es2015 true
+99 silly hasDependencyInstalled mccree-helper-utils babel-preset-es2015
+100 silly dependencyIsSatisfied [ 'babel-preset-es2015',
+100 silly dependencyIsSatisfied   '6.18.0',
+100 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-utils/node_modules' ]
+101 verbose dependencyIsSatisfied babel-preset-es2015 true
+102 silly hasDependencyInstalled mccree-controller-loader babel-preset-stage-0
+103 silly dependencyIsSatisfied [ 'babel-preset-stage-0',
+103 silly dependencyIsSatisfied   '6.16.0',
+103 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+104 verbose dependencyIsSatisfied babel-preset-stage-0 true
+105 silly hasDependencyInstalled mccree-core-loaderbuffer babel-preset-stage-0
+106 silly dependencyIsSatisfied [ 'babel-preset-stage-0',
+106 silly dependencyIsSatisfied   '6.16.0',
+106 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-loaderbuffer/node_modules' ]
+107 verbose dependencyIsSatisfied babel-preset-stage-0 true
+108 silly hasDependencyInstalled mccree-core-track babel-preset-stage-0
+109 silly dependencyIsSatisfied [ 'babel-preset-stage-0',
+109 silly dependencyIsSatisfied   '6.16.0',
+109 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+110 verbose dependencyIsSatisfied babel-preset-stage-0 true
+111 silly hasDependencyInstalled mccree-core babel-preset-stage-0
+112 silly dependencyIsSatisfied [ 'babel-preset-stage-0',
+112 silly dependencyIsSatisfied   '6.16.0',
+112 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core/node_modules' ]
+113 verbose dependencyIsSatisfied babel-preset-stage-0 true
+114 silly hasDependencyInstalled mccree-helper-logger babel-preset-stage-0
+115 silly dependencyIsSatisfied [ 'babel-preset-stage-0',
+115 silly dependencyIsSatisfied   '6.16.0',
+115 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-logger/node_modules' ]
+116 verbose dependencyIsSatisfied babel-preset-stage-0 true
+117 silly hasDependencyInstalled mccree-helper-utils babel-preset-stage-0
+118 silly dependencyIsSatisfied [ 'babel-preset-stage-0',
+118 silly dependencyIsSatisfied   '6.16.0',
+118 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-utils/node_modules' ]
+119 verbose dependencyIsSatisfied babel-preset-stage-0 true
+120 silly hasDependencyInstalled mccree-controller-loader chai
+121 silly dependencyIsSatisfied [ 'chai',
+121 silly dependencyIsSatisfied   '^3.5.0',
+121 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+122 verbose dependencyIsSatisfied chai true
+123 silly hasDependencyInstalled mccree-core-track chai
+124 silly dependencyIsSatisfied [ 'chai',
+124 silly dependencyIsSatisfied   '^3.5.0',
+124 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+125 verbose dependencyIsSatisfied chai true
+126 silly hasDependencyInstalled mccree-core chai
+127 silly dependencyIsSatisfied [ 'chai',
+127 silly dependencyIsSatisfied   '^3.5.0',
+127 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core/node_modules' ]
+128 verbose dependencyIsSatisfied chai true
+129 silly hasDependencyInstalled mccree-helper-logger chai
+130 silly dependencyIsSatisfied [ 'chai',
+130 silly dependencyIsSatisfied   '^3.5.0',
+130 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-logger/node_modules' ]
+131 verbose dependencyIsSatisfied chai true
+132 silly hasDependencyInstalled mccree-core-loaderbuffer chai
+133 silly dependencyIsSatisfied [ 'chai',
+133 silly dependencyIsSatisfied   '3.5.0',
+133 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-loaderbuffer/node_modules' ]
+134 verbose dependencyIsSatisfied chai true
+135 silly hasDependencyInstalled mccree-helper-utils chai
+136 silly dependencyIsSatisfied [ 'chai',
+136 silly dependencyIsSatisfied   '3.5.0',
+136 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-utils/node_modules' ]
+137 verbose dependencyIsSatisfied chai true
+138 silly hasDependencyInstalled mccree-controller-loader del
+139 silly dependencyIsSatisfied [ 'del',
+139 silly dependencyIsSatisfied   '^2.2.2',
+139 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+140 verbose dependencyIsSatisfied del true
+141 silly hasDependencyInstalled mccree-core-track del
+142 silly dependencyIsSatisfied [ 'del',
+142 silly dependencyIsSatisfied   '^2.2.2',
+142 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+143 verbose dependencyIsSatisfied del true
+144 silly hasDependencyInstalled mccree-helper-logger del
+145 silly dependencyIsSatisfied [ 'del',
+145 silly dependencyIsSatisfied   '^2.2.2',
+145 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-logger/node_modules' ]
+146 verbose dependencyIsSatisfied del true
+147 silly hasDependencyInstalled mccree-core-loaderbuffer del
+148 silly dependencyIsSatisfied [ 'del',
+148 silly dependencyIsSatisfied   '2.2.2',
+148 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-loaderbuffer/node_modules' ]
+149 verbose dependencyIsSatisfied del true
+150 silly hasDependencyInstalled mccree-core del
+151 silly dependencyIsSatisfied [ 'del',
+151 silly dependencyIsSatisfied   '2.2.2',
+151 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core/node_modules' ]
+152 verbose dependencyIsSatisfied del true
+153 silly hasDependencyInstalled mccree-helper-utils del
+154 silly dependencyIsSatisfied [ 'del',
+154 silly dependencyIsSatisfied   '2.2.2',
+154 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-utils/node_modules' ]
+155 verbose dependencyIsSatisfied del true
+156 silly hasDependencyInstalled mccree-controller-loader g-upload-image
+157 silly dependencyIsSatisfied [ 'g-upload-image',
+157 silly dependencyIsSatisfied   '^1.0.10',
+157 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+158 verbose dependencyIsSatisfied g-upload-image true
+159 silly hasDependencyInstalled mccree-core-track g-upload-image
+160 silly dependencyIsSatisfied [ 'g-upload-image',
+160 silly dependencyIsSatisfied   '^1.0.10',
+160 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+161 verbose dependencyIsSatisfied g-upload-image true
+162 silly hasDependencyInstalled mccree-helper-logger g-upload-image
+163 silly dependencyIsSatisfied [ 'g-upload-image',
+163 silly dependencyIsSatisfied   '^1.0.10',
+163 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-logger/node_modules' ]
+164 verbose dependencyIsSatisfied g-upload-image true
+165 silly hasDependencyInstalled mccree-controller-loader gulp
+166 silly dependencyIsSatisfied [ 'gulp',
+166 silly dependencyIsSatisfied   '3.9.1',
+166 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+167 verbose dependencyIsSatisfied gulp true
+168 silly hasDependencyInstalled mccree-core-loaderbuffer gulp
+169 silly dependencyIsSatisfied [ 'gulp',
+169 silly dependencyIsSatisfied   '3.9.1',
+169 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-loaderbuffer/node_modules' ]
+170 verbose dependencyIsSatisfied gulp true
+171 silly hasDependencyInstalled mccree-core-track gulp
+172 silly dependencyIsSatisfied [ 'gulp',
+172 silly dependencyIsSatisfied   '3.9.1',
+172 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+173 verbose dependencyIsSatisfied gulp true
+174 silly hasDependencyInstalled mccree-core gulp
+175 silly dependencyIsSatisfied [ 'gulp',
+175 silly dependencyIsSatisfied   '3.9.1',
+175 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core/node_modules' ]
+176 verbose dependencyIsSatisfied gulp true
+177 silly hasDependencyInstalled mccree-helper-logger gulp
+178 silly dependencyIsSatisfied [ 'gulp',
+178 silly dependencyIsSatisfied   '3.9.1',
+178 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-logger/node_modules' ]
+179 verbose dependencyIsSatisfied gulp true
+180 silly hasDependencyInstalled mccree-helper-utils gulp
+181 silly dependencyIsSatisfied [ 'gulp',
+181 silly dependencyIsSatisfied   '3.9.1',
+181 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-utils/node_modules' ]
+182 verbose dependencyIsSatisfied gulp true
+183 silly hasDependencyInstalled mccree-loader-fetch gulp
+184 silly dependencyIsSatisfied [ 'gulp',
+184 silly dependencyIsSatisfied   '^3.9.1',
+184 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-loader-fetch/node_modules' ]
+185 verbose dependencyIsSatisfied gulp true
+186 silly hasDependencyInstalled mccree-controller-loader gulp-babel
+187 silly dependencyIsSatisfied [ 'gulp-babel',
+187 silly dependencyIsSatisfied   '6.1.2',
+187 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+188 verbose dependencyIsSatisfied gulp-babel true
+189 silly hasDependencyInstalled mccree-core-loaderbuffer gulp-babel
+190 silly dependencyIsSatisfied [ 'gulp-babel',
+190 silly dependencyIsSatisfied   '6.1.2',
+190 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-loaderbuffer/node_modules' ]
+191 verbose dependencyIsSatisfied gulp-babel true
+192 silly hasDependencyInstalled mccree-core-track gulp-babel
+193 silly dependencyIsSatisfied [ 'gulp-babel',
+193 silly dependencyIsSatisfied   '6.1.2',
+193 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+194 verbose dependencyIsSatisfied gulp-babel true
+195 silly hasDependencyInstalled mccree-core gulp-babel
+196 silly dependencyIsSatisfied [ 'gulp-babel',
+196 silly dependencyIsSatisfied   '6.1.2',
+196 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core/node_modules' ]
+197 verbose dependencyIsSatisfied gulp-babel true
+198 silly hasDependencyInstalled mccree-helper-logger gulp-babel
+199 silly dependencyIsSatisfied [ 'gulp-babel',
+199 silly dependencyIsSatisfied   '6.1.2',
+199 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-logger/node_modules' ]
+200 verbose dependencyIsSatisfied gulp-babel true
+201 silly hasDependencyInstalled mccree-helper-utils gulp-babel
+202 silly dependencyIsSatisfied [ 'gulp-babel',
+202 silly dependencyIsSatisfied   '6.1.2',
+202 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-utils/node_modules' ]
+203 verbose dependencyIsSatisfied gulp-babel true
+204 silly hasDependencyInstalled mccree-controller-loader gulp-eslint
+205 silly dependencyIsSatisfied [ 'gulp-eslint',
+205 silly dependencyIsSatisfied   '3.0.1',
+205 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+206 verbose dependencyIsSatisfied gulp-eslint true
+207 silly hasDependencyInstalled mccree-core-loaderbuffer gulp-eslint
+208 silly dependencyIsSatisfied [ 'gulp-eslint',
+208 silly dependencyIsSatisfied   '3.0.1',
+208 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-loaderbuffer/node_modules' ]
+209 verbose dependencyIsSatisfied gulp-eslint true
+210 silly hasDependencyInstalled mccree-core-track gulp-eslint
+211 silly dependencyIsSatisfied [ 'gulp-eslint',
+211 silly dependencyIsSatisfied   '3.0.1',
+211 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+212 verbose dependencyIsSatisfied gulp-eslint true
+213 silly hasDependencyInstalled mccree-core gulp-eslint
+214 silly dependencyIsSatisfied [ 'gulp-eslint',
+214 silly dependencyIsSatisfied   '3.0.1',
+214 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core/node_modules' ]
+215 verbose dependencyIsSatisfied gulp-eslint true
+216 silly hasDependencyInstalled mccree-helper-logger gulp-eslint
+217 silly dependencyIsSatisfied [ 'gulp-eslint',
+217 silly dependencyIsSatisfied   '3.0.1',
+217 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-logger/node_modules' ]
+218 verbose dependencyIsSatisfied gulp-eslint true
+219 silly hasDependencyInstalled mccree-helper-utils gulp-eslint
+220 silly dependencyIsSatisfied [ 'gulp-eslint',
+220 silly dependencyIsSatisfied   '3.0.1',
+220 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-utils/node_modules' ]
+221 verbose dependencyIsSatisfied gulp-eslint true
+222 silly hasDependencyInstalled mccree-controller-loader gulp-header
+223 silly dependencyIsSatisfied [ 'gulp-header',
+223 silly dependencyIsSatisfied   '1.8.8',
+223 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+224 verbose dependencyIsSatisfied gulp-header true
+225 silly hasDependencyInstalled mccree-core-loaderbuffer gulp-header
+226 silly dependencyIsSatisfied [ 'gulp-header',
+226 silly dependencyIsSatisfied   '1.8.8',
+226 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-loaderbuffer/node_modules' ]
+227 verbose dependencyIsSatisfied gulp-header true
+228 silly hasDependencyInstalled mccree-core-track gulp-header
+229 silly dependencyIsSatisfied [ 'gulp-header',
+229 silly dependencyIsSatisfied   '1.8.8',
+229 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+230 verbose dependencyIsSatisfied gulp-header true
+231 silly hasDependencyInstalled mccree-core gulp-header
+232 silly dependencyIsSatisfied [ 'gulp-header',
+232 silly dependencyIsSatisfied   '1.8.8',
+232 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core/node_modules' ]
+233 verbose dependencyIsSatisfied gulp-header true
+234 silly hasDependencyInstalled mccree-helper-logger gulp-header
+235 silly dependencyIsSatisfied [ 'gulp-header',
+235 silly dependencyIsSatisfied   '1.8.8',
+235 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-logger/node_modules' ]
+236 verbose dependencyIsSatisfied gulp-header true
+237 silly hasDependencyInstalled mccree-helper-utils gulp-header
+238 silly dependencyIsSatisfied [ 'gulp-header',
+238 silly dependencyIsSatisfied   '1.8.8',
+238 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-utils/node_modules' ]
+239 verbose dependencyIsSatisfied gulp-header true
+240 silly hasDependencyInstalled mccree-controller-loader gulp-newer
+241 silly dependencyIsSatisfied [ 'gulp-newer',
+241 silly dependencyIsSatisfied   '^1.3.0',
+241 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+242 verbose dependencyIsSatisfied gulp-newer true
+243 silly hasDependencyInstalled mccree-core-track gulp-newer
+244 silly dependencyIsSatisfied [ 'gulp-newer',
+244 silly dependencyIsSatisfied   '^1.3.0',
+244 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+245 verbose dependencyIsSatisfied gulp-newer true
+246 silly hasDependencyInstalled mccree-core-loaderbuffer gulp-newer
+247 silly dependencyIsSatisfied [ 'gulp-newer',
+247 silly dependencyIsSatisfied   '1.3.0',
+247 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-loaderbuffer/node_modules' ]
+248 verbose dependencyIsSatisfied gulp-newer true
+249 silly hasDependencyInstalled mccree-core gulp-newer
+250 silly dependencyIsSatisfied [ 'gulp-newer',
+250 silly dependencyIsSatisfied   '1.3.0',
+250 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core/node_modules' ]
+251 verbose dependencyIsSatisfied gulp-newer true
+252 silly hasDependencyInstalled mccree-helper-logger gulp-newer
+253 silly dependencyIsSatisfied [ 'gulp-newer',
+253 silly dependencyIsSatisfied   '1.3.0',
+253 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-logger/node_modules' ]
+254 verbose dependencyIsSatisfied gulp-newer true
+255 silly hasDependencyInstalled mccree-helper-utils gulp-newer
+256 silly dependencyIsSatisfied [ 'gulp-newer',
+256 silly dependencyIsSatisfied   '1.3.0',
+256 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-utils/node_modules' ]
+257 verbose dependencyIsSatisfied gulp-newer true
+258 silly hasDependencyInstalled mccree-controller-loader gulp-plumber
+259 silly dependencyIsSatisfied [ 'gulp-plumber',
+259 silly dependencyIsSatisfied   '^1.1.0',
+259 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+260 verbose dependencyIsSatisfied gulp-plumber true
+261 silly hasDependencyInstalled mccree-core-track gulp-plumber
+262 silly dependencyIsSatisfied [ 'gulp-plumber',
+262 silly dependencyIsSatisfied   '^1.1.0',
+262 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+263 verbose dependencyIsSatisfied gulp-plumber true
+264 silly hasDependencyInstalled mccree-core-loaderbuffer gulp-plumber
+265 silly dependencyIsSatisfied [ 'gulp-plumber',
+265 silly dependencyIsSatisfied   '1.1.0',
+265 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-loaderbuffer/node_modules' ]
+266 verbose dependencyIsSatisfied gulp-plumber true
+267 silly hasDependencyInstalled mccree-core gulp-plumber
+268 silly dependencyIsSatisfied [ 'gulp-plumber',
+268 silly dependencyIsSatisfied   '1.1.0',
+268 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core/node_modules' ]
+269 verbose dependencyIsSatisfied gulp-plumber true
+270 silly hasDependencyInstalled mccree-helper-logger gulp-plumber
+271 silly dependencyIsSatisfied [ 'gulp-plumber',
+271 silly dependencyIsSatisfied   '1.1.0',
+271 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-logger/node_modules' ]
+272 verbose dependencyIsSatisfied gulp-plumber true
+273 silly hasDependencyInstalled mccree-helper-utils gulp-plumber
+274 silly dependencyIsSatisfied [ 'gulp-plumber',
+274 silly dependencyIsSatisfied   '1.1.0',
+274 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-utils/node_modules' ]
+275 verbose dependencyIsSatisfied gulp-plumber true
+276 silly hasDependencyInstalled mccree-controller-loader gulp-rename
+277 silly dependencyIsSatisfied [ 'gulp-rename',
+277 silly dependencyIsSatisfied   '1.2.2',
+277 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+278 verbose dependencyIsSatisfied gulp-rename true
+279 silly hasDependencyInstalled mccree-core-loaderbuffer gulp-rename
+280 silly dependencyIsSatisfied [ 'gulp-rename',
+280 silly dependencyIsSatisfied   '1.2.2',
+280 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-loaderbuffer/node_modules' ]
+281 verbose dependencyIsSatisfied gulp-rename true
+282 silly hasDependencyInstalled mccree-core-track gulp-rename
+283 silly dependencyIsSatisfied [ 'gulp-rename',
+283 silly dependencyIsSatisfied   '1.2.2',
+283 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+284 verbose dependencyIsSatisfied gulp-rename true
+285 silly hasDependencyInstalled mccree-core gulp-rename
+286 silly dependencyIsSatisfied [ 'gulp-rename',
+286 silly dependencyIsSatisfied   '1.2.2',
+286 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core/node_modules' ]
+287 verbose dependencyIsSatisfied gulp-rename true
+288 silly hasDependencyInstalled mccree-helper-logger gulp-rename
+289 silly dependencyIsSatisfied [ 'gulp-rename',
+289 silly dependencyIsSatisfied   '1.2.2',
+289 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-logger/node_modules' ]
+290 verbose dependencyIsSatisfied gulp-rename true
+291 silly hasDependencyInstalled mccree-helper-utils gulp-rename
+292 silly dependencyIsSatisfied [ 'gulp-rename',
+292 silly dependencyIsSatisfied   '1.2.2',
+292 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-utils/node_modules' ]
+293 verbose dependencyIsSatisfied gulp-rename true
+294 silly hasDependencyInstalled mccree-controller-loader gulp-sourcemaps
+295 silly dependencyIsSatisfied [ 'gulp-sourcemaps',
+295 silly dependencyIsSatisfied   '2.2.0',
+295 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+296 verbose dependencyIsSatisfied gulp-sourcemaps true
+297 silly hasDependencyInstalled mccree-core-loaderbuffer gulp-sourcemaps
+298 silly dependencyIsSatisfied [ 'gulp-sourcemaps',
+298 silly dependencyIsSatisfied   '2.2.0',
+298 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-loaderbuffer/node_modules' ]
+299 verbose dependencyIsSatisfied gulp-sourcemaps true
+300 silly hasDependencyInstalled mccree-core-track gulp-sourcemaps
+301 silly dependencyIsSatisfied [ 'gulp-sourcemaps',
+301 silly dependencyIsSatisfied   '2.2.0',
+301 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+302 verbose dependencyIsSatisfied gulp-sourcemaps true
+303 silly hasDependencyInstalled mccree-helper-logger gulp-sourcemaps
+304 silly dependencyIsSatisfied [ 'gulp-sourcemaps',
+304 silly dependencyIsSatisfied   '2.2.0',
+304 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-logger/node_modules' ]
+305 verbose dependencyIsSatisfied gulp-sourcemaps true
+306 silly hasDependencyInstalled mccree-helper-utils gulp-sourcemaps
+307 silly dependencyIsSatisfied [ 'gulp-sourcemaps',
+307 silly dependencyIsSatisfied   '2.2.0',
+307 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-utils/node_modules' ]
+308 verbose dependencyIsSatisfied gulp-sourcemaps true
+309 silly hasDependencyInstalled mccree-controller-loader gulp-uglify
+310 silly dependencyIsSatisfied [ 'gulp-uglify',
+310 silly dependencyIsSatisfied   '2.0.0',
+310 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+311 verbose dependencyIsSatisfied gulp-uglify true
+312 silly hasDependencyInstalled mccree-core-loaderbuffer gulp-uglify
+313 silly dependencyIsSatisfied [ 'gulp-uglify',
+313 silly dependencyIsSatisfied   '2.0.0',
+313 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-loaderbuffer/node_modules' ]
+314 verbose dependencyIsSatisfied gulp-uglify true
+315 silly hasDependencyInstalled mccree-core-track gulp-uglify
+316 silly dependencyIsSatisfied [ 'gulp-uglify',
+316 silly dependencyIsSatisfied   '2.0.0',
+316 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+317 verbose dependencyIsSatisfied gulp-uglify true
+318 silly hasDependencyInstalled mccree-core gulp-uglify
+319 silly dependencyIsSatisfied [ 'gulp-uglify',
+319 silly dependencyIsSatisfied   '2.0.0',
+319 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core/node_modules' ]
+320 verbose dependencyIsSatisfied gulp-uglify true
+321 silly hasDependencyInstalled mccree-helper-logger gulp-uglify
+322 silly dependencyIsSatisfied [ 'gulp-uglify',
+322 silly dependencyIsSatisfied   '2.0.0',
+322 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-logger/node_modules' ]
+323 verbose dependencyIsSatisfied gulp-uglify true
+324 silly hasDependencyInstalled mccree-helper-utils gulp-uglify
+325 silly dependencyIsSatisfied [ 'gulp-uglify',
+325 silly dependencyIsSatisfied   '2.0.0',
+325 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-utils/node_modules' ]
+326 verbose dependencyIsSatisfied gulp-uglify true
+327 silly hasDependencyInstalled mccree-controller-loader gulp-util
+328 silly dependencyIsSatisfied [ 'gulp-util',
+328 silly dependencyIsSatisfied   '^3.0.8',
+328 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+329 verbose dependencyIsSatisfied gulp-util true
+330 silly hasDependencyInstalled mccree-core-track gulp-util
+331 silly dependencyIsSatisfied [ 'gulp-util',
+331 silly dependencyIsSatisfied   '^3.0.8',
+331 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+332 verbose dependencyIsSatisfied gulp-util true
+333 silly hasDependencyInstalled mccree-core gulp-util
+334 silly dependencyIsSatisfied [ 'gulp-util',
+334 silly dependencyIsSatisfied   '^3.0.8',
+334 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core/node_modules' ]
+335 verbose dependencyIsSatisfied gulp-util true
+336 silly hasDependencyInstalled mccree-helper-logger gulp-util
+337 silly dependencyIsSatisfied [ 'gulp-util',
+337 silly dependencyIsSatisfied   '^3.0.8',
+337 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-logger/node_modules' ]
+338 verbose dependencyIsSatisfied gulp-util true
+339 silly hasDependencyInstalled mccree-core-loaderbuffer gulp-util
+340 silly dependencyIsSatisfied [ 'gulp-util',
+340 silly dependencyIsSatisfied   '3.0.8',
+340 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-loaderbuffer/node_modules' ]
+341 verbose dependencyIsSatisfied gulp-util true
+342 silly hasDependencyInstalled mccree-helper-utils gulp-util
+343 silly dependencyIsSatisfied [ 'gulp-util',
+343 silly dependencyIsSatisfied   '3.0.8',
+343 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-utils/node_modules' ]
+344 verbose dependencyIsSatisfied gulp-util true
+345 silly hasDependencyInstalled mccree-controller-loader gulp-webpack
+346 silly dependencyIsSatisfied [ 'gulp-webpack',
+346 silly dependencyIsSatisfied   '1.5.0',
+346 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+347 verbose dependencyIsSatisfied gulp-webpack true
+348 silly hasDependencyInstalled mccree-core-loaderbuffer gulp-webpack
+349 silly dependencyIsSatisfied [ 'gulp-webpack',
+349 silly dependencyIsSatisfied   '1.5.0',
+349 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-loaderbuffer/node_modules' ]
+350 verbose dependencyIsSatisfied gulp-webpack true
+351 silly hasDependencyInstalled mccree-core gulp-webpack
+352 silly dependencyIsSatisfied [ 'gulp-webpack',
+352 silly dependencyIsSatisfied   '1.5.0',
+352 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core/node_modules' ]
+353 verbose dependencyIsSatisfied gulp-webpack true
+354 silly hasDependencyInstalled mccree-helper-logger gulp-webpack
+355 silly dependencyIsSatisfied [ 'gulp-webpack',
+355 silly dependencyIsSatisfied   '1.5.0',
+355 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-logger/node_modules' ]
+356 verbose dependencyIsSatisfied gulp-webpack true
+357 silly hasDependencyInstalled mccree-helper-utils gulp-webpack
+358 silly dependencyIsSatisfied [ 'gulp-webpack',
+358 silly dependencyIsSatisfied   '1.5.0',
+358 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-utils/node_modules' ]
+359 verbose dependencyIsSatisfied gulp-webpack true
+360 silly hasDependencyInstalled mccree-controller-loader gutil
+361 silly dependencyIsSatisfied [ 'gutil',
+361 silly dependencyIsSatisfied   '^1.6.4',
+361 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+362 verbose dependencyIsSatisfied gutil true
+363 silly hasDependencyInstalled mccree-core-track gutil
+364 silly dependencyIsSatisfied [ 'gutil',
+364 silly dependencyIsSatisfied   '^1.6.4',
+364 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+365 verbose dependencyIsSatisfied gutil true
+366 silly hasDependencyInstalled mccree-core gutil
+367 silly dependencyIsSatisfied [ 'gutil',
+367 silly dependencyIsSatisfied   '^1.6.4',
+367 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core/node_modules' ]
+368 verbose dependencyIsSatisfied gutil true
+369 silly hasDependencyInstalled mccree-core-loaderbuffer gutil
+370 silly dependencyIsSatisfied [ 'gutil',
+370 silly dependencyIsSatisfied   '1.6.4',
+370 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-loaderbuffer/node_modules' ]
+371 verbose dependencyIsSatisfied gutil true
+372 silly hasDependencyInstalled mccree-helper-logger gutil
+373 silly dependencyIsSatisfied [ 'gutil',
+373 silly dependencyIsSatisfied   '1.6.4',
+373 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-logger/node_modules' ]
+374 verbose dependencyIsSatisfied gutil true
+375 silly hasDependencyInstalled mccree-helper-utils gutil
+376 silly dependencyIsSatisfied [ 'gutil',
+376 silly dependencyIsSatisfied   '1.6.4',
+376 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-utils/node_modules' ]
+377 verbose dependencyIsSatisfied gutil true
+378 silly hasDependencyInstalled mccree-controller-loader ink-docstrap
+379 silly dependencyIsSatisfied [ 'ink-docstrap',
+379 silly dependencyIsSatisfied   '^1.3.0',
+379 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+380 verbose dependencyIsSatisfied ink-docstrap true
+381 silly hasDependencyInstalled mccree-core-track ink-docstrap
+382 silly dependencyIsSatisfied [ 'ink-docstrap',
+382 silly dependencyIsSatisfied   '^1.3.0',
+382 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+383 verbose dependencyIsSatisfied ink-docstrap true
+384 silly hasDependencyInstalled mccree-controller-loader isparta
+385 silly dependencyIsSatisfied [ 'isparta',
+385 silly dependencyIsSatisfied   '^4.0.0',
+385 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+386 verbose dependencyIsSatisfied isparta true
+387 silly hasDependencyInstalled mccree-core-track isparta
+388 silly dependencyIsSatisfied [ 'isparta',
+388 silly dependencyIsSatisfied   '^4.0.0',
+388 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+389 verbose dependencyIsSatisfied isparta true
+390 silly hasDependencyInstalled mccree-loader-fetch isparta
+391 silly dependencyIsSatisfied [ 'isparta',
+391 silly dependencyIsSatisfied   '^4.0.0',
+391 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-loader-fetch/node_modules' ]
+392 verbose dependencyIsSatisfied isparta true
+393 silly hasDependencyInstalled mccree-controller-loader json-loader
+394 silly dependencyIsSatisfied [ 'json-loader',
+394 silly dependencyIsSatisfied   '^0.5.4',
+394 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+395 verbose dependencyIsSatisfied json-loader true
+396 silly hasDependencyInstalled mccree-core-track json-loader
+397 silly dependencyIsSatisfied [ 'json-loader',
+397 silly dependencyIsSatisfied   '^0.5.4',
+397 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+398 verbose dependencyIsSatisfied json-loader true
+399 silly hasDependencyInstalled mccree-controller-loader mocha
+400 silly dependencyIsSatisfied [ 'mocha',
+400 silly dependencyIsSatisfied   '3.4.2',
+400 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+401 verbose dependencyIsSatisfied mocha true
+402 silly hasDependencyInstalled mccree-core-loaderbuffer mocha
+403 silly dependencyIsSatisfied [ 'mocha',
+403 silly dependencyIsSatisfied   '3.4.2',
+403 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-loaderbuffer/node_modules' ]
+404 verbose dependencyIsSatisfied mocha true
+405 silly hasDependencyInstalled mccree-core-track mocha
+406 silly dependencyIsSatisfied [ 'mocha',
+406 silly dependencyIsSatisfied   '3.4.2',
+406 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+407 verbose dependencyIsSatisfied mocha true
+408 silly hasDependencyInstalled mccree-core mocha
+409 silly dependencyIsSatisfied [ 'mocha',
+409 silly dependencyIsSatisfied   '3.4.2',
+409 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core/node_modules' ]
+410 verbose dependencyIsSatisfied mocha true
+411 silly hasDependencyInstalled mccree-helper-logger mocha
+412 silly dependencyIsSatisfied [ 'mocha',
+412 silly dependencyIsSatisfied   '3.4.2',
+412 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-logger/node_modules' ]
+413 verbose dependencyIsSatisfied mocha true
+414 silly hasDependencyInstalled mccree-helper-utils mocha
+415 silly dependencyIsSatisfied [ 'mocha',
+415 silly dependencyIsSatisfied   '3.4.2',
+415 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-utils/node_modules' ]
+416 verbose dependencyIsSatisfied mocha true
+417 silly hasDependencyInstalled mccree-loader-fetch mocha
+418 silly dependencyIsSatisfied [ 'mocha',
+418 silly dependencyIsSatisfied   '^4.0.1',
+418 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-loader-fetch/node_modules' ]
+419 verbose dependencyIsSatisfied mocha true
+420 silly hasDependencyInstalled mccree-controller-loader muk
+421 silly dependencyIsSatisfied [ 'muk',
+421 silly dependencyIsSatisfied   '0.5.3',
+421 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+422 verbose dependencyIsSatisfied muk true
+423 silly hasDependencyInstalled mccree-core-track muk
+424 silly dependencyIsSatisfied [ 'muk',
+424 silly dependencyIsSatisfied   '0.5.3',
+424 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+425 verbose dependencyIsSatisfied muk true
+426 silly hasDependencyInstalled mccree-loader-fetch muk
+427 silly dependencyIsSatisfied [ 'muk',
+427 silly dependencyIsSatisfied   '^0.5.3',
+427 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-loader-fetch/node_modules' ]
+428 verbose dependencyIsSatisfied muk true
+429 silly hasDependencyInstalled mccree-controller-loader require-dir
+430 silly dependencyIsSatisfied [ 'require-dir',
+430 silly dependencyIsSatisfied   '^0.3.1',
+430 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+431 verbose dependencyIsSatisfied require-dir true
+432 silly hasDependencyInstalled mccree-core-track require-dir
+433 silly dependencyIsSatisfied [ 'require-dir',
+433 silly dependencyIsSatisfied   '^0.3.1',
+433 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+434 verbose dependencyIsSatisfied require-dir true
+435 silly hasDependencyInstalled mccree-controller-loader watchify
+436 silly dependencyIsSatisfied [ 'watchify',
+436 silly dependencyIsSatisfied   '^3.8.0',
+436 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+437 verbose dependencyIsSatisfied watchify true
+438 silly hasDependencyInstalled mccree-core-track watchify
+439 silly dependencyIsSatisfied [ 'watchify',
+439 silly dependencyIsSatisfied   '^3.8.0',
+439 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-track/node_modules' ]
+440 verbose dependencyIsSatisfied watchify true
+441 silly hasDependencyInstalled mccree-core watchify
+442 silly dependencyIsSatisfied [ 'watchify',
+442 silly dependencyIsSatisfied   '^3.8.0',
+442 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core/node_modules' ]
+443 verbose dependencyIsSatisfied watchify true
+444 silly hasDependencyInstalled mccree-controller-loader webpack
+445 silly dependencyIsSatisfied [ 'webpack',
+445 silly dependencyIsSatisfied   '^2.1.0-beta.25',
+445 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+446 verbose dependencyIsSatisfied webpack true
+447 silly hasDependencyInstalled mccree-controller-loader webpack-stream
+448 silly dependencyIsSatisfied [ 'webpack-stream',
+448 silly dependencyIsSatisfied   '3.2.0',
+448 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-controller-loader/node_modules' ]
+449 verbose dependencyIsSatisfied webpack-stream true
+450 silly hasDependencyInstalled mccree-core-loaderbuffer babel-istanbul
+451 silly dependencyIsSatisfied [ 'babel-istanbul',
+451 silly dependencyIsSatisfied   '^0.12.2',
+451 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core-loaderbuffer/node_modules' ]
+452 verbose dependencyIsSatisfied babel-istanbul true
+453 silly hasDependencyInstalled mccree-core babel-istanbul
+454 silly dependencyIsSatisfied [ 'babel-istanbul',
+454 silly dependencyIsSatisfied   '^0.12.2',
+454 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core/node_modules' ]
+455 verbose dependencyIsSatisfied babel-istanbul true
+456 silly hasDependencyInstalled mccree-helper-logger babel-istanbul
+457 silly dependencyIsSatisfied [ 'babel-istanbul',
+457 silly dependencyIsSatisfied   '^0.12.2',
+457 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-logger/node_modules' ]
+458 verbose dependencyIsSatisfied babel-istanbul true
+459 silly hasDependencyInstalled mccree-helper-utils babel-istanbul
+460 silly dependencyIsSatisfied [ 'babel-istanbul',
+460 silly dependencyIsSatisfied   '^0.12.2',
+460 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-helper-utils/node_modules' ]
+461 verbose dependencyIsSatisfied babel-istanbul true
+462 silly hasDependencyInstalled mccree-loader-fetch babel-istanbul
+463 silly dependencyIsSatisfied [ 'babel-istanbul',
+463 silly dependencyIsSatisfied   '^0.12.2',
+463 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-loader-fetch/node_modules' ]
+464 verbose dependencyIsSatisfied babel-istanbul true
+465 silly hasDependencyInstalled mccree-core events
+466 silly dependencyIsSatisfied [ 'events',
+466 silly dependencyIsSatisfied   '1.1.1',
+466 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-core/node_modules' ]
+467 verbose dependencyIsSatisfied events true
+468 silly hasDependencyInstalled mccree-loader-tencentp2p mccree-controller-loader
+469 silly dependencyIsSatisfied [ 'mccree-controller-loader',
+469 silly dependencyIsSatisfied   '^1.1.35',
+469 silly dependencyIsSatisfied   '/home/jiangyuqing/devspace/mccree/packages/mccree-loader-tencentp2p/node_modules' ]
+470 verbose dependencyIsSatisfied mccree-controller-loader false
+471 silly root dependencies []
+472 silly leaf dependencies {
+472 silly leaf dependencies   "mccree-core-loaderbuffer": [
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel@6.23.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-cli@6.18.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-eslint@7.1.1",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-preset-es2015@6.18.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-preset-stage-0@6.16.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "chai@3.5.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "del@2.2.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp@3.9.1",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-babel@6.1.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-eslint@3.0.1",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-header@1.8.8",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-newer@1.3.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-plumber@1.1.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-rename@1.2.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-sourcemaps@2.2.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-uglify@2.0.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-util@3.0.8",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-webpack@1.5.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gutil@1.6.4",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "mocha@3.4.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-istanbul@^0.12.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     }
+472 silly leaf dependencies   ],
+472 silly leaf dependencies   "mccree-core-track": [
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel@6.23.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-cli@6.18.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-eslint@^7.1.1",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-preset-es2015@6.18.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-preset-stage-0@6.16.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "chai@^3.5.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "del@^2.2.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "g-upload-image@^1.0.10",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp@3.9.1",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-babel@6.1.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-eslint@3.0.1",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-header@1.8.8",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-newer@^1.3.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-plumber@^1.1.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-rename@1.2.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-sourcemaps@2.2.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-uglify@2.0.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-util@^3.0.8",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gutil@^1.6.4",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "ink-docstrap@^1.3.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "isparta@^4.0.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "json-loader@^0.5.4",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "mocha@3.4.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "muk@0.5.3",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "require-dir@^0.3.1",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "watchify@^3.8.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     }
+472 silly leaf dependencies   ],
+472 silly leaf dependencies   "mccree-core": [
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel@6.23.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-cli@6.18.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-eslint@^7.1.1",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-preset-es2015@6.18.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-preset-stage-0@6.16.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "chai@^3.5.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "del@2.2.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp@3.9.1",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-babel@6.1.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-eslint@3.0.1",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-header@1.8.8",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-newer@1.3.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-plumber@1.1.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-rename@1.2.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-uglify@2.0.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-util@^3.0.8",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-webpack@1.5.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gutil@^1.6.4",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "mocha@3.4.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "watchify@^3.8.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-istanbul@^0.12.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "events@1.1.1",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     }
+472 silly leaf dependencies   ],
+472 silly leaf dependencies   "mccree-helper-logger": [
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel@6.23.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-cli@6.18.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-eslint@7.1.1",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-preset-es2015@6.18.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-preset-stage-0@6.16.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "chai@^3.5.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "del@^2.2.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "g-upload-image@^1.0.10",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp@3.9.1",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-babel@6.1.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-eslint@3.0.1",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-header@1.8.8",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-newer@1.3.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-plumber@1.1.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-rename@1.2.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-sourcemaps@2.2.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-uglify@2.0.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-util@^3.0.8",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-webpack@1.5.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gutil@1.6.4",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "mocha@3.4.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-istanbul@^0.12.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     }
+472 silly leaf dependencies   ],
+472 silly leaf dependencies   "mccree-helper-utils": [
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel@6.23.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-cli@6.18.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-eslint@7.1.1",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-preset-es2015@6.18.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-preset-stage-0@6.16.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "chai@3.5.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "del@2.2.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp@3.9.1",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-babel@6.1.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-eslint@3.0.1",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-header@1.8.8",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-newer@1.3.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-plumber@1.1.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-rename@1.2.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-sourcemaps@2.2.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-uglify@2.0.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-util@3.0.8",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-webpack@1.5.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gutil@1.6.4",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "mocha@3.4.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-istanbul@^0.12.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     }
+472 silly leaf dependencies   ],
+472 silly leaf dependencies   "mccree-controller-loader": [
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel@^6.23.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-cli@6.18.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-eslint@^7.1.1",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-preset-es2015@6.18.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-preset-stage-0@6.16.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "chai@^3.5.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "del@^2.2.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "g-upload-image@^1.0.10",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp@3.9.1",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-babel@6.1.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-eslint@3.0.1",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-header@1.8.8",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-newer@^1.3.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-plumber@^1.1.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-rename@1.2.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-sourcemaps@2.2.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-uglify@2.0.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-util@^3.0.8",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp-webpack@1.5.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gutil@^1.6.4",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "ink-docstrap@^1.3.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "isparta@^4.0.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "json-loader@^0.5.4",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "mocha@3.4.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "muk@0.5.3",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "require-dir@^0.3.1",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "watchify@^3.8.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "webpack@^2.1.0-beta.25",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "webpack-stream@3.2.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     }
+472 silly leaf dependencies   ],
+472 silly leaf dependencies   "mccree-loader-fetch": [
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "gulp@^3.9.1",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "isparta@^4.0.0",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "mocha@^4.0.1",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "muk@^0.5.3",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     },
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "babel-istanbul@^0.12.2",
+472 silly leaf dependencies       "isSatisfied": true
+472 silly leaf dependencies     }
+472 silly leaf dependencies   ],
+472 silly leaf dependencies   "mccree-loader-tencentp2p": [
+472 silly leaf dependencies     {
+472 silly leaf dependencies       "dependency": "mccree-controller-loader@^1.1.35",
+472 silly leaf dependencies       "isSatisfied": false
+472 silly leaf dependencies     }
+472 silly leaf dependencies   ]
+472 silly leaf dependencies }
+473 info Installing external dependencies
+474 verbose actions 1 actions, concurrency 4
+475 silly installInDir mccree-loader-tencentp2p [ 'mccree-controller-loader@^1.1.35' ]
+476 silly installInDir backup /home/jiangyuqing/devspace/mccree/packages/mccree-loader-tencentp2p/package.json
+477 silly rename [ '/home/jiangyuqing/devspace/mccree/packages/mccree-loader-tencentp2p/package.json',
+477 silly rename   '/home/jiangyuqing/devspace/mccree/packages/mccree-loader-tencentp2p/package.json.lerna_backup' ]
+478 silly installInDir writing tempJson { dependencies: { 'mccree-controller-loader': '^1.1.35' } }
+479 silly getExecOpts { cwd: '/home/jiangyuqing/devspace/mccree/packages/mccree-loader-tencentp2p' }
+480 silly installInDir [ 'npm', [ 'install' ] ]
+481 silly installInDir cleanup /home/jiangyuqing/devspace/mccree/packages/mccree-loader-tencentp2p/package.json
+482 silly renameSync [ '/home/jiangyuqing/devspace/mccree/packages/mccree-loader-tencentp2p/package.json.lerna_backup',
+482 silly renameSync   '/home/jiangyuqing/devspace/mccree/packages/mccree-loader-tencentp2p/package.json' ]
+483 verbose installed leaf mccree-loader-tencentp2p
+484 error execute callback with error
+485 error Error: Command failed: npm install
+485 error npm ERR! code E404
+485 error npm ERR! 404 Not Found: mccree-controller-loader@^1.1.35
+485 error
+485 error npm ERR! A complete log of this run can be found in:
+485 error npm ERR!     /root/.npm/_logs/2017-11-14T05_24_53_749Z-debug.log
+485 error
+485 error     at Promise.all.then.arr (/usr/local/node-v8.9.0-linux-x64/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
+485 error     at <anonymous>

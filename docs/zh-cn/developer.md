@@ -11,10 +11,7 @@ npm install --global lerna
 ```
 ./scripts/init.sh
 ```
-- 初始化lerna
-```
-lerna bootstrap
-```
+
 
 
 ## Mccree 结构及代码规范

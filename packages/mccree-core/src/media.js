@@ -2,7 +2,6 @@
 /**
  * The data struct
  */
-'use strict';
 
 class Media {
   /**
