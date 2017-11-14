@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "events": "1.1.1",
-    "mccree-core-loaderbuffer": "^1.0.0",
+    "mccree-core-loaderbuffer": "1.0.0",
     "mccree-helper-logger": "1.0.2",
     "mccree-helper-utils": "1.0.0"
   }
