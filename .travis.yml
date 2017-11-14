@@ -2,6 +2,7 @@ language: node_js
 node_js:
   - '8.9.0'
 install:
-    - sudo ./scripts/init.sh
+    - 'sudo npm install -g lerna'
+    - 'sudo ./scripts/init.sh'
 script:
-    - sudo ./scripts/build.sh
+    - 'sudo ./scripts/build.sh'
