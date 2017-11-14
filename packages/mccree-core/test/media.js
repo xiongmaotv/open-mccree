@@ -146,17 +146,17 @@ describe('Media', function() {
 
     it('no tracks', function() {
       var m = new Media();
-      m.distoryTracks();
+      m.destoryTracks();
     });
 
     it('one track', function() {
       var m = new Media(null, [tracks1]);
-      m.distoryTracks();
+      m.destoryTracks();
     });
 
     it('multi tracks', function() {
       var m = new Media(null, [tracks1, tracks2]);
-      m.distoryTracks();
+      m.destoryTracks();
     });
   });
 });

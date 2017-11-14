@@ -12,3 +12,4 @@ do
     cd ..;
   fi
 done
+lerna bootstrap;

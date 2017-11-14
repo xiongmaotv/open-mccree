@@ -11,11 +11,6 @@ npm install --global lerna
 ```
 ./scripts/init.sh
 ```
-- Bootstrap lerna
-```
-lerna bootstrap
-```
-
 
 ## Mccree structure and code style
 

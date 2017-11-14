@@ -1,6 +1,5 @@
 'use strict';
 const chai = require('chai');
-const muk = require('muk');
 const Mccree = require('../src/index.js').default;
 const expect = chai.expect;
 
@@ -83,6 +82,23 @@ describe('Mccree', function() {
 
       mccree.load('test');
       expect(mccree.originUrl).to.equal('test');
+    });
+  });
+
+  describe('attachMediaElement', function() {
+    it('attachMediaElement', function() {
+      var mccree = new Mccree();
+      mccree.attachMediaElement({});
+      expect(mccree.mediaElement).to.deep.equal({});
+    });
+  });
+
+  describe('detachMediaElement', function() {
+    it('detachMediaElement', function() {
+      var mccree = new Mccree();
+      mccree.mediaElement  = "test";
+      mccree.detachMediaElement();
+      expect(mccree.media).to.be.null;
     });
   });
 
