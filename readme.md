@@ -1,5 +1,6 @@
 # MCCREE
 [![license](https://img.shields.io/github/license/xiongmaotv/open-mccree.svg)](https://github.com/xiongmaotv/open-mccree)
+[![Travis](https://img.shields.io/travis/xiongmaotv/open-mccree.svg)](https://travis-ci.org/xiongmaotv/open-mccree)
 
 A front end solution for mutlimedia loading, mux, demux, stream and play.
 
@@ -19,7 +20,7 @@ Mccree is a front end multimedia framework, which is able to loading, mux, demux
 - Demux Flv format video.
 - Remux H264 and AAC to Mp4 format.
 - Playback through the web MediaSource Extension.
-  
+
 The following features will be supported soon:
 
 - Load hls source through the web XMLHttpRequest API.
@@ -48,7 +49,7 @@ TBA (After panda-mccree-live module released)
 |mccree-controller-loader|100%||||Yuqing Jiang|PandaTv|---|
 |mccree-loader-fetch|100%||||Yuqing Jiang|PandaTv|---|
 |mccree-loader-moz-xhr|100%||||Yuqing Jiang|PandaTv|---|
-|mccree-loader-tencentp2p|100%||||Tencent Team|Tencent|availible soon|
+|mccree-loader-tencentp2p|100%||||Tencent Team|Tencent|released|
 |mccree-loader-hls|70%||||Jiaqi Li|PandaTv|---|
 |mccree-demuxer-flv|100%||||Yuqing Jiang|PandaTv|---|
 |mccree-demuxer-ts|30%||||Jiaqi Li|PandaTv|---|
@@ -58,16 +59,22 @@ TBA (After panda-mccree-live module released)
 
 ## Contributors
 
-#### core team
-- PandaTv team
+#### core team - PandaTv team
 
 |name|github|email|blog|
 |---|---|---|---|
 |Yuqing Jiang|[yqjiang](https://github.com/yqjiang)|jiangyuqing@panda.tv||
 |Jiaqi Li|[lee920217](https://github.com/lee920217)|lijiaqi@panda.tv||
 
+#### Other teams
+- Tencent team
+|name|github|email|blog|
+|Guangge Lv|---|---|---|
+|Lipeng Cui|---|---|---|
+
 #### Other contributors
-TBA 
+
+
 
 ## Join us
 Read ./docs/en/developer.md
