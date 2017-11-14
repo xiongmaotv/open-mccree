@@ -4,6 +4,6 @@ node_js:
 before_script: 
     - 'npm install -g gulp-cli'
     - 'npm install -g lerna'
-    - './scripts/init.sh'
+    - 'sudo bash ./scripts/init.sh'
 script:
-    - './scripts/build.sh'
+    - 'sudo bash ./scripts/build.sh'
