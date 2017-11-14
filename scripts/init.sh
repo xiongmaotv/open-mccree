@@ -10,4 +10,4 @@ do
   cd ../../
 done
 
-lerna bootstrap;
+lerna bootstrap
