@@ -29,7 +29,6 @@
     "babel-preset-stage-0": "6.16.0",
     "chai": "^3.5.0",
     "del": "^2.2.2",
-    "g-upload-image": "^1.0.10",
     "gulp": "3.9.1",
     "gulp-babel": "6.1.2",
     "gulp-eslint": "3.0.1",
