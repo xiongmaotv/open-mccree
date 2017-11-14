@@ -1,6 +1,6 @@
 {
   "name": "mccree-core",
-  "version": "1.1.27",
+  "version": "1.0.0",
   "description": "",
   "scripts": {
     "test": "./scripts/test.sh"
@@ -29,7 +29,7 @@
     "gulp-webpack": "1.5.0",
     "gutil": "^1.6.4",
     "mocha": "3.4.2",
-    "watchify": "3.8.0"
+    "watchify": "^3.8.0"
   },
   "dependencies": {
     "events": "1.1.1",

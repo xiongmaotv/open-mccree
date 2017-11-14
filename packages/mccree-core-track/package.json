@@ -1,6 +1,6 @@
 {
   "name": "mccree-core-track",
-  "version": "1.1.28",
+  "version": "1.0.0",
   "description": "",
   "main": "build/index.js",
   "scripts": {
@@ -27,7 +27,6 @@
     "gulp-uglify": "2.0.0",
     "gulp-util": "^3.0.8",
     "gutil": "^1.6.4",
-    "isparta": "^4.0.0",
     "json-loader": "^0.5.4",
     "mocha": "3.4.2"
   }
