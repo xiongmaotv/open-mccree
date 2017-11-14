@@ -1,9 +1,10 @@
 language: node_js
+sudo: true
 node_js:
   - '8.9.0'
 install: 
   - 'npm install -g gulp-cli'
   - 'npm install -g lerna'
-  - 'sudo ./scripts/init.sh'
+  - 'sudo sh ./scripts/init.sh'
 script:
-  - 'sudo ./scripts/build.sh'
+  - 'sudo sh ./scripts/build.sh'
