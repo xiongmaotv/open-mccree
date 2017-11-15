@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.63% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>2/76</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/41</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.63% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>2/76</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+import LoaderController from 'mccree-controller-loader';
+&nbsp;
+class <span class="cstat-no" title="statement not covered" >FetchLoader {</span>
+  static isSupported() <span class="fstat-no" title="function not covered" >{</span>
+    return <span class="cstat-no" title="statement not covered" >!!(self.fetch &amp;&amp; self.ReadableStream &amp;&amp; Uint8Array);</span>
+  }
+&nbsp;
+  /**
+   * @constructs
+   *
+   * @param {Object} configs - configs (optional) 设置（可选）。
+   */
+  constructor(<span class="fstat-no" title="function not covered" >configs) {</span>
+    this.<span class="cstat-no" title="statement not covered" >TAG = 'FetchLoader';</span>
+    this.<span class="cstat-no" title="statement not covered" >type = 'loader';</span>
+    this.<span class="cstat-no" title="statement not covered" >configs = configs || {};</span>
+&nbsp;
+    this.<span class="cstat-no" title="statement not covered" >status = 0;</span>
+    this.<span class="cstat-no" title="statement not covered" >error = null;</span>
+    this.<span class="cstat-no" title="statement not covered" >_reader = null;</span>
+  }
+&nbsp;
+  /**
+   * This function is called when loader intializing.
+   * 当loader初始化的时候进行调用。
+   * 
+   * @param {Object} mccree - the mccree core. 麦克雷内核对象。
+   */
+  init(<span class="fstat-no" title="function not covered" >mccree) {</span>
+    this.<span class="cstat-no" title="statement not covered" >controller = new LoaderController(this);</span>
+    this.<span class="cstat-no" title="statement not covered" >controller.init.call(this, mccree);</span>
+  }
+&nbsp;
+  /**
+   * This function is to load video stream from a source address.
+   * 拉取整段视频流。
+   *
+   * @param {String} source - the source address. 拉流地址。
+   * @param {String} opt - the fetch options. fetch接口拉流属性。
+   * @param {String} range - the stream range. 流片段区间。
+   */
+  load(<span class="fstat-no" title="function not covered" >source, opt, range) {</span>
+    // unload if the loader is loading data.
+    // 如果loader正在获取数据，先进行unload操作。
+    // Declear condition to improve preformance.
+    // 声明清楚执行条件，以提高执行效率。
+    if (<span class="cstat-no" title="statement not covered" >this.loading === true) {</span>
+      this.<span class="cstat-no" title="statement not covered" >unload();</span>
+    }
+&nbsp;
+    // clear the loader buffer
+    // 清空loaderbuffer。
+    this.<span class="cstat-no" title="statement not covered" >mccree.loaderBuffer.clear();</span>
+    this.<span class="cstat-no" title="statement not covered" >loadPartail(source, {</span>
+      start: -1,
+      end: -1
+    }, opt);
+  }
+&nbsp;
+  /**
+   * This function is to load video stream partially from a source address.
+   * 拉取部分视频流。
+   *
+   * @param {String} source - the source address. 拉流地址。
+   * @param {String} opt - the fetch options. fetch接口拉流属性。
+   * @param {String} range - the stream range. 流片段区间。
+   */
+  loadPartail(<span class="fstat-no" title="function not covered" >source, range, opts) {</span>
+    // Declear condition to improve preformance.
+    // 声明清楚执行条件，以提高执行效率。
+    if (<span class="cstat-no" title="statement not covered" >this.mccree === undefined) {</span>
+      this.<span class="cstat-no" title="statement not covered" >logger.debug(this.TAG, 'Uninitailized', 'this module is not init yet');</span>
+      return;
+    }
+&nbsp;
+    this.<span class="cstat-no" title="statement not covered" >source = source;</span>
+&nbsp;
+    let <span class="cstat-no" title="statement not covered" >params = this._getParams(range, opts);</span>
+    let <span class="cstat-no" title="statement not covered" >fetchPromise = self.fetch(source, params);</span>
+    let <span class="cstat-no" title="statement not covered" >that = this;</span>
+    // fetch is returns a promise in Browsers. resolve when connected or error occured.
+    // fetch 返回一个Promise。当拉到流或异常时释放
+    fetchPromise.<span class="cstat-no" title="statement not covered" >then(<span class="fstat-no" title="function not covered" >function(response) {</span></span>
+      that.<span class="cstat-no" title="statement not covered" >_status = response.status;</span>
+      that.<span class="cstat-no" title="statement not covered" >loading = true;</span>
+      return <span class="cstat-no" title="statement not covered" >that._onFetchResponse.call(that, response);</span>
+    }).catch(this._onFetchException.bind(this));
+  }
+&nbsp;
+  /**
+   * Unload from the current source.
+   * 从当前视频源断流。
+   * 
+   * @return {Promise} - Resolve when disconnected. 断链时释放。
+   */
+  unload() <span class="fstat-no" title="function not covered" >{</span>
+    let <span class="cstat-no" title="statement not covered" >that = this;</span>
+    return <span class="cstat-no" title="statement not covered" >new Promise(<span class="fstat-no" title="function not covered" >(resolve, reject) =&gt; {</span></span>
+      if (<span class="cstat-no" title="statement not covered" >!that.loading) {</span>
+        resolve();
+      }
+      that.<span class="cstat-no" title="statement not covered" >loading = false;</span>
+      that.<span class="cstat-no" title="statement not covered" >mccree.loaderBuffer.clear();</span>
+&nbsp;
+      // declear conditions to improve proformance.
+      // 声明清楚条件，有助于提高执行效率
+      if (<span class="cstat-no" title="statement not covered" >that._reader !== undefined) {</span>
+        that.<span class="cstat-no" title="statement not covered" >_reader.cancel().then(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+          that.<span class="cstat-no" title="statement not covered" >loading = false;</span>
+          resolve();
+        });
+      } else {
+        that.<span class="cstat-no" title="statement not covered" >loading = false;</span>
+        resolve();
+      }
+&nbsp;
+      this.<span class="cstat-no" title="statement not covered" >destroyResolve = resolve;</span>
+    });
+  }
+&nbsp;
+  /**
+   * Construct fetch params.
+   * 构造fetch参数。
+   *
+   * @param {String} opt - the fetch options. fetch接口拉流属性。
+   * @param {String} range - the stream range. 流片段区间。
+   */
+  _getParams(<span class="fstat-no" title="function not covered" >range, opts) {</span>
+    let <span class="cstat-no" title="statement not covered" >options = opts || {};</span>
+    let <span class="cstat-no" title="statement not covered" >headers = new self.Headers();</span>
+&nbsp;
+    let <span class="cstat-no" title="statement not covered" >params = {</span>
+      method: 'GET',
+      headers: headers,
+      mode: 'cors',
+      cache: 'default'
+    };
+&nbsp;
+    // add custmor headers
+    // 添加自定义头
+    if (<span class="cstat-no" title="statement not covered" >typeof this.configs.headers === 'object') {</span>
+      let <span class="cstat-no" title="statement not covered" >configHeaders = this.configs.headers;</span>
+      for (<span class="cstat-no" title="statement not covered" >let key in configHeaders) {</span>
+        if (<span class="cstat-no" title="statement not covered" >configHeaders.hasOwnProperty(key)) {</span>
+          headers.<span class="cstat-no" title="statement not covered" >append(key, configHeaders[key]);</span>
+        }
+      }
+    }
+&nbsp;
+    if (<span class="cstat-no" title="statement not covered" >options.cors === false) {</span>
+      params.<span class="cstat-no" title="statement not covered" >mode = 'same-origin';</span>
+    }
+&nbsp;
+    // withCredentials is disabled by default
+    // withCredentials 在默认情况下不被使用。
+    if (<span class="cstat-no" title="statement not covered" >options.withCredentials) {</span>
+      params.<span class="cstat-no" title="statement not covered" >credentials = 'include';</span>
+    }
+&nbsp;
+    return <span class="cstat-no" title="statement not covered" >params;</span>
+  }
+&nbsp;
+  /**
+   * Called when fetch has a response.
+   * fetch返回时的回调。
+   *
+   * @param {Object} response - the response. 返回。
+   */
+  _onFetchResponse(<span class="fstat-no" title="function not covered" >response) {</span>
+    this.<span class="cstat-no" title="statement not covered" >mccree.url = response.url || this.mccree.url;</span>
+    if (<span class="cstat-no" title="statement not covered" >response.ok === true) {</span>
+      this.<span class="cstat-no" title="statement not covered" >controller.onConnected.call(this, response);</span>
+      return <span class="cstat-no" title="statement not covered" >this._onReader.call(this, response.body.getReader());</span>
+    } else <span class="cstat-no" title="statement not covered" >if (response.status == 404) {</span>
+      this.<span class="cstat-no" title="statement not covered" >controller.onNotfound.call(this, response);</span>
+    } else <span class="cstat-no" title="statement not covered" >if (response.status == 403) {</span>
+      this.<span class="cstat-no" title="statement not covered" >controller.onForbidden.call(this, response);</span>
+    } else {
+      this.<span class="cstat-no" title="statement not covered" >controller.onUnknownError.call(this, response);</span>
+    }
+  }
+&nbsp;
+  /**
+   * Called when catches excptions.
+   * 发生异常时的回调。
+   *
+   * @param {Object} error - the error. 错误对象。
+   */
+  _onFetchException(<span class="fstat-no" title="function not covered" >error) {</span>
+    this.<span class="cstat-no" title="statement not covered" >logger.debug(this.TAG, this.type, this.logMsgs.UNKNOWN);</span>
+    this.<span class="cstat-no" title="statement not covered" >observer.trigger('error', this.errorTypes.NETWORK_ERROR, error);</span>
+    return;
+  }
+&nbsp;
+  /**
+   * The data pumper.
+   * 数据泵。
+   *
+   * @param {Object} reader - the reader. reader对象。
+   */
+  _onReader(<span class="fstat-no" title="function not covered" >reader) {</span>
+    this.<span class="cstat-no" title="statement not covered" >_reader = reader;</span>
+    if (<span class="cstat-no" title="statement not covered" >this.loading === false) {</span>
+      return;
+    }
+&nbsp;
+    let <span class="cstat-no" title="statement not covered" >that = this;</span>
+    // reader read function returns a Promise. get data when callback and has value.done when disconnected.
+    // read方法返回一个Promise. 回调中可以获取到数据。当value.done存在时，说明链接断开。
+    this.<span class="cstat-no" title="statement not covered" >_reader &amp;&amp; this._reader.read().then(<span class="fstat-no" title="function not covered" >function(val) {</span></span>
+      // IMPORTANT: declear conditions to improve proformance.
+      // 重要：声明清楚条件，有助于提高执行效率
+      if (<span class="cstat-no" title="statement not covered" >that !== undefined &amp;&amp; val.done === true) {</span>
+        that.<span class="cstat-no" title="statement not covered" >loading = false;</span>
+        that.<span class="cstat-no" title="statement not covered" >logger.debug(that.TAG, that.type, 'Loading Finished');</span>
+        if(<span class="cstat-no" title="statement not covered" >that.destroyResolve !== undefined) {</span>
+          that.<span class="cstat-no" title="statement not covered" >destroyResolve();</span>
+          that.<span class="cstat-no" title="statement not covered" >destroyResolve = undefined;</span>
+        } else {
+          that.<span class="cstat-no" title="statement not covered" >observer.trigger('error', that.errorTypes.NETWORK_ERROR, that.errorDetails.NOT_FOUND);</span>
+        }
+        
+        return;
+      }
+&nbsp;
+      that.<span class="cstat-no" title="statement not covered" >mccree.loaderBuffer.push(val.value);</span>
+      that.<span class="cstat-no" title="statement not covered" >observer.trigger(that.events.FRAG_LOADED, val.value.byteLength);</span>
+      return <span class="cstat-no" title="statement not covered" >that._onReader(reader);</span>
+    }).catch(<span class="fstat-no" title="function not covered" >function(error) {</span>
+      that.<span class="cstat-no" title="statement not covered" >observer.trigger('error', that.errorTypes.NETWORK_ERROR, error.message);</span>
+    });
+  }
+}
+&nbsp;
+export default <span class="cstat-no" title="statement not covered" >FetchLoader;</span>
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Nov 13 2017 12:42:05 GMT+0800 (CST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
