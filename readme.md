@@ -65,10 +65,12 @@ TBA (After panda-mccree-live module released)
 |---|---|---|---|
 |Yuqing Jiang|[yqjiang](https://github.com/yqjiang)|jiangyuqing@panda.tv||
 |Jiaqi Li|[lee920217](https://github.com/lee920217)|lijiaqi@panda.tv||
+|Yongwei Kang(mochen)|[lee920217](https://github.com/imochen)|kangyongwei@panda.tv||
 
 #### Other teams
 - Tencent team
 |name|github|email|blog|
+|---|---|---|---|
 |Guangge Lv|---|---|---|
 |Lipeng Cui|---|---|---|
 
