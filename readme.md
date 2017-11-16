@@ -68,7 +68,9 @@ TBA (After panda-mccree-live module released)
 |Yongwei Kang(mochen)|[lee920217](https://github.com/imochen)|kangyongwei@panda.tv||
 
 #### Other teams
+
 - Tencent team
+
 |name|github|email|blog|
 |---|---|---|---|
 |Guangge Lv|---|---|---|
