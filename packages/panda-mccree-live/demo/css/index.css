@@ -1,0 +1,248 @@
+body {
+    margin: 0px;
+    background: #f7f7f7;
+    font-family: "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "SimSun", "Tahoma", "Arial", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+iframe#navigation {
+    position: absolute;
+    bottom: 90px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 0 90px 0;
+    box-sizing: border-box;
+}
+* {
+    box-sizing: border-box;
+}
+
+/** navigation å¤´**/
+
+.header {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+    background: #333;
+    border-bottom: 2px #000 solid;
+    z-index: 5
+}
+
+.header .inner {
+    max-width: 1200px;
+    position: relative;
+    margin: auto;
+    color: #fff;
+    font-size: 35px;
+    font-family: fantasy;
+    cursor: pointer;
+}
+
+.header .inner .navs,.header .inner a.navs.share  {
+    display: inline-block;
+    font-size: 18px;
+    margin-left: 20px;
+    font-family: fantasy;
+    position: relative;
+    line-height: 34px;
+    padding-top: 16px;
+    color: #fff;
+}
+.header .inner .navs:first-of-type {
+    margin-left: 80px;
+}
+
+.header .inner .navs.blog .links {
+    display: none;
+    background: transparent;
+    width: 150px;
+    position: absolute;
+    left: -10px;
+    margin-top: -1px;
+}
+
+.header .inner .navs.blog:hover .links {
+    display: block;
+    background: #333;
+    line-height: 34px;
+}
+
+.header .inner .navs.blog:hover .links a {
+    color: #fff;
+    padding: 0 10px;
+    font-size: 14px;
+    line-height: 34px;
+}
+
+.cherry {
+    position: absolute;
+    color: #fff;
+    opacity: 0.2;
+}
+.search {
+    position: relative;
+    height: 150px;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+}
+
+.bj {
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+    height: 100%;
+    background: url(../img/bj.jpg) 50% 50%;
+    background-size: cover;
+    opacity: 0.7;
+}
+
+.cherry {
+    background-image:url(../img/cherry.png);
+    width: 60px;
+    height: 58px;
+    z-index: 1;
+    opacity: 1;
+    transform: scale(0.5);
+    position: absolute;
+    animation: cherry 8s ease-out 1 both;
+    -webkit-animation: cherry 8s ease-out 1 both;
+    display: none;
+}
+.search-frame {
+    max-width: 1200px;
+    left: 20px;
+    right: 20px;
+    margin: 20px auto;
+    height: 110px;
+    position: absolute;
+    z-index: 2;
+}
+.search-btn {
+    font-size: 49px;
+    position: relative;
+    color: #000;
+    font-weight: 900;
+    display: inline-block;
+    text-shadow: 1px 1px 0 #fff;
+    line-height: 50px;
+    font-family: fantasy, PingFang SC Bold;
+}
+
+.search-btn:after {
+    content: "STREAM ADDRESS";
+    color: rgba(0,0,0,.7);
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    z-index: -1;
+    display: inline-block;
+    width: 400px;
+    -webkit-mask-image: url(http://f.cl.ly/items/1t1C0W3y040g1J172r3h/mask.png);
+}
+
+
+.search-input {
+    display: block;
+    width: 100%;
+    height: 40px;
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0 20px;
+    margin: 20px 0;
+    float: left;
+}
+
+.player-container {
+    width: 100%;
+    position: relative;
+    margin-top: 20px;
+}
+
+#videoElement {
+    margin: auto;
+    left: 0;
+    right: 0;
+    position: absolute;
+    max-width: 1200px;
+    max-height: 720px;
+}
+.clear {
+    clear: both;
+}
+#submit {
+    width: 17%;
+    float: right;
+    display: block;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    padding: 0 20px;
+    margin: 20px 0;
+    float: right;
+    text-align: center;
+    line-height: 38px;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #fff;
+    background: #333;
+}
+
+.bufferstatus {
+    position: absolute;
+    top: 720px;
+    width: 1200px;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+.bufferstatus .bar {
+    width: 100%;
+    height: 20px;
+    margin: 10px 0 10px 0;
+    background: #ccc;
+    position: relative;
+}
+
+.bufferstatus .bar .inner {
+    background-color: #f66;
+    color: #fff;
+    width: 50%;
+    position: absolute;
+    height: 20px;
+    left: 0px;
+}
+
+@keyframes cherry {
+    0% {
+        margin-right: 0px;
+        top:-58px;
+        opacity: 1;
+    }
+    100% {
+        margin-right: 400px;
+        top:150px;
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes cherry {
+    0% {
+        margin-right: 0px;
+        top:-58px;
+        opacity: 1;
+    }
+
+    100% {
+        margin-right: 400px;
+        top:150px;
+        opacity: 0;
+    }
+}

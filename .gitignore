@@ -2,6 +2,3 @@ node_modules
 .tmp
 .DS_Store
 npm-debug.log
-panda-mccree-live
-mccree-demuxer-flv
-mccree-remuxer-mp4live

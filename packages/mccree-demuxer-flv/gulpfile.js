@@ -60,4 +60,3 @@ gulp.task('lint', function() {
   ];
   return _lint(lintPath, true);
 });
-

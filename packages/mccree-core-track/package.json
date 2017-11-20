@@ -6,8 +6,20 @@
   "scripts": {
     "test": "./scripts/test.sh"
   },
-  "author": "Yuqing Jiang",
-  "license": "ISC",
+  "license": {
+    "type": "Apache-2.0",
+    "url": "https://opensource.org/licenses/apache2.0.php"
+  },
+  "contributors": [
+    {
+      "name": "Jiang, Yuqing",
+      "email": "jiangyuqing@panda.tv"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xiongmaotv/open-mccree.git"
+  },
   "devDependencies": {
     "babel": "6.23.0",
     "babel-cli": "6.18.0",
@@ -28,7 +40,6 @@
     "gulp-util": "^3.0.8",
     "gutil": "^1.6.4",
     "json-loader": "^0.5.4",
-    "mocha": "3.4.2",
-    "gulp-webpack": "1.5.0"
+    "mocha": "3.4.2"
   }
 }

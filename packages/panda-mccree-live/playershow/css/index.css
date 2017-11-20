@@ -1,0 +1,121 @@
+body {
+  background-color: #000;
+  margin: 0;
+}
+.roominfo {
+    font-size: 20px;
+    color: #93b0e1;
+    position: absolute;
+    top: 40px;
+    right: 52%;
+}
+#player {
+    position: absolute;
+    width: 46%;
+    height: 46%;
+    top:4%;
+    right: 2%;
+    border: 5px double #43667e;
+    box-shadow: 0 0 20px 4px #42699f;
+    box-sizing: border-box;
+}
+
+#left {
+    position: absolute;
+    width: 49%;
+    height: 49%;
+    bottom: 50%;
+    left: 2%;
+}
+.bufferstatus {
+    top: 53vh;
+    height: 19vw;
+    position: absolute;
+    width: 48%;
+    left: 2%;
+}
+.bar {
+    position: relative;
+    height: 8%;
+    border: 1px solid #6792b6;
+    margin: 1vh 20px 1.8vh 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0 3px 4px #2f4a70;
+}
+
+label {
+    color: #93b0e1;
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-weight: bold;
+}
+.inner {
+    position: absolute;
+    top: 3px;
+    left:3px;
+    bottom: 3px;
+    width: 50%;
+    transition: 0.5s;
+    background-color: #93b0e1;
+    text-align: center;
+    color: #2f4a70;
+    line-height: 24px;
+    background-image: -webkit-gradient(-45deg, rgba(255, 255, 255, .2) 20px, transparent 20px,transparent 30px, rgba(255, 255, 255, .2) 30px, rgba(255, 255, 255, .2) 40px,transparent 40px, transparent);
+    background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2) 20px, transparent 20px,transparent 30px, rgba(255, 255, 255, .2) 30px, rgba(255, 255, 255, .2) 40px,transparent 40px, transparent);
+    background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, .2) 20px, transparent 20px,transparent 30px, rgba(255, 255, 255, .2) 30px, rgba(255, 255, 255, .2) 40px,transparent 40px, transparent);
+    background-image: linear-gradient(-45deg, rgba(255, 255, 255, .2) 20px, transparent 20px,transparent 30px, rgba(255, 255, 255, .2) 30px, rgba(255, 255, 255, .2) 40px,transparent 40px, transparent);
+}
+
+.stat {
+    width: 46%;
+    height: 30%;
+    position: absolute;
+    right: 2%;
+    color: #93b0e1;
+    top: 63%;
+}
+
+.stat p {
+    position: relative;
+    font-size: 14px;
+    line-height: 14px;
+    margin: 8px 0;
+    width: 50%;
+    float: left;
+    display: block;
+}
+.changeroom {
+    position: absolute;
+    right: 2%;
+    width: 46%;
+    top: 53%;
+    height: 10%;
+}
+
+#changerm {
+    background: #000;
+    border: 0px;
+    border-bottom: 1px solid #93b0e1;
+    height: 63%;
+    line-height: 28px;
+    width: 40%;
+    font-size: 20px;
+    color: #a9c0e7;
+    padding: 0 10px;
+    float: left;
+}
+
+.btn {
+    float: left;
+    color: #fff;
+    background-color: #93b0e1;
+    height: 63%;
+    line-height: 6vh;
+    width: 100px;
+    text-align: center;
+    margin-left: 20px;
+    border-radius: 3px;
+    font-size: 20px;
+}
+

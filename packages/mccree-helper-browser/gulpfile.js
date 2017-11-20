@@ -61,3 +61,16 @@ gulp.task('lint', function() {
   return _lint(lintPath, true);
 });
 
+
+gulp.task('webpack', ['clean', 'lint', 'build'], function() {
+  let opt = {
+    devtool: 'source-map',
+    output: {
+      path: __dirname + '/build',
+      filename: 'index.js'
+    }
+  };
+  return gulp.src(path.resolve(__dirname + '/build', 'index.js'))
+    .pipe(webpack(opt))
+    .pipe(gulp.dest(__dirname + '/dist'));
+});

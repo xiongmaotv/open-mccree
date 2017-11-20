@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PDFE播放器检测工具</title>
+  <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="http://gallerybox.echartsjs.com/dep/echarts/latest/echarts.min.js"></script>
+  <script type="text/javascript" src="http://gallerybox.echartsjs.com/dep/echarts/latest/echarts.min.js"></script>
+  <script src="http://echarts.baidu.com/resource/echarts-gl-latest/dist/echarts-gl.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./css/index.css">
+</head>
+<body>
+  <div class="roominfo"></div>
+  <video id="player"  autoplay="true" preload="true" ></video>
+  <canvas id="left"></canvas>
+  <div class="changeroom">
+    <input id="changerm" type="" name="" placeholder="请输入房间号，调试问题房间">
+    <div id="changeroombtn" class="btn">切换</div>
+  </div>
+  <div class="bufferstatus">
+    <label>Loader Buffer</label>
+    <div class="bar loaderBuffer">
+
+      <div class="inner"></div>
+    </div>
+    <label>Demuxer AudioTrack</label>
+    <div class="bar daBuffer">
+      
+      <div class="inner"></div>
+    </div>
+
+    <label>Demuxer VideoTrack</label>
+    <div class="bar dvBuffer">
+      
+      <div class="inner"></div>
+    </div>
+
+    <label>Remuxer AudioTrack</label>
+    <div class="bar raBuffer">
+      <div class="inner"></div>
+    </div>
+
+    <label>Remuxer VideoTrack</label>
+    <div class="bar rvBuffer">
+      <div class="inner"></div>
+    </div>
+  </div>
+  <div class="stat"> </div>
+  <script type="text/javascript" src="./js/eqcharts.js"></script>
+  <script type="text/javascript" src="./js/index.js"></script>
+  <script type="text/javascript" src="https://s.h2.pdim.gs/static/0d07a54e9a352433.js"></script>
+</body>
+</html>

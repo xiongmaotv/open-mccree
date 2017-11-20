@@ -2,7 +2,9 @@ const gulp = require('gulp');
 const babel = require('gulp-babel');
 const newer = require("gulp-newer");
 const plumber = require("gulp-plumber");
+const uglify = require("gulp-uglify");
 const gutil = require("gulp-util");
+const rename = require('gulp-rename');
 const webpack = require('gulp-webpack');
 const del = require('del');
 const eslint = require('gulp-eslint');
@@ -40,7 +42,8 @@ gulp.task('build', function() {
   return gulp.src(buildPath)
     .pipe(babel({
       presets: ['es2015']
-    })).pipe(gulp.dest(__dirname + '/build'));
+    })).pipe(uglify())
+    .pipe(gulp.dest(__dirname + '/build'));
 });
 
 gulp.task('clean', function() {
@@ -61,3 +64,18 @@ gulp.task('lint', function() {
   return _lint(lintPath, true);
 });
 
+
+gulp.task('webpack', ['clean', 'lint', 'build'], function() {
+  let opt = {
+    devtool: 'source-map',
+    output: {
+      path: __dirname + '/dist',
+      filename: 'index.js'
+    }
+  };
+  return gulp.src(path.resolve(__dirname + '/build', 'index.js'))
+    .pipe(webpack())
+    .pipe(rename('index.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest(__dirname + '/dist'));
+});
