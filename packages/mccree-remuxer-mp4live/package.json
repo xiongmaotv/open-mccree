@@ -1,6 +1,6 @@
 {
   "name": "mccree-remuxer-mp4live",
-  "version": "1.0.0",
+  "version": "1.1.1-0",
   "description": "",
   "main": "build/index.js",
   "scripts": {
@@ -43,6 +43,6 @@
     "mocha": "3.4.2"
   },
   "dependencies": {
-    "mccree-helper-browser": "1.0.0"
+    "mccree-helper-browser": "^1.1.1-0"
   }
 }

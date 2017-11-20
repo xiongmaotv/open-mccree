@@ -1,11 +1,11 @@
 {
   "name": "mccree-loader-tencentp2p",
-  "version": "1.1.35",
+  "version": "1.1.1-0",
   "description": "Collection of helper functions for mccree",
   "author": "Yuqing Jiang",
   "license": "UNLICENSED",
   "main": "build/index.js",
   "dependencies": {
-    "mccree-controller-loader": "^1.0.0"
+    "mccree-controller-loader": "^1.1.1-0"
   }
 }

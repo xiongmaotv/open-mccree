@@ -1,6 +1,6 @@
 {
   "name": "mccree-core",
-  "version": "1.0.0",
+  "version": "1.1.1-0",
   "description": "",
   "scripts": {
     "test": "./scripts/test.sh"
@@ -33,8 +33,8 @@
   },
   "dependencies": {
     "events": "1.1.1",
-    "mccree-core-loaderbuffer": "1.0.0",
-    "mccree-helper-logger": "1.0.2",
-    "mccree-helper-utils": "1.0.0"
+    "mccree-core-loaderbuffer": "^1.1.1-0",
+    "mccree-helper-logger": "^1.1.1-0",
+    "mccree-helper-utils": "^1.1.1-0"
   }
 }
