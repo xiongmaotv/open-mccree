@@ -2,6 +2,7 @@
 [![license](https://img.shields.io/github/license/xiongmaotv/open-mccree.svg)](https://github.com/xiongmaotv/open-mccree)
 [![Travis](https://img.shields.io/travis/xiongmaotv/open-mccree.svg)](https://travis-ci.org/xiongmaotv/open-mccree)
 [![npm](https://img.shields.io/npm/v/mccree-core.svg)](https://www.npmjs.com/package/mccree-core)
+
 A front end solution for mutlimedia loading, mux, demux, stream and play.
 
 - [About](#about)
