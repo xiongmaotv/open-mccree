@@ -5,6 +5,7 @@ node_js:
 install: 
   - 'npm install -g gulp-cli'
   - 'npm install -g lerna'
-  - 'lerna bootstrap;'
-script:
   - './scripts/build.sh'
+script:
+  - 'lerna run build'
+  - 'lerna run webpack'

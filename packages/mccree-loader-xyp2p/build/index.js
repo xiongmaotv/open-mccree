@@ -75,9 +75,9 @@ var XYVPLoader = function () {
     key: 'unload',
     value: function unload() {
       var that = this;
-      var promise = new Promise(function (resolve, reject) {
+      return new Promise(function (resolve, reject) {
         that.xyLive.close();
-        that.observer.trigger('error', this.errorTypes.NETWORK_ERROR, errInfo.msg);
+        that.observer.trigger('error', that.errorTypes.NETWORK_ERROR, 'unload');
       });
     }
   }, {
