@@ -37,7 +37,7 @@ $('#submit').click(function(){
 
       m.destroy().then(function(){
             var videoElement = document.getElementById('videoElement');
-    m = new PandaMccreeLive({},{autoReload: 30e3, debug: true, useTencentP2P: true, videoId: 'videoElement', src: $('#stream').val()});
+    m = new PandaMccreeLive({},{autoReload: 30e3, debug: true, usep2p: true, videoId: 'videoElement', src: $('#stream').val()});
     m.attachMediaElement(videoElement);
     m.load($('#stream').val());
     window.localStorage['flvaddress'] = $('#stream').val();
@@ -49,32 +49,6 @@ $('#submit').click(function(){
       m.load($('#stream').val());
       window.localStorage['flvaddress'] = $('#stream').val();
     }
-
-
-    // m.mediaElement.addEventListener('canplay',function(){
-    //   videoElement.play();
-    //   console.log('canplay');
-    // });
-    // m.mediaElement.addEventListener('stalled',function(){
-    //   console.log('stalled');
-    // });
-    // m.mediaElement.addEventListener('readystatechange',function(){
-    //   console.log(m.mediaElement.readyState);
-    // });
-    // m.mediaElement.addEventListener('suspend',function(){
-    //   console.log(m.mediaElement.readyState);
-    // });
-    // m.on('statistics_info',function(d) {
-    //   // console.log(d);
-    // });
-    // m.on('media_info',function(d) {
-    //   console.log(d);
-    // });
-    // m.on('error',function(a, b) {
-    //   console.warn(a);
-    //   console.warn(b);
-    // });
-
     timmer = setInterval (_checkBuffer, 1e3);
 });
 

@@ -37,7 +37,7 @@ export class PandaMccreeLive extends Mccree {
     }, config);
     this.logger.debug('PandaMccreeLive', 'mccree', '正在启动播放装置。');
     this.initStatistic();
-    this.version = '1.1.38';
+    this.version = '1.1.0-0';
     this.mseController = new MSEController();
     this.mseController.init(this);
     this.on = this.observer.on;
