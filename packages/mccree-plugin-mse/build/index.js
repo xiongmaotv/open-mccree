@@ -46,7 +46,7 @@ var MSEController = function () {
   }, {
     key: 'checkState',
     value: function checkState() {
-      if (this.config.autoReload > 5e3 && this.mediaElement && this.mediaElement.readyState < 3 && new Date().getTime() - this.startTime - this.mediaElement.currentTime * 1e3 > this.config.autoReload) {
+      if (this.config.autoReload > 15e3 && this.mediaElement && this.mediaElement.readyState < 3 && new Date().getTime() - this.startTime - this.mediaElement.currentTime * 1e3 > this.config.autoReload) {
         var _that = this;
         this.mccree.reload().then(function () {
           _that.startTime = undefined;

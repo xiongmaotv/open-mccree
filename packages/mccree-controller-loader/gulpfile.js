@@ -3,7 +3,6 @@ const babel = require('gulp-babel');
 const newer = require("gulp-newer");
 const plumber = require("gulp-plumber");
 const gutil = require("gulp-util");
-const webpack = require('gulp-webpack');
 const del = require('del');
 const eslint = require('gulp-eslint');
 

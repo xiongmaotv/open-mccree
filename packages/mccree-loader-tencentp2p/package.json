@@ -2,10 +2,49 @@
   "name": "mccree-loader-tencentp2p",
   "version": "1.1.1-0",
   "description": "Collection of helper functions for mccree",
-  "author": "Yuqing Jiang",
-  "license": "UNLICENSED",
   "main": "build/index.js",
+  "scripts": {
+    "test": "./scripts/test.sh",
+    "build": "gulp build"
+  },
+  "license": {
+    "type": "Apache-2.0",
+    "url": "https://opensource.org/licenses/apache2.0.php"
+  },
+  "contributors": [
+    {
+      "name": "Jiang, Yuqing",
+      "email": "jiangyuqing@panda.tv"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xiongmaotv/open-mccree.git"
+  },
   "dependencies": {
     "mccree-controller-loader": "^1.1.1-0"
+  },
+  "devDependencies": {
+    "babel": "6.23.0",
+    "babel-cli": "6.18.0",
+    "babel-eslint": "7.1.1",
+    "babel-istanbul": "^0.12.2",
+    "babel-preset-es2015": "6.18.0",
+    "babel-preset-stage-0": "6.16.0",
+    "chai": "3.5.0",
+    "del": "2.2.2",
+    "gulp": "3.9.1",
+    "gulp-babel": "6.1.2",
+    "gulp-eslint": "3.0.1",
+    "gulp-header": "1.8.8",
+    "gulp-newer": "1.3.0",
+    "gulp-plumber": "1.1.0",
+    "gulp-rename": "1.2.2",
+    "gulp-sourcemaps": "2.2.0",
+    "gulp-uglify": "2.0.0",
+    "gulp-util": "3.0.8",
+    "gulp-webpack": "1.5.0",
+    "gutil": "1.6.4",
+    "mocha": "3.4.2"
   }
 }

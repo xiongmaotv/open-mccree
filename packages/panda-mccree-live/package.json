@@ -4,7 +4,9 @@
   "description": "flvdemuxer",
   "main": "build/index.js",
   "scripts": {
-    "test": "./scripts/test.sh"
+    "test": "./scripts/test.sh",
+    "build": "gulp build",
+    "webpack": "gulp webpack"
   },
   "keywords": [
     "demuxer",

@@ -4,7 +4,8 @@
   "description": "",
   "main": "build/index.js",
   "scripts": {
-    "test": "./scripts/test.sh"
+    "test": "./scripts/test.sh",
+    "build": "gulp build"
   },
   "license": "UNLICENSED",
   "contributors": [

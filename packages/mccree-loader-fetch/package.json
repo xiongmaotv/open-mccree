@@ -4,7 +4,8 @@
   "description": "",
   "main": "build/index.js",
   "scripts": {
-    "test": "./scripts/test.sh"
+    "test": "./scripts/test.sh",
+    "build": "gulp build"
   },
   "license": {
     "type": "Apache-2.0",
@@ -19,6 +20,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/xiongmaotv/open-mccree.git"
+  },
+  "dependencies": {
+    "mccree-controller-loader": "1.1.1-0"
   },
   "devDependencies": {
     "babel": "6.23.0",
