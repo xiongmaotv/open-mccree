@@ -76,6 +76,6 @@ gulp.task('webpack', ['clean', 'lint', 'build'], function() {
   return gulp.src(path.resolve(__dirname + '/build', 'index.js'))
     .pipe(webpack())
     .pipe(rename('index.min.js'))
-    .pipe(uglify())
+//    .pipe(uglify())
     .pipe(gulp.dest(__dirname + '/dist'));
 });

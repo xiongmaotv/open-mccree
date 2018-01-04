@@ -3,7 +3,6 @@
 import Mccree from 'mccree-core';
 import FetchLoader from 'mccree-loader-fetch';
 import MozLoader from 'mccree-loader-moz-xhr';
-import TcLoader from 'mccree-loader-tencentp2p';
 import MSEController from 'mccree-plugin-mse';
 import Browser from 'mccree-helper-browser';
 import Demux from 'mccree-demuxer-flv';
@@ -36,6 +35,12 @@ export class PandaMccreeLive extends Mccree {
       remux: remuxer
     }, config);
     this.logger.debug('PandaMccreeLive', 'mccree', '正在启动播放装置。');
+    let that = this;
+    this.observer.on('METADATA_CHANGED', function() {
+      if (!that.reloading) {
+        that.reload.call(that);
+      }
+    });
     this.initStatistic();
     this.version = '1.1.0-0';
     this.mseController = new MSEController();
@@ -104,12 +109,13 @@ export class PandaMccreeLive extends Mccree {
 
   reload() {
     let tempurl = this.originUrl;
+    let tempelem = this.getMediaElement();
     let that = this;
+    that.reloading = true;
     return new Promise((resolve, reject) => {
-      that.reloading = true;
       that.loader.unload().then(res => {
-        that.observer.trigger('error', this.events.errorTypes.NETWORK_ERROR, {});
-        that.observer.off('FRAME_DROPPED');
+        that.mseController.destroy();
+        that.detachMedia();
         that.media.tracks = {};
         that.remuxBuffer = {
           audio: [],
@@ -118,7 +124,9 @@ export class PandaMccreeLive extends Mccree {
         that.loaderBuffer.clear();
         that.demux.reset();
         that.remux.destroy();
-        that.mseController.destroy();
+        that.mseController.attachMediaElement(tempelem);
+        that.loader.load(tempurl);
+        that.reloading = false;
         resolve();
       }).catch(err => {
         that.reloading = false;
