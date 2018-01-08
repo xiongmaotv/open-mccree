@@ -382,10 +382,12 @@ var FLVDemuxer = function () {
         meta.audioSampleRate = audioSampleRate;
         meta.sampleRateIndex = audioSampleRateIndex;
         meta.refSampleDuration = refSampleDuration;
-        this._hasAudioSequence = true;
-        if (this._hasScript && (!this.mccree.media.tracks.videoTrack || this._hasVideoSequence)) {
+        if (this._hasScript && !this._hasAudioSequence && (!this.mccree.media.tracks.videoTrack || this._hasVideoSequence)) {
           this.observer.trigger('METADATA_PARSED');
-        }
+        } else if (this._hasScript && this._hasAudioSequence) {
+          this.observer.trigger('METADATA_CHANGED');
+        };
+        this._hasAudioSequence = true;
       } else {
         chunk.data = chunk.data.slice(1, chunk.data.length);
         this.observer.trigger('AUDIODATA_PARSED');
@@ -418,10 +420,12 @@ var FLVDemuxer = function () {
           this._avcSequenceHeaderParser(chunk.data);
           var validate = this._datasizeValidator(chunk.datasize);
           if (validate) {
-            this._hasVideoSequence = true;
-            if (this._hasScript && (!this.mccree.media.tracks.audioTrack || this._hasAudioSequence)) {
+            if (this._hasScript && !this._hasVideoSequence && (!this.mccree.media.tracks.audioTrack || this._hasAudioSequence)) {
               this.observer.trigger('METADATA_PARSED');
+            } else if (this._hasScript && this._hasVideoSequence) {
+              this.observer.trigger('METADATA_CHANGED');
             }
+            this._hasVideoSequence = true;
           }
         } else {
           if (!this._datasizeValidator(chunk.datasize)) {

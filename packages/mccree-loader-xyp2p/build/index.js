@@ -78,6 +78,7 @@ var XYVPLoader = function () {
       return new Promise(function (resolve, reject) {
         that.xyLive.close();
         that.observer.trigger('error', that.errorTypes.NETWORK_ERROR, 'unload');
+        resolve();
       });
     }
   }, {
