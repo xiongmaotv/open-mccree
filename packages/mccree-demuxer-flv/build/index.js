@@ -419,14 +419,21 @@ var FLVDemuxer = function () {
         this.mccree.loaderBuffer.shift(3);
         // 对七牛SDK中AVCC和AnnexB错误混编的兼容。（不影响其他端&SDK编码器及推流)
         // TODO: 配适其他SDK混编情况
-        var data = this.mccree.loaderBuffer.shift(chunk.datasize - 1);
-        if (data[4] === 0 && data[5] === 0 && data[6] === 0 && data[7] === 7) {
-          var annexcode = data.slice(0, 4);
+
+        var data = this.mccree.loaderBuffer.shift(chunk.datasize - 5);
+        if (data[4] === 0 && data[5] === 0 && data[6] === 0 && data[7] === 1) {
+          var avcclength = 0;
+          for (var i = 0; i < 4; i++) {
+            avcclength = avcclength * 256 + data[i];
+          }
+          avcclength -= 4;
           data = data.slice(4, data.length);
-          data[0] = annexcode[0];
-          data[1] = annexcode[1];
-          data[2] = annexcode[2];
-          data[3] = annexcode[3];
+          data[3] = avcclength % 256;
+          avcclength = (avcclength - data[3]) / 256;
+          data[2] = avcclength % 256;
+          avcclength = (avcclength - data[2]) / 256;
+          data[1] = avcclength % 256;
+          data[0] = (avcclength - data[1]) / 256;
         }
         chunk.data = data;
         // If it is AVC sequece Header.
