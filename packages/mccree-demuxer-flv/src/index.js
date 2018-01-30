@@ -1,5 +1,5 @@
 'use strict';
-import {AudioTrack, VideoTrack} from 'mccree-core-track';
+import { AudioTrack, VideoTrack } from 'mccree-core-track';
 import SPSParser from 'mccree-helper-spsparser';
 import defaultVideoConfig from './default-video-config.js';
 import defaultAudioConfig from './default-audio-config.js';
@@ -153,7 +153,7 @@ class FLVDemuxer {
       return null;
     }
     let chunk = this._parseFlvTagHeader();
-    if(chunk) {
+    if (chunk) {
       this._processChunk(chunk);
     }
   }
@@ -173,7 +173,7 @@ class FLVDemuxer {
     chunk.datasize = this.mccree.loaderBuffer.toInt(1, 3);
     if ((chunk.tagType !== 8 && chunk.tagType !== 9 && chunk.tagType !== 11 && chunk.tagType !== 18)
       || this.mccree.loaderBuffer.toInt(8, 3) !== 0) {
-      if(this.loaderBuffer && this.loaderBuffer.length > 0) {
+      if (this.loaderBuffer && this.loaderBuffer.length > 0) {
         this.loaderBuffer.shift(1);
       }
       this.logger.warn(this.TAG, this.type, ' tagType' + chunk.tagType);
@@ -242,17 +242,17 @@ class FLVDemuxer {
     }
 
     // Edit default meta.
-    if(audioTrack && !audioTrack.hasSpecificConfig) {
+    if (audioTrack && !audioTrack.hasSpecificConfig) {
       let meta = audioTrack.meta;
-      if(mediaInfo.audiosamplerate) {
+      if (mediaInfo.audiosamplerate) {
         meta.audioSampleRate = mediaInfo.audiosamplerate;
-      } 
-       
-      if(mediaInfo.audiochannels) {
+      }
+
+      if (mediaInfo.audiochannels) {
         meta.channelCount = mediaInfo.audiochannels;
       }
 
-      switch(mediaInfo.audiosamplerate) {
+      switch (mediaInfo.audiosamplerate) {
         case 44100:
           meta.sampleRateIndex = 4;
           break;
@@ -264,13 +264,13 @@ class FLVDemuxer {
           break;
       }
     }
-    if(videoTrack && !videoTrack.hasSpecificConfig) { 
+    if (videoTrack && !videoTrack.hasSpecificConfig) {
       let meta = videoTrack.meta;
       if (typeof mediaInfo.framerate === 'number') {
         let fps_num = Math.floor(mediaInfo.framerate * 1000);
         if (fps_num > 0) {
           let fps = fps_num / 1000;
-          if(!meta.frameRate) {
+          if (!meta.frameRate) {
             meta.frameRate = {};
           }
           meta.frameRate.fixed = true;
@@ -284,22 +284,24 @@ class FLVDemuxer {
 
   _parseAACData(chunk) {
     let track = this.mccree.media.tracks.audioTrack;
-    if(!track) {
+    if (!track) {
       return;
     }
 
     let meta = track.meta;
-    
-    if(!meta) {
+
+    if (!meta) {
       meta = defaultAudioConfig;
     }
 
     let info = this.mccree.loaderBuffer.shift(1)[0];
+
     chunk.data = this.mccree.loaderBuffer.shift(chunk.datasize - 1);
+
     let format = (info & 240) >>> 4;
 
     track.format = format;
-    
+
     if (format !== 10) {
       this.observer.trigger('error', this.mccree.events.MEDIA_ERROR, {});
     }
@@ -332,7 +334,8 @@ class FLVDemuxer {
         this.observer.trigger('METADATA_PARSED');
       } else if (this._hasScript && this._hasAudioSequence) {
         this.observer.trigger('METADATA_CHANGED');
-      };
+      }
+      ;
       this._hasAudioSequence = true;
     } else {
       chunk.data = chunk.data.slice(1, chunk.data.length);
@@ -359,15 +362,33 @@ class FLVDemuxer {
       chunk.avcPacketType = this.mccree.loaderBuffer.shift(1)[0];
       chunk.compositionTime = this.mccree.loaderBuffer.toInt(0, 3);
       this.mccree.loaderBuffer.shift(3);
-      chunk.data = this.mccree.loaderBuffer.shift(chunk.datasize - 5);
+      // 对七牛SDK中AVCC和AnnexB错误混编的兼容。（不影响其他端&SDK编码器及推流)
+      // TODO: 配适其他SDK混编情况
+      
+      let data = this.mccree.loaderBuffer.shift(chunk.datasize - 5);
+      if (data[4] === 0 && data[5] === 0 && data[6] === 0 && data[7] === 1) {
+        let avcclength = 0;
+        for(let i= 0; i < 4; i++) {
+          avcclength = avcclength * 256 + data[i] ;
+        }
+        avcclength -= 4;
+        data = data.slice(4, data.length);
+        data[3] = avcclength % 256;
+        avcclength = (avcclength - data[3])  / 256;
+        data[2] = avcclength % 256;
+        avcclength = (avcclength - data[2])  / 256;
+        data[1] = avcclength % 256;
+        data[0] = (avcclength - data[1]) / 256;
+      }
+      chunk.data = data;
       // If it is AVC sequece Header.
       if (chunk.avcPacketType === 0) {
         this._avcSequenceHeaderParser(chunk.data);
         let validate = this._datasizeValidator(chunk.datasize);
         if (validate) {
-          if (this._hasScript && !this._hasVideoSequence  &&  (!this.mccree.media.tracks.audioTrack || this._hasAudioSequence)) {
+          if (this._hasScript && !this._hasVideoSequence && (!this.mccree.media.tracks.audioTrack || this._hasAudioSequence)) {
             this.observer.trigger('METADATA_PARSED');
-          }else if (this._hasScript && this._hasVideoSequence) {
+          } else if (this._hasScript && this._hasVideoSequence) {
             this.observer.trigger('METADATA_CHANGED');
           }
           this._hasVideoSequence = true;
@@ -390,6 +411,7 @@ class FLVDemuxer {
 
     delete chunk.tagType;
   }
+
 
   _datasizeValidator(datasize) {
     let datasizeConfirm = this.mccree.loaderBuffer.toInt(0, 4);
@@ -429,14 +451,14 @@ class FLVDemuxer {
 
   _avcSequenceHeaderParser(data) {
     let track = this.mccree.media.tracks.videoTrack;
-    
-    if(!track) {
+
+    if (!track) {
       return;
     }
 
     let offset = 0;
 
-    if(!track.meta) {
+    if (!track.meta) {
       track.meta = defaultVideoConfig;
     }
     let meta = track.meta;
@@ -490,24 +512,24 @@ class FLVDemuxer {
       this.mccree.media.tracks.videoTrack.pps = pps;
     }
 
-    if(config && config.codec_size) {
+    if (config && config.codec_size) {
       meta.codecWidth = config.codec_size.width;
       meta.codecHeight = config.codec_size.height;
       meta.presentWidth = config.present_size.width;
       meta.presentHeight = config.present_size.height;
     }
-    
+
     meta.profile = config.profile_string || meta.profile;
     meta.level = config.level_string || meta.level;
     meta.bitDepth = config.bit_depth || meta.bitDepth;
     meta.chromaFormat = config.chroma_format || meta.chromaFormat;
-    
-    if(meta.sarRatio) {
+
+    if (meta.sarRatio) {
       meta.sarRatio.width = config.sar_ratio.width;
       meta.sarRatio.height = config.sar_ratio.height;
     }
-    
-    if(meta.frameRate && config.frame_rate.fixed && config.frame_rate.fps_num > 0 && config.frame_rate.fps_den > 0) {
+
+    if (meta.frameRate && config.frame_rate.fixed && config.frame_rate.fps_num > 0 && config.frame_rate.fps_den > 0) {
       meta.frameRate = config.frame_rate;
     }
 
