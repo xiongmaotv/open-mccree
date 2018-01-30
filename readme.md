@@ -75,6 +75,12 @@ TBA (After panda-mccree-live module released)
 |Guangge Lv|---|---|---|
 |Lipeng Cui|---|---|---|
 
+- xycdn team
+
+|name|github|email|blog|
+|---|---|---|---|
+
+
 #### Other contributors
 
 
