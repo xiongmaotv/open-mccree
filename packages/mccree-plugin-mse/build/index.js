@@ -47,9 +47,9 @@ var MSEController = function () {
     key: 'checkState',
     value: function checkState() {
       if (this.config.autoReload > 15e3 && this.mediaElement && this.mediaElement.readyState < 3 && new Date().getTime() - this.startTime - this.mediaElement.currentTime * 1e3 > this.config.autoReload) {
-        var _that = this;
+        var that = this;
         this.mccree.reload().then(function () {
-          _that.startTime = undefined;
+          that.startTime = undefined;
         });
       }
       if (this.seekables[this.seekables.length - 1] > this.lastSeek && this.mediaElement && this.mediaElement.readyState === 2 && this.seekables.length > 1) {
@@ -250,6 +250,18 @@ var MSEController = function () {
       if (!this.mediaSource || !this.asourceBuffer || !this.vsourceBuffer) {
         return;
       }
+      this.removeSourceBuffer();
+      this.detachMediaElement();
+      this.asourceBuffer = null;
+      this.vsourceBuffer = null;
+      this.mediaSource = null;
+      this._lastClearTime = 0;
+      this.seekables = [];
+    }
+  }, {
+    key: 'removeSourceBuffer',
+    value: function removeSourceBuffer() {
+      this._initAppanded = false;
       this.mediaElement.pause();
       URL.revokeObjectURL(this.mediaElement.src);
       this.asourceBuffer && this.asourceBuffer.removeEventListener('error', this.onError.bind(this));
@@ -259,12 +271,6 @@ var MSEController = function () {
         this.mediaSource.removeSourceBuffer(this.asourceBuffer);
         this.mediaSource.removeSourceBuffer(this.vsourceBuffer);
       }
-      this.detachMediaElement();
-      this.asourceBuffer = null;
-      this.vsourceBuffer = null;
-      this.mediaSource = null;
-      this._lastClearTime = 0;
-      that.seekables = [];
     }
   }, {
     key: 'onError',

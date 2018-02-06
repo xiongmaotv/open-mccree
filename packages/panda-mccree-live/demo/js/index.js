@@ -37,14 +37,14 @@ $('#submit').click(function(){
 
       m.destroy().then(function(){
             var videoElement = document.getElementById('videoElement');
-    m = new PandaMccreeLive({},{autoReload: 30e3, debug: true, usep2p: true, videoId: 'videoElement', src: $('#stream').val()});
+    m = new PandaMccreeLive({},{autoReload: 30e3, debug: true, usep2p: false, videoId: 'videoElement', src: $('#stream').val()});
     m.attachMediaElement(videoElement);
     m.load($('#stream').val());
     window.localStorage['flvaddress'] = $('#stream').val();
       });
     } else {
       var videoElement = document.getElementById('videoElement');
-      m = new PandaMccreeLive({},{autoReload: 30e3, debug: true, useTencentP2P: true, videoId: 'videoElement', src: $('#stream').val()});
+      m = new PandaMccreeLive({},{autoReload: 30e3, debug: true, useTencentP2P: false, videoId: 'videoElement', src: $('#stream').val()});
       m.attachMediaElement(videoElement);
       m.load($('#stream').val());
       window.localStorage['flvaddress'] = $('#stream').val();

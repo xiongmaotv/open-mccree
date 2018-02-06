@@ -238,10 +238,22 @@ class MSEController {
   pause() {
     this.mediaElement.pause();
   }
+
   destroy() {
     if (!this.mediaSource || !this.asourceBuffer || !this.vsourceBuffer) {
       return;
     }
+    this.removeSourceBuffer();
+    this.detachMediaElement();
+    this.asourceBuffer = null;
+    this.vsourceBuffer = null;
+    this.mediaSource = null;
+    this._lastClearTime = 0;
+    this.seekables = [];
+  }
+
+  removeSourceBuffer () {
+    this._initAppanded = false;
     this.mediaElement.pause();
     URL.revokeObjectURL(this.mediaElement.src);
     this.asourceBuffer && this.asourceBuffer.removeEventListener('error', this.onError.bind(this));
@@ -251,12 +263,6 @@ class MSEController {
       this.mediaSource.removeSourceBuffer(this.asourceBuffer);
       this.mediaSource.removeSourceBuffer(this.vsourceBuffer);
     }
-    this.detachMediaElement();
-    this.asourceBuffer = null;
-    this.vsourceBuffer = null;
-    this.mediaSource = null;
-    this._lastClearTime = 0;
-    that.seekables = [];
   }
 
   onError(error) {

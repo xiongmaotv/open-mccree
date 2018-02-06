@@ -114,8 +114,7 @@ export class PandaMccreeLive extends Mccree {
     that.reloading = true;
     return new Promise((resolve, reject) => {
       that.loader.unload().then(res => {
-        that.mseController.destroy();
-        that.detachMedia();
+        that.mseController.detachMediaElement();
         that.media.tracks = {};
         that.remuxBuffer = {
           audio: [],
@@ -124,6 +123,7 @@ export class PandaMccreeLive extends Mccree {
         that.loaderBuffer.clear();
         that.demux.reset();
         that.remux.destroy();
+        that.mseController.removeSourceBuffer();
         that.mseController.attachMediaElement(tempelem);
         that.loader.load(tempurl);
         that.reloading = false;
