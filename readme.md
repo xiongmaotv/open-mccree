@@ -65,6 +65,7 @@ TBA (After panda-mccree-live module released)
 |Yuqing Jiang|[yqjiang](https://github.com/yqjiang)|jiangyuqing@panda.tv||
 |Jiaqi Li|[lee920217](https://github.com/lee920217)|lijiaqi@panda.tv||
 |Yongwei Kang(mochen)|[imochen](https://github.com/imochen)|kangyongwei@panda.tv||
+|Bing Dai|[virginiadb](https://github.com/virginiadb)|daibing@panda.tv||
 
 #### Other teams
 
