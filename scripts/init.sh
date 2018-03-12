@@ -9,5 +9,3 @@ do
   gulp build
   cd ../../
 done
-
-lerna bootstrap

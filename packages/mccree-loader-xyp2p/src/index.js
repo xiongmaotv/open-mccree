@@ -20,7 +20,7 @@ class XYVPLoader {
   }
 
   constructor(config) {
-    this.TAG = 'XYVPLoader';
+    this.TAG = 'Mccree-loader-xyp2p';
     this.type = 'loader';
     this.config = config || {};
     this.xyLive = null;
@@ -33,7 +33,36 @@ class XYVPLoader {
     this.events.XY_ERROR = window.xyvp.XYLiveEvent.ERROR;
     this.events.FLV_DATA = window.xyvp.XYLiveEvent.FLV_DATA;
   }
+  
+  loadPartail(source, range, opts) {
+    if (!this.mccree) {
+      this.logger.warn(this.TAG, 'Live is not init yet');
+      return;
+    }
 
+    this.source = source;
+    this._loading = false;
+
+    this.xhr = new XMLHttpRequest();
+    let that = this;
+    this.xhr.open("get", source, true);
+    this.xhr.responseType = 'moz-chunked-arraybuffer';
+    this.xhr.onreadystatechange = e => {
+      if(this.status === 200) {
+        that.controller.onConnected.call(that, e);
+      } else if(this.status === 404){
+        that.controller.onNotfound.call(that, e);
+      }
+    };
+    this.xhr.onprogress = e => {
+      that.mccree.url = this.xhr.response.url || that.mccree.url;
+      let chunk = e.target.response;
+      that.mccree.loaderBuffer.push(new Uint8Array(chunk));
+      that.observer.trigger(that.events.FRAG_LOADED, chunk.byteLength);
+    };
+    this.xhr.send();
+  }
+  
   load(source, opt, range) {
     let that = this;
     this.xyLive = new window.xyvp.XYLive({url:source,

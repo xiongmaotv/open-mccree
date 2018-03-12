@@ -34,7 +34,8 @@ export class PandaMccreeLive extends Mccree {
       demux: demuxer,
       remux: remuxer
     }, config);
-    this.logger.debug('PandaMccreeLive', 'mccree', '正在启动播放装置。');
+	this.TAG = 'panda-mccree-live';
+    this.logger.debug(this.TAG, 'Live initialization');
     let that = this;
     this.observer.on('METADATA_CHANGED', function() {
       if (!that.reloading) {
@@ -42,7 +43,8 @@ export class PandaMccreeLive extends Mccree {
       }
     });
     this.initStatistic();
-    this.version = '1.1.0-0';
+    this.version = '1.1.1-0';
+	this.logger.info(this.TAG, `Current version: ${this.version}`);
     this.mseController = new MSEController();
     this.mseController.init(this);
     this.on = this.observer.on;
@@ -65,7 +67,7 @@ export class PandaMccreeLive extends Mccree {
   }
 
   load(url) {
-    this.logger.log(this.TAG, `loadurl ${url}`);
+    this.logger.info(this.TAG, `loadurl ${url}`);
     this.originUrl = url;
     this.loader.load(url);
   }
@@ -76,7 +78,7 @@ export class PandaMccreeLive extends Mccree {
 
   destroy() {
     let that = this;
-    this.logger.debug(that.TAG, 'destroy', '正在销毁播放装置。');
+    this.logger.debug(that.TAG, 'Live destroying');
     this.off();
     let promise = new Promise((resolve, reject) => {
       clearInterval(that.statisticTimmer);
@@ -94,7 +96,7 @@ export class PandaMccreeLive extends Mccree {
         that.loader = null;
         that.remux = null;
         that.demux = null;
-        that.logger.debug(that.TAG, 'unload', '正在播放装置完全解除。');
+        that.logger.debug(that.TAG, 'Live destroyed');
         resolve('destroyed');
       }).catch(err => {
         resolve('destroyed');
@@ -172,7 +174,9 @@ export class PandaMccreeLive extends Mccree {
         });
         this.loadbytes = 0;
       }
-    } catch (e) {}
+    } catch (e) {
+
+	}
   }
 
   attachMediaElement(mediaElement) {

@@ -13,7 +13,10 @@
     "mccree"
   ],
   "author": "Yuqing Jiang",
-  "license": "ISC",
+  "license": {
+    "type": "Apache-2.0",
+    "url": "https://opensource.org/licenses/apache2.0.php"
+  },
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-cli": "6.18.0",

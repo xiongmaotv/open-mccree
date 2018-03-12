@@ -1,6 +1,6 @@
 class MSEController {
   constructor() {
-    this.TAG = 'MSEController';
+    this.TAG = 'Mccree-plugin-mse';
     this.type = 'plugin';
     this.mediaSource = new window.MediaSource();
     this._lastappand = 'audio';
@@ -66,7 +66,7 @@ class MSEController {
     ) {
       this.mediaElement.currentTime = this.seekables[this.seekables.length - 1] / 1e3;
       this.lastSeek = this.seekables[this.seekables.length - 1];
-      this.logger.debug('PandaMccreeLive', 'mccree', '储能槽能量剩余，正在追帧。追帧至' + (this.seekables[this.seekables.length - 1] / 1e3));
+      this.logger.debug(this.TAG, 'Chase frame to ' + (this.seekables[this.seekables.length - 1] / 1e3));
     }
 
     this._onMediaSegment();
@@ -93,7 +93,7 @@ class MSEController {
       this.vsourceBuffer.remove(this._lastClearTime, playTime - 10);
       this.asourceBuffer.remove(this._lastClearTime, playTime - 10);
       this._lastClearTime = playTime - 10;
-      this.logger.debug(this.TAG, 'PandaMccreeLive', '正在清洗能量槽');
+      this.logger.debug(this.TAG, 'Cache clear');
       while (this.seekables && this.seekables.length > 0 && this.seekables[0] / 1e3 < playTime - 10) {
         this.seekables.shift();
       }
@@ -155,7 +155,7 @@ class MSEController {
             code: 11
           });
         }
-        this.logger.debug(this.TAG, 'debug', '储能槽错误。' + e.code);
+        this.logger.error(this.TAG, 'Cache error of ' + e.code);
       }
     }
   }

@@ -10,7 +10,7 @@ class FLVDemuxer {
    * Constructor
    */
   constructor(config) {
-    this.TAG = 'FLVDemuxer';
+    this.TAG = 'mccree-demuxer-flv:index';
     this.type = 'demuxer';
     this._isFlv = false;
     this._config = config || {};
@@ -64,7 +64,7 @@ class FLVDemuxer {
       var chunk = this._parseFlvTag();
       if (chunk) {
         if (chunk !== -1) {
-          this.logger.error(this.TAG, this.type, {});
+          this.logger.error(this.TAG, 'chunk error');
         }
         this._fragLoaded();
       }
@@ -176,7 +176,7 @@ class FLVDemuxer {
       if (this.loaderBuffer && this.loaderBuffer.length > 0) {
         this.loaderBuffer.shift(1);
       }
-      this.logger.warn(this.TAG, this.type, ' tagType' + chunk.tagType);
+      this.logger.warn(this.TAG, 'tagType ' + chunk.tagType);
       return null;
     }
 
@@ -227,7 +227,7 @@ class FLVDemuxer {
   }
 
   _clearBuffer() {
-    this.logger.debug(this.TAG, this.type, '清除缓存');
+    this.logger.debug(this.TAG, 'Cache clear');
   }
 
   _parseScriptData(chunk) {
@@ -344,7 +344,7 @@ class FLVDemuxer {
     }
 
     if (!validate) {
-      this.logger.warn(this.TAG, this.type, 'TAG 长度确认有误' + chunk.datasize);
+      this.logger.warn(this.TAG, 'TAG length error at ' + chunk.datasize);
     }
   }
 
@@ -395,7 +395,7 @@ class FLVDemuxer {
         }
       } else {
         if (!this._datasizeValidator(chunk.datasize)) {
-          this.logger.warn(this.TAG, this.type, 'TAG 长度确认有误' + chunk.datasize);
+          this.logger.warn(this.TAG, 'TAG length error at ' + chunk.datasize);
         }
         this.observer.trigger('VIDEODATA_PARSED');
         this.mccree.media.tracks.videoTrack.samples.push(chunk);
@@ -403,7 +403,7 @@ class FLVDemuxer {
     } else {
       chunk.data = this.mccree.loaderBuffer.shift(chunk.datasize - 1);
       if (!this._datasizeValidator(chunk.datasize)) {
-        this.logger.warn(this.TAG, this.type, 'TAG 长度确认有误' + chunk.datasize);
+        this.logger.warn(this.TAG, this.type, 'TAG length error at ' + chunk.datasize);
       }
       this.observer.trigger('VIDEODATA_PARSED');
       this.mccree.media.tracks.videoTrack.samples.push(chunk);

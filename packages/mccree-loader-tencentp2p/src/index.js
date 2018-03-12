@@ -32,7 +32,7 @@ class QVBP2PLoader {
      * @param {Function} config.rollback - This method is called when our SDK meets an error.
      */
     constructor(config) {
-        this.TAG = 'QVBP2PLoader';
+        this.TAG = 'Mccree-loader-tencentp2p';
         this.type = 'loader';
         this.config = config || {};
         this._initQVBP2P();
@@ -95,7 +95,7 @@ class QVBP2PLoader {
      */
     loadPartail(source, range, opts) { // partial
         if (!this.mccree) {
-            this.logger.debug(this.TAG, 'Uninitailized', 'this module is not init yet');
+            this.logger.warn(this.TAG, 'Live is not init yet');
             return;
         }
         this._bindInterface();

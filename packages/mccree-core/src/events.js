@@ -59,6 +59,8 @@ let logMessages = {
 
   DESTROY: 'Destroy mccree',
   UNLOADING: 'Unloading',
+  
+  INIT_OBSERVER: 'Observer initialized',
 
   INIT_LOGGER_CUSTOM: 'Logger initialized, use the customer logger',
   INIT_LOGGER_INTERNAL: 'Logger initialized, use the internal logger',
