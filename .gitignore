@@ -4,3 +4,4 @@ node_modules
 npm-debug.log
 $HOME
 package-lock.json
+lerna-debug.log
