@@ -34,7 +34,7 @@ var FetchLoader = function () {
   function FetchLoader(configs) {
     _classCallCheck(this, FetchLoader);
 
-    this.TAG = 'FetchLoader';
+    this.TAG = 'Mccree-loader-fetch';
     this.type = 'loader';
     this.configs = configs || {};
 
@@ -102,7 +102,7 @@ var FetchLoader = function () {
       // Declear condition to improve preformance.
       // 声明清楚执行条件，以提高执行效率。
       if (this.mccree === undefined) {
-        this.logger.debug(this.TAG, 'Uninitailized', 'this module is not init yet');
+        this.logger.warn(this.TAG, 'Live is not init yet');
         return;
       }
 
@@ -234,7 +234,7 @@ var FetchLoader = function () {
   }, {
     key: '_onFetchException',
     value: function _onFetchException(error) {
-      this.logger.debug(this.TAG, this.type, this.logMsgs.UNKNOWN);
+      this.logger.error(this.TAG, this.logMsgs.UNKNOWN);
       this.observer.trigger('error', this.errorTypes.NETWORK_ERROR, error);
       return;
     }
@@ -262,7 +262,7 @@ var FetchLoader = function () {
         // 重要：声明清楚条件，有助于提高执行效率
         if (that !== undefined && val.done === true) {
           that.loading = false;
-          that.logger.debug(that.TAG, that.type, 'Loading Finished');
+          that.logger.debug(that.TAG, 'Loading Finished');
           if (that.destroyResolve !== undefined) {
             that.destroyResolve();
             that.destroyResolve = undefined;

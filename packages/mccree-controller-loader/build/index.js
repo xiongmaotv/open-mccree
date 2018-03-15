@@ -56,7 +56,7 @@ var LoaderController = function () {
     key: 'onConnected',
     value: function onConnected() {
       if (!this.connected) {
-        this.logger.debug(this.TAG, this.type, this.logMsgs.CONNECTED);
+        this.logger.debug(this.TAG, this.logMsgs.CONNECTED);
       }
       this.connected = true;
     }
@@ -86,7 +86,7 @@ var LoaderController = function () {
     value: function onNotfound(response) {
       this.connected = false;
       this.loading = false;
-      this.logger.debug(this.TAG, this.type, this.logMsgs.NOT_FOUND);
+      this.logger.error(this.TAG, this.logMsgs.NOT_FOUND);
       this.observer.trigger('error', this.errorTypes.NETWORK_ERROR, this.errorDetails.NOTFOUND, response);
     }
 
@@ -101,7 +101,7 @@ var LoaderController = function () {
     value: function onForbidden(response) {
       this.connected = false;
       this.loading = false;
-      this.logger.debug(this.TAG, this.type, this.logMsgs.FORBIDDEN);
+      this.logger.error(this.TAG, this.logMsgs.FORBIDDEN);
       this.observer.trigger('error', this.errorTypes.NETWORK_ERROR, this.errorDetails.NOTFOUND, response);
     }
     /**
@@ -115,7 +115,7 @@ var LoaderController = function () {
     value: function onUnknownError(response) {
       this.connected = false;
       this.loading = false;
-      this.logger.debug(this.loader.TAG, this.loader.type, this.logMsgs.NOT_FOUND);
+      this.logger.error(this.loader.TAG, this.logMsgs.NOT_FOUND);
       this.observer.trigger('error', this.errorTypes.NETWORK_ERROR, this.errorDetails.NOTFOUND, response);
     }
   }]);

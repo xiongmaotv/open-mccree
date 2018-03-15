@@ -1,19 +1,3 @@
-/**
- * Copyright [2017] [Shanghai Panda Interactive Entertainment And Culture Company Limited]
- * 
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- *    http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41,77 +25,17 @@ var Logger = function () {
   }
 
   /**
-   * The log function, it will use window.console.log() by default.
+   * The debug function, it will use window.console.debug() by default.
+   * Level 1
    * 
    * @param {string} tag - The tag string. 
-   * @param {string} type - The log type.
-   * @param {string} message - The log message.
+   * @param {string} message - The debug message.
    */
 
 
   _createClass(Logger, [{
-    key: 'log',
-    value: function log(tag, type, message) {
-      if (this.disabled) {
-        return;
-      }
-
-      if (this._logger) {
-        this._logger.log(tag, type, message);
-      } else {
-        var time = new Date().toLocaleString();
-        window && window.console && window.console.log('[' + time + '][' + tag + '] ' + type + ': ', message);
-      }
-    }
-
-    /**
-     * The info function, it will use window.console.info() by default.
-     * 
-     * @param {string} tag - The tag string. 
-     * @param {string} type - The info type.
-     * @param {string} message - The info message.
-     */
-
-  }, {
-    key: 'info',
-    value: function info(tag, type, message) {
-
-      if (this.disabled) {
-        return;
-      }
-      if (this._logger) {
-        this._logger.info(tag, type, message);
-      } else {
-        var time = new Date().toLocaleString();
-        window && window.console && window.console.info('[' + time + '][' + tag + '] ' + type + ': ' + message);
-      }
-    }
-  }, {
-    key: 'warn',
-    value: function warn(tag, type, message) {
-      if (this.disabled) {
-        return;
-      }
-
-      if (this._logger) {
-        this._logger.warn(tag, type, message);
-      } else {
-        var time = new Date().toLocaleString();
-        window && window.console && window.console.warn('[' + time + '][' + tag + '] ' + type + ': ' + message);
-      }
-    }
-
-    /**
-     * The debug function, it will use window.console.debug() by default.
-     * 
-     * @param {string} tag - The tag string. 
-     * @param {string} type - The debug type.
-     * @param {string} message - The debug message.
-     */
-
-  }, {
     key: 'debug',
-    value: function debug(tag, type, message) {
+    value: function debug(tag, message) {
 
       if (this.disabled) {
         return;
@@ -122,33 +46,93 @@ var Logger = function () {
       }
 
       if (this._logger) {
-        this._logger.debug(tag, type, message);
+        this._logger.debug(tag, message);
       } else {
         var time = new Date().toLocaleString();
-        window && window.console && window.console.debug('[' + time + '][' + tag + '] ' + type + ': ', message);
+        window && window.console && window.console.debug('[' + time + '][' + tag + '] debug: ' + message);
       }
     }
 
     /**
-     * The error function, it will use window.console.error() by default.
+     * The log function, it will use window.console.log() by default.
+     * Level 2
      * 
      * @param {string} tag - The tag string. 
-     * @param {string} type - The error type.
-     * @param {string} message - The error message.
+     * @param {string} message - The log message.
      */
 
   }, {
-    key: 'error',
-    value: function error(tag, type, message) {
+    key: 'log',
+    value: function log(tag, message) {
       if (this.disabled) {
         return;
       }
 
       if (this._logger) {
-        this._logger.error(tag, type, message);
+        this._logger.log(tag, message);
       } else {
         var time = new Date().toLocaleString();
-        window && window.console && window.console.debug('[' + time + '][' + tag + '] ' + type + ': ' + message);
+        window && window.console && window.console.log('[' + time + '][' + tag + '] log: ' + message);
+      }
+    }
+
+    /**
+     * The info function, it will use window.console.info() by default.
+     * Level 3
+     * 
+     * @param {string} tag - The tag string. 
+     * @param {string} message - The info message.
+     */
+
+  }, {
+    key: 'info',
+    value: function info(tag, message) {
+
+      if (this.disabled) {
+        return;
+      }
+      if (this._logger) {
+        this._logger.info(tag, message);
+      } else {
+        var time = new Date().toLocaleString();
+        window && window.console && window.console.info('[' + time + '][' + tag + '] info: ' + message);
+      }
+    }
+  }, {
+    key: 'warn',
+    value: function warn(tag, message) {
+      if (this.disabled) {
+        return;
+      }
+
+      if (this._logger) {
+        this._logger.warn(tag, message);
+      } else {
+        var time = new Date().toLocaleString();
+        window && window.console && window.console.warn('[' + time + '][' + tag + '] warn: ' + message);
+      }
+    }
+
+    /**
+     * The error function, it will use window.console.error() by default.
+     * Level 4
+     * 
+     * @param {string} tag - The tag string. 
+     * @param {string} message - The error message.
+     */
+
+  }, {
+    key: 'error',
+    value: function error(tag, message) {
+      if (this.disabled) {
+        return;
+      }
+
+      if (this._logger) {
+        this._logger.error(tag, message);
+      } else {
+        var time = new Date().toLocaleString();
+        window && window.console && window.console.debug('[' + time + '][' + tag + '] error: ' + message);
       }
     }
 

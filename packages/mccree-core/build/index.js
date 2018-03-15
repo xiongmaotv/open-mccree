@@ -48,7 +48,7 @@ var Mccree = function () {
       modules = {};
     }
 
-    this.TAG = 'Mccree';
+    this.TAG = 'Mccree-core';
 
     this.config = config ? config : {};
 
@@ -100,7 +100,7 @@ var Mccree = function () {
         _this.observer = null;
         _this.detachMedia();
         _this.media = null;
-        _this.logger.debug(_this.TAG, 'unload', _this.logMsgs.DESTROY);
+        _this.logger.debug(_this.TAG, _this.logMsgs.DESTROY);
       });
     }
 
@@ -154,7 +154,7 @@ var Mccree = function () {
   }, {
     key: 'load',
     value: function load(url) {
-      this.logger.log(this.TAG, 'loadurl ' + url);
+      this.logger.inf(this.TAG, 'loadurl ' + url);
       this.originUrl = url;
       this.loader.load(url);
     }
@@ -170,7 +170,7 @@ var Mccree = function () {
 
       return new Promise(function (resolve, reject) {
         if (_this2.loader) {
-          _this2.logger.debug(_this2.TAG, 'unload', _this2.logMsgs.UNLOADING);
+          _this2.logger.debug(_this2.TAG, _this2.logMsgs.UNLOADING);
           _this2.loader.unload().then(function (res) {
             resolve();
           }).catch(function (res) {
@@ -194,10 +194,10 @@ var Mccree = function () {
       // init the logger;
       if (logger && _mccreeHelperLogger2.default.isValid(logger)) {
         this.logger = new _mccreeHelperLogger2.default(logger, false, this.debug);
-        this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_LOGGER_CUSTOM);
+        this.logger.debug(this.TAG, this.logMsgs.INIT_LOGGER_CUSTOM);
       } else {
         this.logger = new _mccreeHelperLogger2.default(null, false, this.debug);
-        this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_LOGGER_INTERNAL);
+        this.logger.debug(this.TAG, this.logMsgs.INIT_LOGGER_INTERNAL);
       }
     }
 
@@ -250,7 +250,7 @@ var Mccree = function () {
         }
       };
 
-      this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_OBSERVER);
+      this.logger.debug(this.TAG, this.logMsgs.INIT_OBSERVER);
 
       this.on = this.observer.on.bind(this.observer);
       this.off = this.observer.off.bind(this.observer);
@@ -268,23 +268,23 @@ var Mccree = function () {
     value: function _createModules(modules) {
       if (modules.loader) {
         this.loader = modules.loader;
-        this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_LOADER);
+        this.logger.debug(this.TAG, this.logMsgs.INIT_LOADER);
       } else {
-        this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_LOADER_FAIL);
+        this.logger.error(this.TAG, this.logMsgs.INIT_LOADER_FAIL);
       }
 
       if (modules.demux) {
         this.demux = modules.demux;
-        this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_DEMUXER);
+        this.logger.debug(this.TAG, this.logMsgs.INIT_DEMUXER);
       } else {
-        this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_DEMUXER_FAILED);
+        this.logger.error(this.TAG, this.logMsgs.INIT_DEMUXER_FAILED);
       }
 
       if (modules.remux) {
         this.remux = modules.remux;
-        this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_REMUXER);
+        this.logger.debug(this.TAG, this.logMsgs.INIT_REMUXER);
       } else {
-        this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_REMUXER_FAILED);
+        this.logger.error(this.TAG, this.logMsgs.INIT_REMUXER_FAILED);
       }
     }
 

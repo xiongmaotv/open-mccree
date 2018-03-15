@@ -40,7 +40,7 @@ var XYVPLoader = function () {
   function XYVPLoader(config) {
     _classCallCheck(this, XYVPLoader);
 
-    this.TAG = 'XYVPLoader';
+    this.TAG = 'Mccree-loader-xyp2p';
     this.type = 'loader';
     this.config = config || {};
     this.xyLive = null;
@@ -54,6 +54,38 @@ var XYVPLoader = function () {
       this.controller.init.call(this, mccree);
       this.events.XY_ERROR = window.xyvp.XYLiveEvent.ERROR;
       this.events.FLV_DATA = window.xyvp.XYLiveEvent.FLV_DATA;
+    }
+  }, {
+    key: 'loadPartail',
+    value: function loadPartail(source, range, opts) {
+      var _this = this;
+
+      if (!this.mccree) {
+        this.logger.warn(this.TAG, 'Live is not init yet');
+        return;
+      }
+
+      this.source = source;
+      this._loading = false;
+
+      this.xhr = new XMLHttpRequest();
+      var that = this;
+      this.xhr.open("get", source, true);
+      this.xhr.responseType = 'moz-chunked-arraybuffer';
+      this.xhr.onreadystatechange = function (e) {
+        if (_this.status === 200) {
+          that.controller.onConnected.call(that, e);
+        } else if (_this.status === 404) {
+          that.controller.onNotfound.call(that, e);
+        }
+      };
+      this.xhr.onprogress = function (e) {
+        that.mccree.url = _this.xhr.response.url || that.mccree.url;
+        var chunk = e.target.response;
+        that.mccree.loaderBuffer.push(new Uint8Array(chunk));
+        that.observer.trigger(that.events.FRAG_LOADED, chunk.byteLength);
+      };
+      this.xhr.send();
     }
   }, {
     key: 'load',

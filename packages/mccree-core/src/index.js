@@ -23,7 +23,7 @@ class Mccree {
       modules = {};
     }
 
-    this.TAG = 'Mccree';
+    this.TAG = 'Mccree-core';
     
     this.config = config ? config : {};
     
@@ -69,7 +69,7 @@ class Mccree {
       this.observer = null;
       this.detachMedia();
       this.media = null;
-      this.logger.debug(this.TAG, 'unload', this.logMsgs.DESTROY);
+      this.logger.debug(this.TAG, this.logMsgs.DESTROY);
     });
   }
 
@@ -108,7 +108,7 @@ class Mccree {
    * @param {string} url - The resource url.
    */
   load(url) {
-    this.logger.log(this.TAG, `loadurl ${url}`);
+    this.logger.inf(this.TAG, `loadurl ${url}`);
     this.originUrl = url;
     this.loader.load(url);
   }
@@ -119,7 +119,7 @@ class Mccree {
   unload() {
     return new Promise((resolve, reject) => {
       if(this.loader) {
-        this.logger.debug(this.TAG, 'unload', this.logMsgs.UNLOADING);
+        this.logger.debug(this.TAG, this.logMsgs.UNLOADING);
         this.loader.unload().then(res => {
           resolve();
         }).catch(res => {
@@ -140,10 +140,10 @@ class Mccree {
     // init the logger;
     if (logger && Logger.isValid(logger)) {
       this.logger = new Logger(logger, false, this.debug);
-      this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_LOGGER_CUSTOM);
+      this.logger.debug(this.TAG, this.logMsgs.INIT_LOGGER_CUSTOM);
     } else {
       this.logger = new Logger(null, false, this.debug);
-      this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_LOGGER_INTERNAL);
+      this.logger.debug(this.TAG, this.logMsgs.INIT_LOGGER_INTERNAL);
     }
   }
 
@@ -185,7 +185,7 @@ class Mccree {
       }
     };
 
-    this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_OBSERVER);
+    this.logger.debug(this.TAG, this.logMsgs.INIT_OBSERVER);
 
     this.on = this.observer.on.bind(this.observer);
     this.off = this.observer.off.bind(this.observer);
@@ -200,23 +200,23 @@ class Mccree {
   _createModules(modules) {
     if (modules.loader) {
       this.loader = modules.loader;
-      this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_LOADER);
+      this.logger.debug(this.TAG, this.logMsgs.INIT_LOADER);
     } else {
-      this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_LOADER_FAIL);
+      this.logger.error(this.TAG, this.logMsgs.INIT_LOADER_FAIL);
     }
 
     if (modules.demux) {
       this.demux = modules.demux;
-      this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_DEMUXER);
+      this.logger.debug(this.TAG, this.logMsgs.INIT_DEMUXER);
     } else {
-      this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_DEMUXER_FAILED);
+      this.logger.error(this.TAG, this.logMsgs.INIT_DEMUXER_FAILED);
     }
 
     if (modules.remux) {
       this.remux = modules.remux;
-      this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_REMUXER);
+      this.logger.debug(this.TAG, this.logMsgs.INIT_REMUXER);
     } else {
-      this.logger.debug(this.TAG, 'debug', this.logMsgs.INIT_REMUXER_FAILED);
+      this.logger.error(this.TAG, this.logMsgs.INIT_REMUXER_FAILED);
     }
   }
 

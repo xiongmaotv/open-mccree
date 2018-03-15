@@ -54,7 +54,7 @@ var QVBP2PLoader = function () {
     function QVBP2PLoader(config) {
         _classCallCheck(this, QVBP2PLoader);
 
-        this.TAG = 'QVBP2PLoader';
+        this.TAG = 'Mccree-loader-tencentp2p';
         this.type = 'loader';
         this.config = config || {};
         this._initQVBP2P();
@@ -131,7 +131,7 @@ var QVBP2PLoader = function () {
         value: function loadPartail(source, range, opts) {
             // partial
             if (!this.mccree) {
-                this.logger.debug(this.TAG, 'Uninitailized', 'this module is not init yet');
+                this.logger.warn(this.TAG, 'Live is not init yet');
                 return;
             }
             this._bindInterface();

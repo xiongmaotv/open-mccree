@@ -35,7 +35,7 @@ var FLVDemuxer = function () {
   function FLVDemuxer(config) {
     _classCallCheck(this, FLVDemuxer);
 
-    this.TAG = 'FLVDemuxer';
+    this.TAG = 'mccree-demuxer-flv:index';
     this.type = 'demuxer';
     this._isFlv = false;
     this._config = config || {};
@@ -97,7 +97,7 @@ var FLVDemuxer = function () {
         var chunk = this._parseFlvTag();
         if (chunk) {
           if (chunk !== -1) {
-            this.logger.error(this.TAG, this.type, {});
+            this.logger.error(this.TAG, 'chunk error');
           }
           this._fragLoaded();
         }
@@ -226,7 +226,7 @@ var FLVDemuxer = function () {
         if (this.loaderBuffer && this.loaderBuffer.length > 0) {
           this.loaderBuffer.shift(1);
         }
-        this.logger.warn(this.TAG, this.type, ' tagType' + chunk.tagType);
+        this.logger.warn(this.TAG, 'tagType ' + chunk.tagType);
         return null;
       }
 
@@ -279,7 +279,7 @@ var FLVDemuxer = function () {
   }, {
     key: '_clearBuffer',
     value: function _clearBuffer() {
-      this.logger.debug(this.TAG, this.type, '清除缓存');
+      this.logger.debug(this.TAG, 'Cache clear');
     }
   }, {
     key: '_parseScriptData',
@@ -398,7 +398,7 @@ var FLVDemuxer = function () {
       }
 
       if (!validate) {
-        this.logger.warn(this.TAG, this.type, 'TAG 长度确认有误' + chunk.datasize);
+        this.logger.warn(this.TAG, 'TAG length error at ' + chunk.datasize);
       }
     }
   }, {
@@ -450,7 +450,7 @@ var FLVDemuxer = function () {
           }
         } else {
           if (!this._datasizeValidator(chunk.datasize)) {
-            this.logger.warn(this.TAG, this.type, 'TAG 长度确认有误' + chunk.datasize);
+            this.logger.warn(this.TAG, 'TAG length error at ' + chunk.datasize);
           }
           this.observer.trigger('VIDEODATA_PARSED');
           this.mccree.media.tracks.videoTrack.samples.push(chunk);
@@ -458,7 +458,7 @@ var FLVDemuxer = function () {
       } else {
         chunk.data = this.mccree.loaderBuffer.shift(chunk.datasize - 1);
         if (!this._datasizeValidator(chunk.datasize)) {
-          this.logger.warn(this.TAG, this.type, 'TAG 长度确认有误' + chunk.datasize);
+          this.logger.warn(this.TAG, this.type, 'TAG length error at ' + chunk.datasize);
         }
         this.observer.trigger('VIDEODATA_PARSED');
         this.mccree.media.tracks.videoTrack.samples.push(chunk);

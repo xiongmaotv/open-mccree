@@ -1,6 +1,6 @@
 {
   "name": "panda-mccree-live",
-  "version": "1.1.1-0",
+  "version": "1.1.1",
   "description": "flvdemuxer",
   "main": "build/index.js",
   "scripts": {
@@ -13,7 +13,10 @@
     "mccree"
   ],
   "author": "Yuqing Jiang",
-  "license": "ISC",
+  "license": {
+    "type": "Apache-2.0",
+    "url": "https://opensource.org/licenses/apache2.0.php"
+  },
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-cli": "6.18.0",
@@ -44,14 +47,14 @@
     "webpack-stream": "3.2.0"
   },
   "dependencies": {
-    "mccree-core": "^1.1.1-0",
-    "mccree-core-loaderbuffer": "^1.1.1-0",
-    "mccree-demuxer-flv": "^1.1.1-0",
-    "mccree-helper-browser": "^1.1.1-0",
-    "mccree-helper-logger": "^1.1.1-0",
-    "mccree-loader-fetch": "^1.1.1-0",
-    "mccree-loader-moz-xhr": "^1.1.1-0",
-    "mccree-plugin-mse": "^1.1.1-0",
-    "mccree-remuxer-mp4live": "^1.1.1-0"
+    "mccree-core": "^1.1.1",
+    "mccree-core-loaderbuffer": "^1.1.1",
+    "mccree-demuxer-flv": "^1.1.1",
+    "mccree-helper-browser": "^1.1.1",
+    "mccree-helper-logger": "^1.1.1",
+    "mccree-loader-fetch": "^1.1.1",
+    "mccree-loader-moz-xhr": "^1.1.1",
+    "mccree-plugin-mse": "^1.1.1",
+    "mccree-remuxer-mp4live": "^1.1.1"
   }
 }

@@ -23,7 +23,7 @@ var MozXhrLoader = function () {
   function MozXhrLoader(config) {
     _classCallCheck(this, MozXhrLoader);
 
-    this.TAG = 'MozXhrLoader';
+    this.TAG = 'Mccree-loader-moz-xhr';
     this.type = 'loader';
     this.config = config || {};
   }
@@ -49,7 +49,7 @@ var MozXhrLoader = function () {
       var _this = this;
 
       if (!this.mccree) {
-        this.logger.debug(this.TAG, 'Uninitailized', 'this module is not init yet');
+        this.logger.warn(this.TAG, 'Live is not init yet');
         return;
       }
 

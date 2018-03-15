@@ -1,6 +1,6 @@
 {
   "name": "mccree-loader-xyp2p",
-  "version": "1.1.36",
+  "version": "1.1.1",
   "description": "",
   "scripts": {
     "test": "./scripts/test.sh",
@@ -10,7 +10,7 @@
   "license": "UNLICENSED",
   "main": "build/index.js",
   "dependencies": {
-    "mccree-controller-loader": "^1.1.1-0"
+    "mccree-controller-loader": "^1.1.1"
   },
   "devDependencies": {
     "babel": "6.23.0",

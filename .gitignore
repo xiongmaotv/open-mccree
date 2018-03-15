@@ -2,3 +2,6 @@ node_modules
 .tmp
 .DS_Store
 npm-debug.log
+$HOME
+package-lock.json
+lerna-debug.log
