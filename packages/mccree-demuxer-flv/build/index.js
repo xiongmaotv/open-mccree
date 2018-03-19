@@ -137,9 +137,9 @@ var FLVDemuxer = function () {
     }
 
     /**
-     * If the stream has audio or video. 
-     * @param {numeber} streamFlag - Data from the stream which is define whether the audio / video track is exist. 
-     * @param {String} playType - Defined by the customer. Optional. 
+     * If the stream has audio or video.
+     * @param {numeber} streamFlag - Data from the stream which is define whether the audio / video track is exist.
+     * @param {String} playType - Defined by the customer. Optional.
      */
 
   }, {
@@ -160,8 +160,8 @@ var FLVDemuxer = function () {
       return trackInfo;
     }
 
-    /** 
-     * Set the default video configurations. 
+    /**
+     * Set the default video configurations.
      */
 
   }, {
@@ -172,8 +172,8 @@ var FLVDemuxer = function () {
       videoTrack.id = videoTrack.meta.id = this._tracknum;
     }
 
-    /** 
-     * Set the default video configurations. 
+    /**
+     * Set the default video configurations.
      */
 
   }, {
@@ -206,7 +206,7 @@ var FLVDemuxer = function () {
       }
     }
 
-    /** 
+    /**
      * Parse the 11 byte tag Header
      */
 
@@ -249,7 +249,7 @@ var FLVDemuxer = function () {
 
       chunk.timestamp = timestamp;
 
-      // streamId 
+      // streamId
       this.mccree.loaderBuffer.shift(3);
       return chunk;
     }
@@ -452,16 +452,23 @@ var FLVDemuxer = function () {
           if (!this._datasizeValidator(chunk.datasize)) {
             this.logger.warn(this.TAG, 'TAG length error at ' + chunk.datasize);
           }
-          this.observer.trigger('VIDEODATA_PARSED');
           this.mccree.media.tracks.videoTrack.samples.push(chunk);
+          this.observer.trigger('VIDEODATA_PARSED');
         }
+      } else if (codecID === 12) {
+        chunk.data = this.mccree.loaderBuffer.shift(chunk.datasize - 1);
+        if (!this._datasizeValidator(chunk.datasize)) {
+          this.logger.warn(this.TAG, this.type, 'TAG 长度确认有误' + chunk.datasize);
+        }
+        this.mccree.media.tracks.videoTrack.samples.push(chunk);
+        this.observer.trigger('HEVC_VIDEODATA_PARSED');
       } else {
         chunk.data = this.mccree.loaderBuffer.shift(chunk.datasize - 1);
         if (!this._datasizeValidator(chunk.datasize)) {
           this.logger.warn(this.TAG, this.type, 'TAG length error at ' + chunk.datasize);
         }
-        this.observer.trigger('VIDEODATA_PARSED');
         this.mccree.media.tracks.videoTrack.samples.push(chunk);
+        this.observer.trigger('VIDEODATA_PARSED');
       }
 
       delete chunk.tagType;

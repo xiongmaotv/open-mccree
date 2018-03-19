@@ -101,9 +101,9 @@ class FLVDemuxer {
   }
 
   /**
-   * If the stream has audio or video. 
-   * @param {numeber} streamFlag - Data from the stream which is define whether the audio / video track is exist. 
-   * @param {String} playType - Defined by the customer. Optional. 
+   * If the stream has audio or video.
+   * @param {numeber} streamFlag - Data from the stream which is define whether the audio / video track is exist.
+   * @param {String} playType - Defined by the customer. Optional.
    */
   _switchPlayType(streamFlag, playType) {
     let trackInfo = 0x05;
@@ -121,8 +121,8 @@ class FLVDemuxer {
     return trackInfo;
   }
 
-  /** 
-   * Set the default video configurations. 
+  /**
+   * Set the default video configurations.
    */
   _setDefaultVideoConfig() {
     let videoTrack = this.mccree.media.tracks.videoTrack;
@@ -130,8 +130,8 @@ class FLVDemuxer {
     videoTrack.id = videoTrack.meta.id = this._tracknum;
   }
 
-  /** 
-   * Set the default video configurations. 
+  /**
+   * Set the default video configurations.
    */
   _setDefaultAudioConfig() {
     let audioTrack = this.mccree.media.tracks.audioTrack;
@@ -158,7 +158,7 @@ class FLVDemuxer {
     }
   }
 
-  /** 
+  /**
    * Parse the 11 byte tag Header
    */
   _parseFlvTagHeader() {
@@ -199,7 +199,7 @@ class FLVDemuxer {
 
     chunk.timestamp = timestamp;
 
-    // streamId 
+    // streamId
     this.mccree.loaderBuffer.shift(3);
     return chunk;
   }
@@ -364,7 +364,7 @@ class FLVDemuxer {
       this.mccree.loaderBuffer.shift(3);
       // 对七牛SDK中AVCC和AnnexB错误混编的兼容。（不影响其他端&SDK编码器及推流)
       // TODO: 配适其他SDK混编情况
-      
+
       let data = this.mccree.loaderBuffer.shift(chunk.datasize - 5);
       if (data[4] === 0 && data[5] === 0 && data[6] === 0 && data[7] === 1) {
         let avcclength = 0;
@@ -397,16 +397,23 @@ class FLVDemuxer {
         if (!this._datasizeValidator(chunk.datasize)) {
           this.logger.warn(this.TAG, 'TAG length error at ' + chunk.datasize);
         }
-        this.observer.trigger('VIDEODATA_PARSED');
         this.mccree.media.tracks.videoTrack.samples.push(chunk);
+        this.observer.trigger('VIDEODATA_PARSED');
       }
+    } else if(codecID === 12){
+      chunk.data = this.mccree.loaderBuffer.shift(chunk.datasize - 1);
+      if (!this._datasizeValidator(chunk.datasize)) {
+        this.logger.warn(this.TAG, this.type, 'TAG 长度确认有误' + chunk.datasize);
+      }
+      this.mccree.media.tracks.videoTrack.samples.push(chunk);
+      this.observer.trigger('HEVC_VIDEODATA_PARSED');
     } else {
       chunk.data = this.mccree.loaderBuffer.shift(chunk.datasize - 1);
       if (!this._datasizeValidator(chunk.datasize)) {
         this.logger.warn(this.TAG, this.type, 'TAG length error at ' + chunk.datasize);
       }
-      this.observer.trigger('VIDEODATA_PARSED');
       this.mccree.media.tracks.videoTrack.samples.push(chunk);
+      this.observer.trigger('VIDEODATA_PARSED');
     }
 
     delete chunk.tagType;
