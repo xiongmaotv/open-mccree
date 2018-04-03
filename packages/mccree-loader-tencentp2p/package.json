@@ -4,6 +4,7 @@
   "description": "Collection of helper functions for mccree",
   "main": "build/index.js",
   "scripts": {
+    "init": "npm install",
     "test": "./scripts/test.sh",
     "build": "gulp build"
   },

@@ -23,7 +23,7 @@ var MP4Remuxer = function () {
   function MP4Remuxer(config) {
     _classCallCheck(this, MP4Remuxer);
 
-    this.TAG = 'MP4Remuxer';
+    this.TAG = 'Mccree-remuxer-mp4live:index';
 
     this.type = 'remuxer';
 
@@ -254,7 +254,7 @@ var MP4Remuxer = function () {
         // 掉帧检测 音频抽帧
         if (sampleDuration > videoTrack.meta.refSampleDuration + 1) {
           this.observer.trigger('FRAME_DROPPED', Math.floor(sampleDuration / videoTrack.meta.refSampleDuration));
-          this.logger.debug(this.TAG, this.type, '检测到视频掉帧 掉帧时间点：' + base);
+          this.logger.warn(this.TAG, this.type, 'Video jump frame to ' + base);
         }
 
         this.mccree.media.videoDuration += sampleDuration;
@@ -308,7 +308,7 @@ var MP4Remuxer = function () {
           mp4Samples = [];
       // 如果音视频总时长差出一个音频片段长度，则该音频片段废弃。
       while (audioSamples[0] && audioSamples[0].timestamp + sampleDuration < baseDts) {
-        this.logger.warn(this.TAG, this.type, '检测到音频掉帧/正在进行追帧，追帧时间点：' + audioSamples[0].timestamp);
+        this.logger.warn(this.TAG, 'Audio chase frame to ' + audioSamples[0].timestamp);
         audioSamples.shift();
       }
 
@@ -351,7 +351,7 @@ var MP4Remuxer = function () {
       }
 
       while (this.mccree.media.videoDuration - this.mccree.media.audioDuration > audioTrack.meta.refSampleDuration + 1) {
-        this.logger.debug(this.TAG, this.type, '检测到音频掉帧，正在进行补偿 基准时间点：' + base + ' 补偿时间点：' + next);
+        this.logger.debug(this.TAG, 'Audio fill the frame of ' + base + ' 补偿时间点：' + next);
         base = next;
         next = base + audioSample.sampleDuration;
         var _mp4Sample = {

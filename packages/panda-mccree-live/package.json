@@ -4,6 +4,7 @@
   "description": "flvdemuxer",
   "main": "build/index.js",
   "scripts": {
+    "init": "npm install",
     "test": "./scripts/test.sh",
     "build": "gulp build",
     "webpack": "gulp webpack"

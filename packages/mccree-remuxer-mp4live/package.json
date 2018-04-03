@@ -4,7 +4,9 @@
   "description": "",
   "main": "build/index.js",
   "scripts": {
-    "test": "./scripts/test.sh"
+    "init": "npm install",
+    "test": "./scripts/test.sh",
+    "build": "gulp build"
   },
   "license": {
     "type": "Apache-2.0",
