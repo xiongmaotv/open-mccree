@@ -2,7 +2,6 @@ import MP4 from './mp4-generator';
 import Browser from 'mccree-helper-browser';
 // Fragmented mp4 remuxer
 class MP4Remuxer {
-
   constructor(config) {
     this.TAG = 'Mccree-remuxer-mp4live:index';
 
@@ -53,6 +52,7 @@ class MP4Remuxer {
   timmerCallback() {
     this.mccree.media.tracks.videoTrack && this.mccree.media.tracks.audioTrack && this._generateBoxes();
   }
+
   _generateInitailSegment() {
     MP4.init();
     this._fixRatio();
@@ -304,12 +304,12 @@ class MP4Remuxer {
 
       this.mccree.media.audioDuration += audioSample.sampleDuration;
       let mp4Sample = {
-        dts: audioSample.timestamp,
-        pts: audioSample.timestamp,
+        dts: audioSample.timestamp - this._dtsBase,
+        pts: audioSample.timestamp - this._dtsBase,
         cts: 0,
         size: audioSample.data.length,
         duration: audioSample.sampleDuration,
-        originalDts: base,
+        originalDts: base - this._dtsBase,
         flags: {
           isLeading: 0,
           dependsOn: 1,
@@ -327,12 +327,12 @@ class MP4Remuxer {
       base = next;
       next = base + audioSample.sampleDuration;
       let mp4Sample = {
-        dts: base,
-        pts: base,
+        dts: base - this._dtsBase,
+        pts: base - this._dtsBase,
         cts: 0,
         size: audioSample.data.length,
         duration: audioSample.sampleDuration,
-        originalDts: base,
+        originalDts: base - this._dtsBase,
         flags: {
           isLeading: 0,
           dependsOn: 1,
@@ -386,6 +386,7 @@ class MP4Remuxer {
     this._dtsBase = Math.min(this._audioDtsBase, this._videoDtsBase);
     this._dtsBaseInited = true;
   }
+
   _mergeBoxes(moof, mdat) {
     let result = new Uint8Array(moof.byteLength + mdat.byteLength);
     result.set(moof, 0);

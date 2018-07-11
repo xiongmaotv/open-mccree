@@ -89,8 +89,7 @@ class MSEController {
       return;
     }
 
-    if (this.asourceBuffer && this.vsourceBuffer && !this.vsourceBuffer.updating && !this.asourceBuffer.updating) {
-      this.vsourceBuffer.remove(this._lastClearTime, playTime - 10);
+    if (this.asourceBuffer && !this.asourceBuffer.updating) {
       this.asourceBuffer.remove(this._lastClearTime, playTime - 10);
       this._lastClearTime = playTime - 10;
       this.logger.debug(this.TAG, 'Cache clear');
@@ -126,23 +125,20 @@ class MSEController {
 
     this.clearBuffer.call(this);
 
-    if (this.mccree.remuxBuffer.video.length < 1 || this.mccree.remuxBuffer.audio.length < 1) {
+    if (this.mccree.remuxBuffer.audio.length < 1) {
       return;
     }
 
-
-    if (this.asourceBuffer && this.vsourceBuffer && !this.vsourceBuffer.updating && !this.asourceBuffer.updating) {
+    if (this.asourceBuffer && !this.asourceBuffer.updating) {
       try {
         if (!this.mediaElement.error && this.mccree.remuxBuffer.lastDts > 500) {
-          let vdata = this.mccree.remuxBuffer.video.shift();
           let adata = this.mccree.remuxBuffer.audio.shift();
-          this.vsourceBuffer.appendBuffer(vdata.data);
           this.asourceBuffer.appendBuffer(adata.data);
           if (!this.seekables) {
             this.seekables = [];
           }
-          if (vdata.seekable && vdata.timestamp > 0) {
-            this.seekables.push(vdata.timestamp);
+          if (adata.seekable && adata.timestamp > 0) {
+            this.seekables.push(adata.timestamp);
           }
           this.checkState.bind(this);
         } else if (this.mediaElement.error) {
@@ -178,15 +174,11 @@ class MSEController {
     this._initAppanded = true;
     this.asourceBuffer = this.mediaSource.addSourceBuffer('audio/mp4;codecs=' + this.mccree.media.tracks.audioTrack.meta.codec);
     this.asourceBuffer.appendBuffer(data.audio);
-    this.vsourceBuffer = this.mediaSource.addSourceBuffer('video/mp4;codecs=' + this.mccree.media.tracks.videoTrack.meta.codec);
-    this.vsourceBuffer.appendBuffer(data.video);
 
     let that = this;
     that._onMediaSegment();
     this.asourceBuffer.addEventListener('error', this.onError.bind(this));
-    this.vsourceBuffer.addEventListener('error', this.onError.bind(this));
     this.mediaSource.addEventListener('error', this.onError.bind(this));
-    this.vsourceBuffer.addEventListener('updateend', this.checkState.bind(this));
     try {
       if (this.media && this.media.mediaInfo && this.media.mediaInfo.cdn_ip) {
         this.mccree.cdnip = this.media.mediaInfo.cdn_ip;
@@ -209,16 +201,6 @@ class MSEController {
         audiocodec = this.mccree.media.tracks.audioTrack.meta.codec;
       }
 
-      if (!this.mccree.media) {
-        videocodec = '';
-      } else if (!this.mccree.media.tracks.videoTrack) {
-        videocodec = 'VTNF';
-      } else if (!this.mccree.media.tracks.videoTrack.meta) {
-        videocodec = 'VMNF';
-      } else {
-        videocodec = this.mccree.media.tracks.videoTrack.meta.codec;
-      }
-
       let info = {
         mimeType: 'flv;codecs="' + audiocodec + ',' + videocodec + '"',
         metadata: {
@@ -234,20 +216,23 @@ class MSEController {
         cdnip: this.mccree.media ? this.mccree.media.mediaInfo.cdn_ip : this.mccree.cdnip
       };
       this.observer.trigger('media_info', info);
-    } catch (e) {}
+    } catch (e) {
+      this.logger.warn(this.TAG, `_appendInitSegment:${e.message}`);
+      return;
+    }
   }
+
   pause() {
     this.mediaElement.pause();
   }
 
   destroy() {
-    if (!this.mediaSource || !this.asourceBuffer || !this.vsourceBuffer) {
+    if (!this.mediaSource || !this.asourceBuffer) {
       return;
     }
     this.removeSourceBuffer();
     this.detachMediaElement();
     this.asourceBuffer = null;
-    this.vsourceBuffer = null;
     this.mediaSource = null;
     this._lastClearTime = 0;
     this.seekables = [];
@@ -258,11 +243,8 @@ class MSEController {
     this.mediaElement.pause();
     URL.revokeObjectURL(this.mediaElement.src);
     this.asourceBuffer && this.asourceBuffer.removeEventListener('error', this.onError.bind(this));
-    this.vsourceBuffer && this.vsourceBuffer.removeEventListener('error', this.onError.bind(this));
-    this.vsourceBuffer && this.vsourceBuffer.removeEventListener('updateend', this.checkState.bind(this));
     if (this.mediaSource && this.mediaSource.sourceBuffers.length > 1) {
       this.mediaSource.removeSourceBuffer(this.asourceBuffer);
-      this.mediaSource.removeSourceBuffer(this.vsourceBuffer);
     }
   }
 

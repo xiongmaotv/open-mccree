@@ -348,70 +348,111 @@ class FLVDemuxer {
     }
   }
 
-  _parseAVCData(chunk) {
-
+_parseHevcData(chunk) {
     // header
     let info = this.mccree.loaderBuffer.shift(1)[0];
     chunk.frameType = (info & 0xf0) >>> 4;
+    let tempCodecID = this.mccree.media.tracks.videoTrack.codecID;
     let codecID = info & 0x0f;
     this.mccree.media.tracks.videoTrack.codecID = codecID;
-
-    // AVC or not.
-    if (codecID === 7) {
-      // AVC header.
-      chunk.avcPacketType = this.mccree.loaderBuffer.shift(1)[0];
-      chunk.compositionTime = this.mccree.loaderBuffer.toInt(0, 3);
-      this.mccree.loaderBuffer.shift(3);
-      // 对七牛SDK中AVCC和AnnexB错误混编的兼容。（不影响其他端&SDK编码器及推流)
-      // TODO: 配适其他SDK混编情况
+    
+    //hevc和avc的header解析方式一样
+    chunk.avcPacketType = this.mccree.loaderBuffer.shift(1)[0];
+    chunk.compositionTime = this.mccree.loaderBuffer.toInt(0, 3);
+    this.mccree.loaderBuffer.shift(3);
+    
+    // hevc is 12, avc is 7
+    if (codecID === 12) {
+      var data = this.mccree.loaderBuffer.shift(chunk.datasize - 5);
+      chunk.data = data;
       
-      let data = this.mccree.loaderBuffer.shift(chunk.datasize - 5);
+      if(chunk.avcPacketType != 0){
+        if (!this._datasizeValidator(chunk.datasize)) {
+          this.logger.warn(this.TAG, this.logMsgs.TAG_LENGTH_ERROR + chunk.datasize);
+        }
+        let nalu = {};
+        let r = 0;
+        nalu.compositionTime = chunk.compositionTime;
+        nalu.timestamp = chunk.timestamp;
+        while(chunk.data.length > r){
+          let sizes = chunk.data.slice(0+r,4+r);
+          nalu.size = sizes[3];
+          nalu.size += sizes[2] * 256;
+          nalu.size += sizes[1] * 256 * 256;
+          nalu.size += sizes[0] * 256 * 256 * 256;
+          r += 4;
+          nalu.data = chunk.data.slice(0+r,nalu.size+r);
+          r += nalu.size;
+          this.mccree.media.tracks.videoTrack.samples.push(nalu);
+          this.observer.trigger('VIDEO_PARSED');
+        }
+      }else if(chunk.avcPacketType == 0){
+        if (!this._datasizeValidator(chunk.datasize)) {
+          this.logger.warn(this.TAG, this.logMsgs.TAG_LENGTH_ERROR + chunk.datasize);
+        }else{
+          this.observer.trigger('METADATA_PARSED');
+        }
+      }
+    } else if(codecID === 7){
+      var data = this.mccree.loaderBuffer.shift(chunk.datasize - 5);
+      data = this._parseNaLu(data);
       if (data[4] === 0 && data[5] === 0 && data[6] === 0 && data[7] === 1) {
-        let avcclength = 0;
-        for(let i= 0; i < 4; i++) {
-          avcclength = avcclength * 256 + data[i] ;
+        var avcclength = 0;
+        for (var i = 0; i < 4; i++) {
+          avcclength = avcclength * 256 + data[i];
         }
         avcclength -= 4;
         data = data.slice(4, data.length);
         data[3] = avcclength % 256;
-        avcclength = (avcclength - data[3])  / 256;
+        avcclength = (avcclength - data[3]) / 256;
         data[2] = avcclength % 256;
-        avcclength = (avcclength - data[2])  / 256;
+        avcclength = (avcclength - data[2]) / 256;
         data[1] = avcclength % 256;
         data[0] = (avcclength - data[1]) / 256;
       }
+
       chunk.data = data;
       // If it is AVC sequece Header.
       if (chunk.avcPacketType === 0) {
-        this._avcSequenceHeaderParser(chunk.data);
+        let tempMeta = Object.assign({}, this.mccree.media.tracks.videoTrack.meta);
+        AvcSequenceHeaderParser.parse.call(this, chunk.data);
+        this._avcSequenceHeaderChanged = this._hasVideoSequence && AvcSequenceHeaderParser.avcInfoChanged(this.mccree.media.tracks.videoTrack.meta, tempMeta, codecID, tempCodecID);
         let validate = this._datasizeValidator(chunk.datasize);
         if (validate) {
           if (this._hasScript && !this._hasVideoSequence && (!this.mccree.media.tracks.audioTrack || this._hasAudioSequence)) {
             this.observer.trigger('METADATA_PARSED');
-          } else if (this._hasScript && this._hasVideoSequence) {
-            this.observer.trigger('METADATA_CHANGED');
+          } else if (this._hasScript
+            && this._hasVideoSequence
+            && this._hasAudioSequence
+            && ((this._aacSequenceHeaderChanged && this._avcSequenceHeaderChanged)
+            || this._scriptDataChanged)) {
+            if(this.hasFramerate || !this._avcSequenceHeaderChanged) {
+              this._aacSequenceHeaderChanged = false;
+              this._avcSequenceHeaderChanged = false;
+              this._scriptDataChanged = false;
+              this.observer.trigger('METADATA_CHANGED');
+            }
           }
           this._hasVideoSequence = true;
         }
       } else {
         if (!this._datasizeValidator(chunk.datasize)) {
-          this.logger.warn(this.TAG, 'TAG length error at ' + chunk.datasize);
+          this.logger.warn(this.TAG, this.logMsgs.TAG_LENGTH_ERROR + chunk.datasize);
         }
         this.observer.trigger('VIDEODATA_PARSED');
         this.mccree.media.tracks.videoTrack.samples.push(chunk);
       }
-    } else {
+    }else{
+      this.logger.warn(this.TAG, `codeid is ${codecID}`);
       chunk.data = this.mccree.loaderBuffer.shift(chunk.datasize - 1);
       if (!this._datasizeValidator(chunk.datasize)) {
-        this.logger.warn(this.TAG, this.type, 'TAG length error at ' + chunk.datasize);
+        this.logger.warn(this.TAG, this.logMsgs.TAG_LENGTH_ERROR + chunk.datasize);
       }
       this.observer.trigger('VIDEODATA_PARSED');
       this.mccree.media.tracks.videoTrack.samples.push(chunk);
     }
-
     delete chunk.tagType;
   }
-
 
   _datasizeValidator(datasize) {
     let datasizeConfirm = this.mccree.loaderBuffer.toInt(0, 4);
@@ -419,6 +460,7 @@ class FLVDemuxer {
     let validate = datasizeConfirm === datasize + 11;
     return validate;
   }
+  
   _switchAudioSamplingFrequency(info) {
     let samplingFrequencyIndex = (info & 12) >>> 2;
     let samplingFrequencyList = [5500, 11025, 22050, 44100];

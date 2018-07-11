@@ -55,6 +55,8 @@
     "mccree-loader-fetch": "^1.1.1",
     "mccree-loader-moz-xhr": "^1.1.1",
     "mccree-plugin-mse": "^1.1.1",
-    "mccree-remuxer-mp4live": "^1.1.1"
+    "mccree-plugin-mse-hevc": "^1.1.1",
+    "mccree-remuxer-mp4live": "^1.1.1",
+    "mccree-remuxer-hevc": "^1.1.1"
   }
 }

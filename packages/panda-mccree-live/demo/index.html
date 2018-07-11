@@ -2,6 +2,9 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="./css/index.css">
+  <script type="text/javascript" src="https://fcrc-video.xycdn.com/panda/xyvp.js"></script>
+  <script src='http://www.vod.lxdns.com/html5/pandaTV/whprelease.js'></script>
+  <script src='https://s.ssl.pdim.gs/static/d7fa880e1328bea9.js'></script>
   <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
   <script type="text/javascript" src="../dist/index.min.js"></script>
   <title>麦克雷Demos</title>
@@ -30,7 +33,9 @@
     </div>
   </div>
 <div class="player-container">
-<video id="videoElement" autoplay="true" preload="true"></video> 
+<video id="videoElement" autoplay="true" preload="true" style="display:none;"></video> 
+<canvas id="canvas1" style="width:1280px;height:720px;" style="display:none;"></canvas>
+<audio id="audioElement" preload="true" style="display:none;" controls></audio>
 <div class="clear"> </div>
 <div class="bufferstatus">
 

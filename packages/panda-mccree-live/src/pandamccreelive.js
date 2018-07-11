@@ -3,10 +3,13 @@
 import Mccree from 'mccree-core';
 import FetchLoader from 'mccree-loader-fetch';
 import MozLoader from 'mccree-loader-moz-xhr';
-import MSEController from 'mccree-plugin-mse';
 import Browser from 'mccree-helper-browser';
 import Demux from 'mccree-demuxer-flv';
-import Remux from 'mccree-remuxer-mp4live';
+import HEVCRemux from 'mccree-remuxer-hevc';
+import H264Remux from 'mccree-remuxer-mp4live';
+import H264MSEController from 'mccree-plugin-mse';
+import HEVCMSEController from 'mccree-plugin-mse-hevc';
+
 export class PandaMccreeLive extends Mccree {
   constructor(modules, config) {
     let browser = Browser.uaMatch(navigator.userAgent);
@@ -17,7 +20,12 @@ export class PandaMccreeLive extends Mccree {
       loader = new FetchLoader();
     }
     let demuxer = new Demux();
-    let remuxer = new Remux();
+    let remuxer = null;
+    if(config.useHEVC) {
+      remuxer = new HEVCRemux();
+    }else{
+      remuxer = new H264Remux();
+    }
 
     config = config || {};
     if (!config.autoReload) {
@@ -28,13 +36,14 @@ export class PandaMccreeLive extends Mccree {
     if (modules.logger) {
       logger = modules.logger;
     }
+
     super({
       logger: logger,
       loader: loader,
       demux: demuxer,
       remux: remuxer
     }, config);
-	this.TAG = 'panda-mccree-live';
+	  this.TAG = 'panda-mccree-live';
     this.logger.debug(this.TAG, 'Live initialization');
     let that = this;
     this.observer.on('METADATA_CHANGED', function() {
@@ -44,8 +53,12 @@ export class PandaMccreeLive extends Mccree {
     });
     this.initStatistic();
     this.version = '1.1.1-0';
-	this.logger.info(this.TAG, `Current version: ${this.version}`);
-    this.mseController = new MSEController();
+	  this.logger.info(this.TAG, `Current version: ${this.version}`);
+    if(this.config.useHEVC){
+      this.mseController = new HEVCMSEController();
+    }else{
+      this.mseController = new H264MSEController();
+    }
     this.mseController.init(this);
     this.on = this.observer.on;
   }
@@ -174,9 +187,7 @@ export class PandaMccreeLive extends Mccree {
         });
         this.loadbytes = 0;
       }
-    } catch (e) {
-
-	}
+    } catch (e) {}
   }
 
   attachMediaElement(mediaElement) {
@@ -191,6 +202,7 @@ export class PandaMccreeLive extends Mccree {
       this.startTime = new Date().getTime();
     }
   }
+
   detachMediaElement() {
     this.mseController.detachMediaElement();
   }
