@@ -55,6 +55,10 @@ var MP4Remuxer = function () {
         audio: [],
         video: []
       };
+    }
+  }, {
+    key: 'remux',
+    value: function remux() {
       this.observer.on('METADATA_PARSED', this._generateInitailSegment.bind(this));
       this.observer.on('VIDEODATA_PARSED', this.timmerCallback.bind(this));
     }

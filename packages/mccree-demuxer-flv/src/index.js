@@ -213,7 +213,7 @@ class FLVDemuxer {
         this._parseAACData(chunk);
         break;
       case 9:
-        this._parseAVCData(chunk);
+        this._parseHevcData(chunk);
         break;
       case 11:
         // for some CDN that did not process the currect RTMP messages
@@ -395,7 +395,6 @@ _parseHevcData(chunk) {
       }
     } else if(codecID === 7){
       var data = this.mccree.loaderBuffer.shift(chunk.datasize - 5);
-      data = this._parseNaLu(data);
       if (data[4] === 0 && data[5] === 0 && data[6] === 0 && data[7] === 1) {
         var avcclength = 0;
         for (var i = 0; i < 4; i++) {
@@ -414,24 +413,13 @@ _parseHevcData(chunk) {
       chunk.data = data;
       // If it is AVC sequece Header.
       if (chunk.avcPacketType === 0) {
-        let tempMeta = Object.assign({}, this.mccree.media.tracks.videoTrack.meta);
-        AvcSequenceHeaderParser.parse.call(this, chunk.data);
-        this._avcSequenceHeaderChanged = this._hasVideoSequence && AvcSequenceHeaderParser.avcInfoChanged(this.mccree.media.tracks.videoTrack.meta, tempMeta, codecID, tempCodecID);
+        this._avcSequenceHeaderParser(chunk.data);
         let validate = this._datasizeValidator(chunk.datasize);
         if (validate) {
           if (this._hasScript && !this._hasVideoSequence && (!this.mccree.media.tracks.audioTrack || this._hasAudioSequence)) {
             this.observer.trigger('METADATA_PARSED');
-          } else if (this._hasScript
-            && this._hasVideoSequence
-            && this._hasAudioSequence
-            && ((this._aacSequenceHeaderChanged && this._avcSequenceHeaderChanged)
-            || this._scriptDataChanged)) {
-            if(this.hasFramerate || !this._avcSequenceHeaderChanged) {
-              this._aacSequenceHeaderChanged = false;
-              this._avcSequenceHeaderChanged = false;
-              this._scriptDataChanged = false;
-              this.observer.trigger('METADATA_CHANGED');
-            }
+          } else if (this._hasScript && this._hasVideoSequence) {
+            this.observer.trigger('METADATA_CHANGED');
           }
           this._hasVideoSequence = true;
         }

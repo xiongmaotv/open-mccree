@@ -33,6 +33,9 @@ class MP4Remuxer {
       audio: [],
       video: []
     };
+  }
+  
+  remux() {
     this.observer.on('METADATA_PARSED', this._generateInitailSegment.bind(this));
     this.observer.on('VIDEODATA_PARSED',this.timmerCallback.bind(this));
   }

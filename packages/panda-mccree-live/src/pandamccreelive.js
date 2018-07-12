@@ -45,6 +45,8 @@ export class PandaMccreeLive extends Mccree {
     }, config);
 	  this.TAG = 'panda-mccree-live';
     this.logger.debug(this.TAG, 'Live initialization');
+    this.remux.remux();
+    this.canvas = document.getElementById(this.config.canvasid);
     let that = this;
     this.observer.on('METADATA_CHANGED', function() {
       if (!that.reloading) {
