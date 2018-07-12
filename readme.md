@@ -46,14 +46,17 @@ TBA (After panda-mccree-live module released)
 |mccree-core-loaderbuffer|100%|100%|√|√|Yuqing Jiang|PandaTv|
 |mccree-helper-utils|100%|100%|√|√|Yuqing Jiang|PandaTv|
 |mccree-helper-logger|100%|100%|√|√|Yuqing Jiang|PandaTv|
-|mccree-helper-browser|100%||||Yuqing Jiang|PandaTv|
-|mccree-controller-loader|100%||||Yuqing Jiang|PandaTv|
-|mccree-loader-fetch|100%||||Yuqing Jiang|PandaTv|
-|mccree-loader-moz-xhr|100%||||Yuqing Jiang|PandaTv|
-|mccree-loader-tencentp2p|100%||||Tencent Team|Tencent|
-|mccree-demuxer-flv|100%||||Yuqing Jiang|PandaTv|
-|mccree-remuxer-mp4live|100%||||Yuqing Jiang|PandaTv|
-|panda-mccree-live|100%||||Yuqing Jiang|PandaTv|
+|mccree-helper-browser|100%|100%|√|√|Yuqing Jiang|PandaTv|
+|mccree-controller-loader|100%||√|√|Yuqing Jiang|PandaTv|
+|mccree-loader-fetch|100%|100%|√|√|Yuqing Jiang|PandaTv|
+|mccree-loader-moz-xhr|100%|100%|√|√|Yuqing Jiang|PandaTv|
+|mccree-loader-tencentp2p|100%|100%|√|√|Tencent Team|Tencent|
+|mccree-demuxer-flv|100%|100%|√|√|Yuqing Jiang|PandaTv|
+|mccree-remuxer-mp4live|100%|100%|√|√|Yuqing Jiang|PandaTv|
+|mccree-remuxer-hevc|100%|100%|√|√|Bing Dai|PandaTv|
+|mccree-plugin-mse|100%|100%|√|√|Bing Dai|PandaTv|
+|mccree-plugin-mse-hevc|100%|100%|√|√|Bing Dai|PandaTv|
+|panda-mccree-live|100%|100%|√|√|Yuqing Jiang|PandaTv|
 
 
 ## Contributors
