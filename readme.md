@@ -21,6 +21,9 @@ Mccree is a front end multimedia framework, which is able to loading, mux, demux
 - Demux Flv format video.
 - Remux H264 and AAC to Mp4 format.
 - Playback through the web MediaSource Extension.
+- mse plugin
+- support hevc codec.
+- support XY and Tencent P2P.
 
 The following features will be supported soon:
 
@@ -47,10 +50,11 @@ TBA (After panda-mccree-live module released)
 |mccree-helper-utils|100%|100%|√|√|Yuqing Jiang|PandaTv|
 |mccree-helper-logger|100%|100%|√|√|Yuqing Jiang|PandaTv|
 |mccree-helper-browser|100%|100%|√|√|Yuqing Jiang|PandaTv|
-|mccree-controller-loader|100%||√|√|Yuqing Jiang|PandaTv|
+|mccree-controller-loader|100%|100%|√|√|Yuqing Jiang|PandaTv|
 |mccree-loader-fetch|100%|100%|√|√|Yuqing Jiang|PandaTv|
 |mccree-loader-moz-xhr|100%|100%|√|√|Yuqing Jiang|PandaTv|
 |mccree-loader-tencentp2p|100%|100%|√|√|Tencent Team|Tencent|
+|mccree-loader-xyp2p|100%|100%|√|√|xycdn Team|xycdn|
 |mccree-demuxer-flv|100%|100%|√|√|Yuqing Jiang|PandaTv|
 |mccree-remuxer-mp4live|100%|100%|√|√|Yuqing Jiang|PandaTv|
 |mccree-remuxer-hevc|100%|100%|√|√|Bing Dai|PandaTv|
