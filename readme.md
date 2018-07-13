@@ -21,9 +21,9 @@ Mccree is a front end multimedia framework, which is able to loading, mux, demux
 - Demux Flv format video.
 - Remux H264 and AAC to Mp4 format.
 - Playback through the web MediaSource Extension.
-- mse plugin
-- support hevc codec.
-- XY and Tencent P2P.
+- Mse plugin
+- Support hevc codec.
+- Support XY and Tencent P2P.
 
 The following features will be supported soon:
 
