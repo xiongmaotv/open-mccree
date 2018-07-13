@@ -23,6 +23,7 @@ Mccree is a front end multimedia framework, which is able to loading, mux, demux
 - Playback through the web MediaSource Extension.
 - mse plugin
 - support hevc codec.
+- XY and Tencent P2P.
 
 The following features will be supported soon:
 
@@ -30,8 +31,6 @@ The following features will be supported soon:
 - Load source from local flv file.
 - Demux m3u8 and ts file (hls).
 - Audio Context (Gain) feature.
-- XY and Tencent P2P.
-
 
 ## Structure
 

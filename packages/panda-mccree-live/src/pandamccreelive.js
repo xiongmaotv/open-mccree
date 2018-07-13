@@ -9,12 +9,23 @@ import HEVCRemux from 'mccree-remuxer-hevc';
 import H264Remux from 'mccree-remuxer-mp4live';
 import H264MSEController from 'mccree-plugin-mse';
 import HEVCMSEController from 'mccree-plugin-mse-hevc';
+import XYVPLoader from 'mccree-loader-xyp2p';
+import QVBP2PLoader from 'mccree-loader-tencentp2p';
 
 export class PandaMccreeLive extends Mccree {
   constructor(modules, config) {
     let browser = Browser.uaMatch(navigator.userAgent);
     let loader = null;
-    if (browser.mozilla) {
+    let usep2p = false;
+    if (config.usep2p == 'xy' && XYVPLoader.isSupported()) {
+      loader = new XYVPLoader();
+      usep2p = 'xy';
+    } else if (config.usep2p == 'tencent' && QVBP2PLoader.isSupported()) {
+      loader = new QVBP2PLoader({
+        videoId: config.videoId
+      });
+      usep2p = 'tencent';
+    } else if (browser.mozilla) {
       loader = new MozLoader();
     } else {
       loader = new FetchLoader();
@@ -44,7 +55,7 @@ export class PandaMccreeLive extends Mccree {
       remux: remuxer
     }, config);
 	  this.TAG = 'panda-mccree-live';
-    this.logger.debug(this.TAG, 'Live initialization');
+    this.logger.debug(this.TAG, `Live initialization,use P2P:${usep2p}`);
     this.remux.remux();
     this.canvas = document.getElementById(this.config.canvasid);
     let that = this;
