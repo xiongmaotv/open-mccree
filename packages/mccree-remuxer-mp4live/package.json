@@ -40,6 +40,7 @@
     "gulp-sourcemaps": "2.2.0",
     "gulp-uglify": "2.0.0",
     "gulp-util": "3.0.8",
+    "gulp-webpack": "1.5.0",
     "gutil": "1.6.4",
     "mocha": "3.4.2"
   },
