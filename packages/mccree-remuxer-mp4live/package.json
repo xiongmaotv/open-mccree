@@ -1,10 +1,11 @@
 {
   "name": "mccree-remuxer-mp4live",
-  "version": "1.1.1",
+  "version": "1.1.3",
   "description": "",
   "main": "build/index.js",
   "scripts": {
-    "test": "./scripts/test.sh"
+    "test": "./scripts/test.sh",
+    "build": "gulp build"
   },
   "license": {
     "type": "Apache-2.0",
@@ -39,10 +40,11 @@
     "gulp-sourcemaps": "2.2.0",
     "gulp-uglify": "2.0.0",
     "gulp-util": "3.0.8",
+    "gulp-webpack": "1.5.0",
     "gutil": "1.6.4",
     "mocha": "3.4.2"
   },
   "dependencies": {
-    "mccree-helper-browser": "^1.1.1"
+    "mccree-helper-browser": "1.1.3"
   }
 }

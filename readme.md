@@ -21,6 +21,9 @@ Mccree is a front end multimedia framework, which is able to loading, mux, demux
 - Demux Flv format video.
 - Remux H264 and AAC to Mp4 format.
 - Playback through the web MediaSource Extension.
+- Mse plugin
+- Support hevc codec.
+- Support XY and Tencent P2P.
 
 The following features will be supported soon:
 
@@ -28,7 +31,6 @@ The following features will be supported soon:
 - Load source from local flv file.
 - Demux m3u8 and ts file (hls).
 - Audio Context (Gain) feature.
-
 
 ## Structure
 
@@ -46,14 +48,18 @@ TBA (After panda-mccree-live module released)
 |mccree-core-loaderbuffer|100%|100%|√|√|Yuqing Jiang|PandaTv|
 |mccree-helper-utils|100%|100%|√|√|Yuqing Jiang|PandaTv|
 |mccree-helper-logger|100%|100%|√|√|Yuqing Jiang|PandaTv|
-|mccree-helper-browser|100%||||Yuqing Jiang|PandaTv|
-|mccree-controller-loader|100%||||Yuqing Jiang|PandaTv|
-|mccree-loader-fetch|100%||||Yuqing Jiang|PandaTv|
-|mccree-loader-moz-xhr|100%||||Yuqing Jiang|PandaTv|
-|mccree-loader-tencentp2p|100%||||Tencent Team|Tencent|
-|mccree-demuxer-flv|100%||||Yuqing Jiang|PandaTv|
-|mccree-remuxer-mp4live|100%||||Yuqing Jiang|PandaTv|
-|panda-mccree-live|100%||||Yuqing Jiang|PandaTv|
+|mccree-helper-browser|100%|100%|√|√|Yuqing Jiang|PandaTv|
+|mccree-controller-loader|100%|100%|√|√|Yuqing Jiang|PandaTv|
+|mccree-loader-fetch|100%|100%|√|√|Yuqing Jiang|PandaTv|
+|mccree-loader-moz-xhr|100%|100%|√|√|Yuqing Jiang|PandaTv|
+|mccree-loader-tencentp2p|100%|100%|√|√|Tencent Team|Tencent|
+|mccree-loader-xyp2p|100%|100%|√|√|xycdn Team|xycdn|
+|mccree-demuxer-flv|100%|100%|√|√|Yuqing Jiang|PandaTv|
+|mccree-remuxer-mp4live|100%|100%|√|√|Yuqing Jiang|PandaTv|
+|mccree-remuxer-hevc|100%|100%|√|√|Bing Dai|PandaTv|
+|mccree-plugin-mse|100%|100%|√|√|Bing Dai|PandaTv|
+|mccree-plugin-mse-hevc|100%|100%|√|√|Bing Dai|PandaTv|
+|panda-mccree-live|100%|100%|√|√|Yuqing Jiang|PandaTv|
 
 
 ## Contributors

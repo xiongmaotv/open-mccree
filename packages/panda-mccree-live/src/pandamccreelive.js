@@ -3,21 +3,40 @@
 import Mccree from 'mccree-core';
 import FetchLoader from 'mccree-loader-fetch';
 import MozLoader from 'mccree-loader-moz-xhr';
-import MSEController from 'mccree-plugin-mse';
 import Browser from 'mccree-helper-browser';
 import Demux from 'mccree-demuxer-flv';
-import Remux from 'mccree-remuxer-mp4live';
+import HEVCRemux from 'mccree-remuxer-hevc';
+import H264Remux from 'mccree-remuxer-mp4live';
+import H264MSEController from 'mccree-plugin-mse';
+import HEVCMSEController from 'mccree-plugin-mse-hevc';
+import XYVPLoader from 'mccree-loader-xyp2p';
+import QVBP2PLoader from 'mccree-loader-tencentp2p';
+
 export class PandaMccreeLive extends Mccree {
   constructor(modules, config) {
     let browser = Browser.uaMatch(navigator.userAgent);
     let loader = null;
-    if (browser.mozilla) {
+    let usep2p = false;
+    if (config.usep2p == 'xy' && XYVPLoader.isSupported()) {
+      loader = new XYVPLoader();
+      usep2p = 'xy';
+    } else if (config.usep2p == 'tencent' && QVBP2PLoader.isSupported()) {
+      loader = new QVBP2PLoader({
+        videoId: config.videoId
+      });
+      usep2p = 'tencent';
+    } else if (browser.mozilla) {
       loader = new MozLoader();
     } else {
       loader = new FetchLoader();
     }
     let demuxer = new Demux();
-    let remuxer = new Remux();
+    let remuxer = null;
+    if(config.useHEVC) {
+      remuxer = new HEVCRemux();
+    }else{
+      remuxer = new H264Remux();
+    }
 
     config = config || {};
     if (!config.autoReload) {
@@ -28,14 +47,17 @@ export class PandaMccreeLive extends Mccree {
     if (modules.logger) {
       logger = modules.logger;
     }
+
     super({
       logger: logger,
       loader: loader,
       demux: demuxer,
       remux: remuxer
     }, config);
-	this.TAG = 'panda-mccree-live';
-    this.logger.debug(this.TAG, 'Live initialization');
+	  this.TAG = 'panda-mccree-live';
+    this.logger.debug(this.TAG, `Live initialization,use P2P:${usep2p}`);
+    this.remux.remux();
+    this.canvas = document.getElementById(this.config.canvasid);
     let that = this;
     this.observer.on('METADATA_CHANGED', function() {
       if (!that.reloading) {
@@ -44,8 +66,12 @@ export class PandaMccreeLive extends Mccree {
     });
     this.initStatistic();
     this.version = '1.1.1-0';
-	this.logger.info(this.TAG, `Current version: ${this.version}`);
-    this.mseController = new MSEController();
+	  this.logger.info(this.TAG, `Current version: ${this.version}`);
+    if(this.config.useHEVC){
+      this.mseController = new HEVCMSEController();
+    }else{
+      this.mseController = new H264MSEController();
+    }
     this.mseController.init(this);
     this.on = this.observer.on;
   }
@@ -174,9 +200,7 @@ export class PandaMccreeLive extends Mccree {
         });
         this.loadbytes = 0;
       }
-    } catch (e) {
-
-	}
+    } catch (e) {}
   }
 
   attachMediaElement(mediaElement) {
@@ -191,6 +215,7 @@ export class PandaMccreeLive extends Mccree {
       this.startTime = new Date().getTime();
     }
   }
+
   detachMediaElement() {
     this.mseController.detachMediaElement();
   }
