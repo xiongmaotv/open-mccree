@@ -22,26 +22,22 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>72/72</span>
+        <span class='fraction'>34/34</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>12/12</span>
+        <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>19/19</span>
+        <span class='fraction'>7/7</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>43/43</span>
-      </div>
-      <div class='fl pad1y'>
-        <span class="strong">1 statement, 3 branches</span>
-        <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
+        <span class='fraction'>34/34</span>
       </div>
     </div>
   </div>
@@ -140,50 +136,16 @@
 91
 92
 93
-94
-95
-96
-97
-98
-99
-100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124
-125
-126
-127
-128</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+94</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
@@ -207,8 +169,6 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -268,39 +228,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
 &nbsp;
 /**
@@ -338,12 +266,10 @@ class LoaderController {
   
   /**
    * This function is called when connected.
-   *
-   * @param {Object} the server response.
    */
   onConnected() {
     if(!this.connected) {
-      this.logger.debug(this.TAG, this.type, this.logMsgs.CONNECTED);
+      this.logger.debug(this.TAG, this.logMsgs.CONNECTED);
     }
     this.connected = true;
   }
@@ -362,68 +288,36 @@ class LoaderController {
   /**
    * This function is called when the resource is not found.
    *
-   * @param {data} the server response.
+   * @param {response} the server response.
    */
   onNotfound(response) {
     this.connected = false;
     this.loading = false;
-    this.logger.debug(this.TAG, this.type, this.logMsgs.NOT_FOUND);
+    this.logger.error(this.TAG, this.logMsgs.NOT_FOUND);
     this.observer.trigger('error', this.errorTypes.NETWORK_ERROR, this.errorDetails.NOTFOUND, response);
   }
 &nbsp;
   /**
    * This function is called when return forbidden.
    *
-   * @param {data} the server response.
+   * @param {response} the server response.
    */
   onForbidden(response) {
     this.connected = false;
     this.loading = false;
-    this.logger.debug(this.TAG, this.type, this.logMsgs.FORBIDDEN);
+    this.logger.error(this.TAG, this.logMsgs.FORBIDDEN);
     this.observer.trigger('error', this.errorTypes.NETWORK_ERROR, this.errorDetails.NOTFOUND, response);
   }
   /**
    * This function is called when can not conneced.
    *
-   * @param {data} the server response.
+   * @param {response} the server response.
    */
   onUnknownError(response) {
     this.connected = false;
     this.loading = false;
-    this.logger.debug(this.loader.TAG, this.loader.type, this.logMsgs.NOT_FOUND);
+    this.logger.error(this.loader.TAG, this.logMsgs.NOT_FOUND);
     this.observer.trigger('error', this.errorTypes.NETWORK_ERROR, this.errorDetails.NOTFOUND, response);
-  }
-  /**
-   * This function is called when can not conneced.
-   *
-   * @param {data} the server response.
-   */
-  debug(msg) {
-    this.logger.debug(this.loader.TAG, this.loader.type, msg);
-  }
-&nbsp;
-  log(msg) {
-    this.logger.log(this.loader.TAG, this.loader.type, msg);
-  }
-&nbsp;
-  info(msg) {
-    this.logger.info(this.loader.TAG, this.loader.type, msg);
-  }
-&nbsp;
-  error(msg) {
-    this.logger.error(this.loader.TAG, this.loader.type, msg);
-  }
-&nbsp;
-  trigger(event, ...data) {
-    this.observer.trigger(event, ...data);
-  }
-&nbsp;
-  on(event, ...data) {
-    this.observer.on(event, ...data);
-  }
-&nbsp;
-  off(event, ...data) {
-    this.observer.off(event, ...data);
   }
 }
 &nbsp;
@@ -434,7 +328,7 @@ export default LoaderController;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Aug 31 2017 11:45:52 GMT+0800 (CST)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Aug 22 2018 16:09:41 GMT+0800 (CST)
 </div>
 </div>
 <script src="../prettify.js"></script>

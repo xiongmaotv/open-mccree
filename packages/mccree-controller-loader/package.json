@@ -4,7 +4,7 @@
   "description": "",
   "main": "build/index.js",
   "scripts": {
-    "test": "./scripts/test.sh",
+    "test": "sudo sh ./scripts/test.sh",
     "build": "gulp build"
   },
   "license": "UNLICENSED",
