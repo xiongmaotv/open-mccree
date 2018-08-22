@@ -45,9 +45,11 @@ class Browser {
         platform: platform_match[0] || ""
       };
 
+    // versionNumber整数版本，version具体版本
     if (matched.browser) {
       browser[matched.browser] = true;
       browser.version = matched.version;
+      // 这里是取整操作
       browser.versionNumber = parseInt(matched.versionNumber, 10);
     }
 
