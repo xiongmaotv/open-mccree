@@ -1,4 +1,4 @@
-#English
+# English
 
 ## mccree-helper-brower
 > a component for brower information parsing
@@ -27,7 +27,7 @@ let brower = Brower.uaMatch(window.navigator.userAgent);
       3.name:the name of brower
       4.platform:the platform running the brower
       
-#中文
+# 中文
 
 ## mccree-helper-brower
 > 一个解析浏览器信息的组件
