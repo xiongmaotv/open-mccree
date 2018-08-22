@@ -19,8 +19,8 @@ let brower = Brower.uaMatch(window.navigator.userAgent);
 ### Interfaces
 
 #### uaMatch()
-    This function is to parse brower information.
-    The return is an object, with properties:
+This function is to parse brower information.
+The return is an object, with properties:
 + versionNumber:the integer version number of brower
 + version:the detailed number of brower
 + name:the name of brower
@@ -48,8 +48,8 @@ let brower = Brower.uaMatch(window.navigator.userAgent);
 ### 接口
 
 #### uaMatch()
-    这个接口用于解析浏览器信息
-    返回一个对象，有以下属性:
+这个接口用于解析浏览器信息
+返回一个对象，有以下属性:
 + versionNumber:浏览器的整数大版本号
 + version:浏览器的具体版本号
 + name:浏览器名字
