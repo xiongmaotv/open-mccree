@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">31.15% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>19/61</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">38.89% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>7/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">26.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10.64% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>5/47</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95</td><td class="line-coverage quiet"><span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span></td><td class="text"><pre class="prettyprint lang-js"><span class="missing-if-branch" title="else path not taken" >E</span>/*
+ * Copyright (C) 2017 Shenzhen Onething Technologies Co., Ltd. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import LoaderController from 'mccree-controller-loader';
+class XYVPLoader {
+  static isSupported() <span class="fstat-no" title="function not covered" >{</span>
+    return <span class="cstat-no" title="statement not covered" >!!window.xyvp;</span>
+  }
+&nbsp;
+  constructor(config) {
+    this.<span class="cstat-no" title="statement not covered" >TAG = 'Mccree-loader-xyp2p';</span>
+    this.<span class="cstat-no" title="statement not covered" >type = 'loader';</span>
+    this.<span class="cstat-no" title="statement not covered" >config = config || {};</span>
+    this.<span class="cstat-no" title="statement not covered" >xyLive = null;</span>
+  }
+&nbsp;
+  init(<span class="fstat-no" title="function not covered" >mccree) {</span>
+    this.<span class="cstat-no" title="statement not covered" >mccree = mccree;</span>
+    this.<span class="cstat-no" title="statement not covered" >controller = new LoaderController(this);</span>
+    this.<span class="cstat-no" title="statement not covered" >controller.init.call(this, mccree);</span>
+    this.<span class="cstat-no" title="statement not covered" >events.XY_ERROR = window.xyvp.XYLiveEvent.ERROR;</span>
+    this.<span class="cstat-no" title="statement not covered" >events.FLV_DATA = window.xyvp.XYLiveEvent.FLV_DATA;</span>
+  }
+  
+  loadPartail(<span class="fstat-no" title="function not covered" >source, range, opts) {</span>
+    if (<span class="cstat-no" title="statement not covered" >!this.mccree) {</span>
+      this.<span class="cstat-no" title="statement not covered" >logger.warn(this.TAG, 'Live is not init yet');</span>
+      return;
+    }
+&nbsp;
+    this.<span class="cstat-no" title="statement not covered" >source = source;</span>
+    this.<span class="cstat-no" title="statement not covered" >_loading = false;</span>
+&nbsp;
+    this.<span class="cstat-no" title="statement not covered" >xhr = new XMLHttpRequest();</span>
+    let <span class="cstat-no" title="statement not covered" >that = this;</span>
+    this.<span class="cstat-no" title="statement not covered" >xhr.open("get", source, true);</span>
+    this.<span class="cstat-no" title="statement not covered" >xhr.responseType = 'moz-chunked-arraybuffer';</span>
+    this.<span class="cstat-no" title="statement not covered" >xhr.onreadystatechange = <span class="fstat-no" title="function not covered" >e =&gt; {</span></span>
+      if(<span class="cstat-no" title="statement not covered" >this.status === 200) {</span>
+        that.<span class="cstat-no" title="statement not covered" >controller.onConnected.call(that, e);</span>
+      } else <span class="cstat-no" title="statement not covered" >if(this.status === 404){</span>
+        that.<span class="cstat-no" title="statement not covered" >controller.onNotfound.call(that, e);</span>
+      }
+    };
+    this.<span class="cstat-no" title="statement not covered" >xhr.onprogress = <span class="fstat-no" title="function not covered" >e =&gt; {</span></span>
+      that.<span class="cstat-no" title="statement not covered" >mccree.url = this.xhr.response.url || that.mccree.url;</span>
+      let <span class="cstat-no" title="statement not covered" >chunk = e.target.response;</span>
+      that.<span class="cstat-no" title="statement not covered" >mccree.loaderBuffer.push(new Uint8Array(chunk));</span>
+      that.<span class="cstat-no" title="statement not covered" >observer.trigger(that.events.FRAG_LOADED, chunk.byteLength);</span>
+    };
+    this.<span class="cstat-no" title="statement not covered" >xhr.send();</span>
+  }
+  
+  load(<span class="fstat-no" title="function not covered" >source, opt, range) {</span>
+    let <span class="cstat-no" title="statement not covered" >that = this;</span>
+    this.<span class="cstat-no" title="statement not covered" >xyLive = new window.xyvp.XYLive({url:source,</span>
+      video:this.mccree.getMediaElement()
+    });
+    this.<span class="cstat-no" title="statement not covered" >xyLive.open();</span>
+    this.<span class="cstat-no" title="statement not covered" >xyLive.on(this.events.FLV_DATA, <span class="fstat-no" title="function not covered" >function(data) {</span></span>
+      that.<span class="cstat-no" title="statement not covered" >mccree.loaderBuffer.push(new Uint8Array(data));</span>
+      that.<span class="cstat-no" title="statement not covered" >observer.trigger(that.events.FRAG_LOADED, data.byteLength);</span>
+    });
+    this.<span class="cstat-no" title="statement not covered" >xyLive.on(that.events.XY_ERROR, <span class="fstat-no" title="function not covered" >function(data) {</span></span>
+      this.<span class="cstat-no" title="statement not covered" >observer.trigger('error', 'p2p_rollback', data);</span>
+    });
+  }
+&nbsp;
+  unload() <span class="fstat-no" title="function not covered" >{</span>
+    let <span class="cstat-no" title="statement not covered" >that = this;</span>
+    return <span class="cstat-no" title="statement not covered" >new Promise(<span class="fstat-no" title="function not covered" >function(resolve,reject) {</span></span>
+      that.<span class="cstat-no" title="statement not covered" >xyLive.close();</span>
+      that.<span class="cstat-no" title="statement not covered" >observer.trigger('error', that.errorTypes.NETWORK_ERROR, 'unload');</span>
+      resolve();
+    });
+  }
+&nbsp;
+  destory() <span class="fstat-no" title="function not covered" >{</span>
+    this.<span class="cstat-no" title="statement not covered" >xyLive.close();</span>
+  }
+}
+&nbsp;
+export default XYVPLoader;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Aug 22 2018 22:07:51 GMT+0800 (CST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
