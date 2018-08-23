@@ -48,17 +48,17 @@ class XYVPLoader {
     this.xhr.open("get", source, true);
     this.xhr.responseType = 'moz-chunked-arraybuffer';
     this.xhr.onreadystatechange = e => {
-      if(this.status === 200) {
+      if(this.xhr.status === 200) {
         that.controller.onConnected.call(that, e);
-      } else if(this.status === 404){
+      } else if(this.xhr.status === 404){
         that.controller.onNotfound.call(that, e);
       }
     };
     this.xhr.onprogress = e => {
-      that.mccree.url = this.xhr.response.url || that.mccree.url;
+      this.mccree.url = this.xhr.response.url || this.mccree.url;
       let chunk = e.target.response;
-      that.mccree.loaderBuffer.push(new Uint8Array(chunk));
-      that.observer.trigger(that.events.FRAG_LOADED, chunk.byteLength);
+      this.mccree.loaderBuffer.push(new Uint8Array(chunk));
+      this.observer.trigger(that.events.FRAG_LOADED, chunk.byteLength);
     };
     this.xhr.send();
   }
@@ -74,7 +74,7 @@ class XYVPLoader {
       that.observer.trigger(that.events.FRAG_LOADED, data.byteLength);
     });
     this.xyLive.on(that.events.XY_ERROR, function(data) {
-      this.observer.trigger('error', 'p2p_rollback', data);
+      that.observer.trigger('error', 'p2p_rollback', data);
     });
   }
 
