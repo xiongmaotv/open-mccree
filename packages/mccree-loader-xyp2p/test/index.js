@@ -134,56 +134,86 @@ describe('module dependency', function(){
   });
   
   describe('loadPartail', function(){
-    it('loadPartail with 404 resource', function(done){
-      try{
-        xy.loadPartail('https://pl-p2p3.live.panda.tv/conf/pandaTV/pl3.live.panda.tv/live_panda/bd16608564b128a0b9b2859cad9908e5/html5?ctmId=cGFuZGFUVg==&surl=aHR0cHM6Ly9wbDMubGl2ZS5wYW5kYS50di9saXZlX3BhbmRhL2JkMTY2MDg1NjRiMTI4YTBiOWIyODU5Y2FkOTkwOGU1LmZsdg==&wsSecret=627891ffba423c23272337e18a3b462d&wsTime=5b7e8727', 'range', 'opts');
-        expect(xy.xhr).to.be.a('XMLHttpRequest');
-        setTimeout(function(){
-          expect(xy.xhr.status).to.be.equal(404);
-          xy.xhr.onprogress = null;
-          xy.xhr.onreadystatechange = null;
-          done();
-        },1500);
-      }catch(e){
-        expect(e).not.to.be.undefined;
-      }
-    });
-    
-    describe('delay', function(){
-      it('delay', function(done){
-        setTimeout(function(){
-          done()
-        }, 1500);
+    describe('302', function(){
+      it('loadPartail with 302 resource', function(done){
+        try{
+          xy.loadPartail('https://liveapi.videojj.com/api/v1/getUser?platformId=5714b45a46a2c22f00f09fb9&platformUserId=222222&cate=dota2', 'range', 'opts');
+          expect(xy.xhr).to.be.a('XMLHttpRequest');
+          setTimeout(function(){
+            xy.xhr.onprogress = null;
+            xy.xhr.onreadystatechange = null;
+            done();
+          },1500);
+        }catch(e){
+          expect(e).not.to.be.undefined;
+        }
+      });
+      
+      describe('delay', function(){
+        it('delay', function(done){
+          setTimeout(function(){
+            done()
+          }, 1500);
+        });
       });
     });
     
-    it('loadPartail with 200 resource', function(done){
-      try{
-        xy.loadPartail('https://s.h2.pdim.gs/static/686fb8fbbbd6adba/ruc_v2.1.6.css', 'range', 'opts');
-        expect(xy.xhr).to.be.a('XMLHttpRequest');
-        setTimeout(function(){
-          expect(xy.xhr.status).to.be.equal(200);
-          xy.xhr.onprogress = null;
-          xy.xhr.onreadystatechange = null;
-          done();
-        },1500);
-      }catch(e){
-        expect(e).not.to.be.undefined;
-      }
-    });
-        
-    describe('delay', function(){
-      it('delay', function(done){
-        setTimeout(function(){
-          done()
-        }, 1500);
+    describe('404', function(){
+      it('loadPartail with 404 resource', function(done){
+        try{
+          xy.loadPartail('https://pl-p2p3.live.panda.tv/conf/pandaTV/pl4.live.panda.tv/live_panda/fc3ff8fa6b4e4dc6ef86c2a9c0c33250_3000/html5?ctmId=cGFuZGFUVg==&surl=aHR0cHM6Ly9wbDQubGl2ZS5wYW5kYS50di9saXZlX3BhbmRhL2ZjM2ZmOGZhNmI0ZTRkYzZlZjg2YzJhOWMwYzMzMjUwXzMwMDAuZmx2&wsSecret=af855a5003ed5b25c0bf5581e74fc1e2&wsTime=5b7e8f8d', 'range', 'opts');
+          expect(xy.xhr).to.be.a('XMLHttpRequest');
+          setTimeout(function(){
+            expect(xy.xhr.status).to.be.equal(404);
+            xy.xhr.onprogress = null;
+            xy.xhr.onreadystatechange = null;
+            done();
+          },1500);
+        }catch(e){
+          expect(e).not.to.be.undefined;
+        }
+      });
+      
+      describe('delay', function(){
+        it('delay', function(done){
+          setTimeout(function(){
+            done()
+          }, 1500);
+        });
       });
     });
     
-    it('loadPartail without mccree', function(){
-      xy.mccree = null;
-      xy.loadPartail('https://www.baidu.com/', 'range', 'opts');
-      expect(logMsg).to.be.equal('Live is not init yet');
+    describe('200', function(){
+      it('loadPartail with 200 resource', function(done){
+        try{
+          xy.loadPartail('https://s.h2.pdim.gs/static/686fb8fbbbd6adba/ruc_v2.1.6.css', 'range', 'opts');
+          expect(xy.xhr).to.be.a('XMLHttpRequest');
+          setTimeout(function(){
+            expect(xy.xhr.status).to.be.equal(200);
+            xy.xhr.onprogress = null;
+            xy.xhr.onreadystatechange = null;
+            done();
+          },1500);
+        }catch(e){
+          expect(e).not.to.be.undefined;
+        }
+      });
+      
+      describe('delay', function(){
+        it('delay', function(done){
+          setTimeout(function(){
+            done()
+          }, 1500);
+        });
+      });
+    });
+    
+    describe('without mccree', function(){
+      it('loadPartail without mccree', function(){
+        xy.mccree = null;
+        xy.loadPartail('https://www.baidu.com/', 'range', 'opts');
+        expect(logMsg).to.be.equal('Live is not init yet');
+      });
     });
   });
 });
